@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    networks:
+      - app_network
+
+  db:
+    image: nouchka/sqlite3
+    container_name: sqlite_db
+    volumes:
+      - sqlite_data:/var/sqlite
+    networks:
+      - app_network
+
+volumes:
+  sqlite_data:
+
+networks:
+  app_network:

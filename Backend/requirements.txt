@@ -1,0 +1,8 @@
+SQLModel
+fastapi[standard]
+uvicorn
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+requests
+python-dotenv
