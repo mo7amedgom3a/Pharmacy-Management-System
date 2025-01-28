@@ -20,7 +20,7 @@ async def get_all_suppliers(session: AsyncSession) -> list[Supplier]:
 
 async def update_supplier(session: AsyncSession, supplier_id: int, supplier: Supplier) -> Supplier:
     supplier = await session.get(Supplier, supplier_id)
-    for key, value in updates.items():
+    for key, value in supplier.items():
         setattr(supplier, key, value)
     await session.commit()
     return supplier

@@ -3,33 +3,50 @@ from models.inventory import Inventory
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlmodel import select
 from dependencies import save
+from fastapi import HTTPException, status
 
 
 async def create_inventory(session: AsyncSession, inventory: InventoryCreate) -> Inventory:
-    inventory = Inventory.from_orm(inventory)
-    await save(session, inventory)
-    return inventory
+    try:
+        inventory = Inventory.from_orm(inventory)
+        await save(session, inventory)
+        return inventory
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
 
 async def get_inventory(session: AsyncSession, inventory_id: int) -> Inventory:
-    return await session.get(Inventory, inventory_id)
+    inventory = await session.get(Inventory, inventory_id)
+    if not inventory:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
+    return inventory
 
 async def get_all_inventory(session: AsyncSession) -> list[Inventory]:
-    result = await session.exec(select(Inventory))
-    return result.all()
+    try:
+        result = await session.exec(select(Inventory))
+        return result.all()
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
 async def update_inventory(session: AsyncSession, inventory_id: int, updates: dict) -> Inventory:
     inventory = await session.get(Inventory, inventory_id)
-    for key, value in updates.items():
-        setattr(inventory, key, value)
-    await session.commit()
-    return inventory
+    if not inventory:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
+    try:
+        for key, value in updates.items():
+            setattr(inventory, key, value)
+        await session.commit()
+        return inventory
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
 async def delete_inventory(session: AsyncSession, inventory_id: int) -> bool:
+    inventory = await session.get(Inventory, inventory_id)
+    if not inventory:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
     try:
-        inventory = await session.get(Inventory, inventory_id)
         await session.delete(inventory)
         await session.commit()
         return True
-    except:
-        return False
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
