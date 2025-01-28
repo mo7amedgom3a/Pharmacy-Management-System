@@ -7,6 +7,7 @@ class DrugBase(BaseModel):
     manufacturer: Optional[str] = None
     description: Optional[str] = None
     supplier_id: Optional[int] = None
+    drug_sub_type_id: Optional[int] = None
 
 class DrugCreate(DrugBase):
     pass

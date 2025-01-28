@@ -1,27 +1,38 @@
 from schemas.employee import EmployeeBase, EmployeeCreate, EmployeeRead
+from models.employee import Employee
+from sqlmodel.ext.asyncio.session import AsyncSession
+from sqlmodel import select
+from dependencies import save
 
-from sqlmodel import Session, select
 
-def create_employee(session: Session, employee: EmployeeCreate):
-    session.add(employee)
-    session.commit()
-    session.refresh(employee)
-    return employee
+async def create_employee(session: AsyncSession, employee: EmployeeCreate) -> Employee:
+    employee_instance = Employee(**employee.dict())
+    await save(session, employee_instance)
+    return employee_instance
 
-def get_employee(session: Session, employee_id: int):
-    return session.get(EmployeeRead, employee_id)
 
-def get_all_employees(session: Session):
-    return session.exec(select(EmployeeRead)).all()
+async def get_employee(session: AsyncSession, employee_id: int) -> Employee:
+    return await session.get(Employee, employee_id)
 
-def update_employee(session: Session, employee_id: int, updates: dict):
-    employee = session.get(EmployeeCreate, employee_id)
+
+async def get_all_employees(session: AsyncSession) -> list[Employee]:
+    result = await session.exec(select(Employee))
+    return result.all()
+
+
+async def update_employee(session: AsyncSession, employee_id: int, updates: dict) -> Employee:
+    employee = await session.get(Employee, employee_id)
     for key, value in updates.items():
         setattr(employee, key, value)
-    session.commit()
+    await session.commit()
     return employee
 
-def delete_employee(session: Session, employee_id: int):
-    employee = session.get(EmployeeRead, employee_id)
-    session.delete(employee)
-    session.commit()
+
+async def delete_employee(session: AsyncSession, employee_id: int) -> bool:
+    try:
+        employee = await session.get(Employee, employee_id)
+        await session.delete(employee)
+        await session.commit()
+        return True
+    except:
+        return False

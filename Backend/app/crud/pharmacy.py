@@ -1,34 +1,38 @@
 from schemas.pharmacy import PharmacyBase, PharmacyCreate, PharmacyRead
 
-from sqlmodel import Session, select
+from sqlmodel.ext.asyncio.session import AsyncSession
+from sqlmodel import select
 from models.pharmacy import Pharmacy
-def create_pharmacy(session: Session, pharmacyDto: PharmacyCreate) -> Pharmacy:
-    #map the DTO to the ORM model
+from dependencies import save
+
+
+async def create_pharmacy(session: AsyncSession, pharmacyDto: PharmacyCreate) -> Pharmacy:
+    # map the DTO to the ORM model
     pharmacy = Pharmacy.from_orm(pharmacyDto)
-    session.add(pharmacy)
-    session.commit()
-    session.refresh(pharmacy)
+    # save the pharmacy to the database
+    await save(session, pharmacy)
     return pharmacy
 
 
-def get_pharmacy(session: Session, pharmacy_id: int) -> Pharmacy:
-    return session.get(Pharmacy, pharmacy_id)
+async def get_pharmacy(session: AsyncSession, pharmacy_id: int) -> Pharmacy:
+    pharmacy = await session.get(Pharmacy, pharmacy_id)
+    return pharmacy
 
-def get_all_pharmacies(session: Session) -> list[Pharmacy]:
-    return session.exec(select(Pharmacy)).all()
+async def get_all_pharmacies(session: AsyncSession) -> list[Pharmacy]:
+    result = await session.execute(select(Pharmacy))
+    pharmacies = result.scalars().all()
+    return pharmacies
 
-
-def update_pharmacy(session: Session, pharmacy_id: int, updates: dict):
-    pharmacy = session.get(Pharmacy, pharmacy_id)
+async def update_pharmacy(session: AsyncSession, pharmacy_id: int, updates: Pharmacy):
+    pharmacy = await session.get(Pharmacy, pharmacy_id)
     for key, value in updates.items():
         setattr(pharmacy, key, value)
-    session.add(pharmacy)
-    session.commit()
-    session.refresh(pharmacy)
+    await save(session, pharmacy)
     return pharmacy
 
-def delete_pharmacy(session: Session, pharmacy_id: int):
-    pharmacy = session.get(Pharmacy, pharmacy_id)
-    session.delete(pharmacy)
-    session.commit()
+
+async def delete_pharmacy(session: AsyncSession, pharmacy_id: int):
+    pharmacy = await session.get(Pharmacy, pharmacy_id)
+    await session.delete(pharmacy)
+    await session.commit()
     return pharmacy

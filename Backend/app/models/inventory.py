@@ -7,3 +7,4 @@ class Inventory(SQLModel, table=True):
     drug_id: Optional[int] = Field(default=None, foreign_key="drug.drug_id")
     quantity: int
     price_per_unit: float
+    min_quantity: int
