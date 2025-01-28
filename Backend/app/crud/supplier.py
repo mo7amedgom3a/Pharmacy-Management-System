@@ -18,11 +18,12 @@ async def get_all_suppliers(session: AsyncSession) -> list[Supplier]:
     result = await session.exec(select(Supplier))
     return result.all()
 
-async def update_supplier(session: AsyncSession, supplier_id: int, supplier: Supplier) -> Supplier:
+async def update_supplier(session: AsyncSession, supplier_id: int, supplier: SupplierCreate) -> Supplier:
+    # Get the supplier
     supplier = await session.get(Supplier, supplier_id)
-    for key, value in supplier.items():
+    # Update the supplier
+    for key, value in supplier.dict().items():
         setattr(supplier, key, value)
-    await session.commit()
     return supplier
 
 async def delete_supplier(session: AsyncSession, supplier_id: int) -> bool:

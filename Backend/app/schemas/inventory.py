@@ -6,6 +6,7 @@ class InventoryBase(BaseModel):
     drug_id: int
     quantity: int
     price_per_unit: float
+    min_quantity: int
 
 class InventoryCreate(InventoryBase):
     pass

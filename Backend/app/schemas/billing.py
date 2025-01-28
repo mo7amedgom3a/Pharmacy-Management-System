@@ -4,8 +4,11 @@ from typing import Optional
 class BillingBase(BaseModel):
     pharmacy_id: int
     customer_name: str
-    date: str
     total_amount: float
+    paid_amount: float
+    drug_id: int
+    quantity: int
+    price: float
 
 class BillingCreate(BillingBase):
     pass

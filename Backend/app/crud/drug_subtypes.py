@@ -1,14 +1,19 @@
 from schemas.drug_subtypes import DrugSubtypeCreate, DrugSubtypeUpdate
-from models.drug import DrugSubType
+from models.drug import DrugSubType, DrugType
 from dependencies import AsyncSession, save
 from fastapi import HTTPException, status
+from sqlmodel import select
 
 
 async def get_drug_subtypes(db_session: AsyncSession) -> list[DrugSubType]:
     """Get all drug subtypes"""
-    result = await db_session.execute(db_session.query(DrugSubType))
-    return result.scalars().all()
-
+    try:
+        result = await db_session.exec(select(DrugSubType))
+        drug_sub_types = result.all()
+        return drug_sub_types
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+    
 
 async def get_drug_subtype_by_id(db_session: AsyncSession, drug_subtype_id: int) -> DrugSubType:
     """Get drug subtype by id"""
@@ -58,3 +63,11 @@ async def delete_drug_subtype(db_session: AsyncSession, drug_subtype_id: int) ->
     await db_session.delete(db_drug_subtype)
     await db_session.commit()
     return True
+
+async def get_drug_subtype_drug_type(db_session: AsyncSession, drug_subtype_id: int) -> DrugType:
+    query = db_session.query(DrugSubType).filter(DrugSubType.drug_sub_type_id == drug_subtype_id)
+    result = await db_session.execute(query)
+    db_drug_subtype = result.scalar()
+    if not db_drug_subtype:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Drug subtype not found")
+    return db_drug_subtype.drug_type

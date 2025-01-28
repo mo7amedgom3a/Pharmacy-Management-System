@@ -1,5 +1,5 @@
 from schemas.drug_types import DrugTypeCreate, DrugTypeUpdate
-from models.drug import DrugType
+from models.drug import DrugType, DrugSubType
 from typing import List, Union
 from dependencies import save
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -43,3 +43,7 @@ async def delete_drug_type(db_session: AsyncSession, drug_type_id: int) -> bool:
     await db_session.delete(db_drug_type)
     await db_session.commit()
     return True
+
+async def get_drug_type_subtypes(db_session: AsyncSession, drug_type_id: int) -> List[DrugSubType]:
+    result = await db_session.execute(select(DrugSubType).filter(DrugSubType.drug_type_id == drug_type_id))
+    return result.scalars().all()

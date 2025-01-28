@@ -9,6 +9,9 @@ class PharmacyBase(BaseModel):
 class PharmacyCreate(PharmacyBase):
     pass
 
+class PharmacyUpdate(PharmacyBase):
+    pass
+
 class PharmacyRead(PharmacyBase):
     pharmacy_id: int
 

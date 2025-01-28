@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlmodel.ext.asyncio.session import AsyncSession
 from dependencies import get_session
-from schemas.drug import DrugCreate
 from crud.drug import *
+from models.drug import DrugSubType, DrugType
 
 router = APIRouter(prefix="/drug", tags=["Drug"])
 from typing import List, Optional
@@ -20,7 +20,7 @@ async def get_drugById(drug_id: int, session: AsyncSession = Depends(get_session
 
 # Create a drug
 @router.post("/", response_model=Drug, status_code=201)
-async def create(drug: Drug, session: AsyncSession = Depends(get_session)) -> Drug:
+async def create(drug: DrugCreate, session: AsyncSession = Depends(get_session)) -> Drug:
     return await create_drug(drug=drug, session=session)
 
 
@@ -34,3 +34,4 @@ async def update(drug_id: int, drug: Drug, session: AsyncSession = Depends(get_s
 @router.delete("/{drug_id}", response_model=bool, status_code=200)
 async def delete(drug_id: int, session: AsyncSession = Depends(get_session)) -> bool:
     return await delete_drug(drug_id=drug_id, session=session)
+

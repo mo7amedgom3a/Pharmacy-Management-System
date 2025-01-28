@@ -1,12 +1,12 @@
 from schemas.drug import DrugBase, DrugCreate, DrugRead
-from models.drug import Drug
+from models.drug import Drug, DrugSubType, DrugType
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlmodel import select
 from dependencies import save
 from fastapi import HTTPException, status
 
 
-async def create_drug(session: AsyncSession, drug: Drug) -> Drug:
+async def create_drug(session: AsyncSession, drug: DrugCreate) -> Drug:
     """create a new drug in the database"""
     try:
         drug = Drug(**drug.dict())
@@ -62,3 +62,5 @@ async def delete_drug(session: AsyncSession, drug_id: int) -> bool:
         return True
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+    
+

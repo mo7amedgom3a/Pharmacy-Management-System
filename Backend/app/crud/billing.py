@@ -9,7 +9,7 @@ from fastapi import HTTPException, status
 async def create_billing(session: AsyncSession, billing: BillingCreate) -> Billing:
     """Create a new billing record in the database"""
     try:
-        billing_instance = Billing(**billing.dict())
+        billing_instance = Billing(**billing.model_dump())
         await save(session, billing_instance)
         return billing_instance
     except Exception as e:
@@ -18,7 +18,7 @@ async def create_billing(session: AsyncSession, billing: BillingCreate) -> Billi
 
 async def get_billing(session: AsyncSession, billing_id: int) -> Billing:
     """Get a billing record from the database"""
-    billing = await session.get(Billing, billing_id)
+    billing = await session.exec(select(Billing).where(Billing.id == billing_id)).first()
     if not billing:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
     return billing
