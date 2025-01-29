@@ -5,7 +5,9 @@ class EmployeeBase(BaseModel):
     pharmacy_id: int
     name: str
     role: str
-    contact_info: Optional[str] = None
+    phone: Optional[str] = None
+    salary: float
+    address: str
 
 class EmployeeCreate(EmployeeBase):
     pass

@@ -9,7 +9,8 @@ from fastapi import HTTPException, status
 
 async def create_inventory(session: AsyncSession, inventory: InventoryCreate) -> Inventory:
     try:
-        inventory = Inventory.from_orm(inventory)
+        inventory = Inventory(**inventory.dict())
+        inventory.current_quantity = inventory.total_quantity
         await save(session, inventory)
         return inventory
     except Exception as e:
@@ -29,13 +30,14 @@ async def get_all_inventory(session: AsyncSession) -> list[Inventory]:
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
-async def update_inventory(session: AsyncSession, inventory_id: int, updates: dict) -> Inventory:
+async def update_inventory(session: AsyncSession, inventory_id: int, updates: InventoryBase) -> Inventory:
     inventory = await session.get(Inventory, inventory_id)
     if not inventory:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
     try:
-        for key, value in updates.items():
+        for key, value in updates.dict(exclude_unset=True).items():
             setattr(inventory, key, value)
+        inventory.current_quantity = inventory.quantity - inventory.current_quantity
         await session.commit()
         return inventory
     except Exception as e:
@@ -62,3 +64,4 @@ async def get_inventory_drugs(session: AsyncSession, inventory_id: int) -> list[
         return result.all()
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+    

@@ -7,3 +7,5 @@ class Employee(SQLModel, table=True):
     name: str = Field(index=True)
     role: str
     phone: str
+    salary: float
+    address: str

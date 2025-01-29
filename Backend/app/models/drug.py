@@ -1,5 +1,6 @@
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional, List
+from models.inventory_transactions import Transaction
 
 class DrugType(SQLModel, table=True):
     drug_type_id: Optional[int] = Field(default=None, primary_key=True)
@@ -22,3 +23,4 @@ class Drug(SQLModel, table=True):
     supplier_id: Optional[int] = Field(default=None, foreign_key="supplier.supplier_id")
     drug_sub_type_id: Optional[int] = Field(default=None, foreign_key="drugsubtype.drug_sub_type_id")
     sub_type: DrugSubType = Relationship(back_populates="drugs")
+    transactions: List[Transaction] = Relationship(back_populates="drug")

@@ -12,7 +12,8 @@ from routers import (
     supplier,
     inventory,
     billing,
-    employee
+    employee,
+    inventory_transactions
 )
 
 
@@ -45,6 +46,7 @@ app.include_router(supplier.router)
 app.include_router(inventory.router)
 app.include_router(billing.router)
 app.include_router(employee.router)
+app.include_router(inventory_transactions.router)
 # Sample root endpoint
 @app.get("/")
 async def read_root():

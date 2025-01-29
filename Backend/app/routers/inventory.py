@@ -9,7 +9,7 @@ router = APIRouter(prefix="/inventory", tags=["Inventory"])
 
 # Get all inventory
 @router.get("/", response_model=List[Inventory], status_code=200)
-async def get_inventory(session: AsyncSession = Depends(get_session)) -> List[Inventory]:
+async def get_allinventory(session: AsyncSession = Depends(get_session)) -> List[Inventory]:
     return await get_all_inventory(session)
 
 

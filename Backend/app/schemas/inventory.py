@@ -4,7 +4,8 @@ from typing import Optional
 class InventoryBase(BaseModel):
     pharmacy_id: int
     drug_id: int
-    quantity: int
+    total_quantity: int
+    current_quantity: int
     price_per_unit: float
     min_quantity: int
 
