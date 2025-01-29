@@ -11,7 +11,7 @@ async def create(transaction: TransactionBase, session: AsyncSession = Depends(g
     return await create_transaction(transaction=transaction, session=session)
 
 @router.get("/", response_model=list[Transaction], status_code=200)
-async def get_all_transactions(session: AsyncSession = Depends(get_session)) -> list[Transaction]:
+async def get_alltransactions(session: AsyncSession = Depends(get_session)) -> list[Transaction]:
     return await get_all_transactions(session)
 
 @router.get("/{transaction_id}", response_model=Transaction, status_code=200)

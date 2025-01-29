@@ -36,8 +36,3 @@ async def update(drug_subtype_id: int, drug_subtype: DrugSubtypeUpdate, session:
 @router.delete("/{drug_subtype_id}", response_model=bool, status_code=200)
 async def delete(drug_subtype_id: int, session: AsyncSession = Depends(get_session)) -> bool:
     return await delete_drug_subtype(db_session=session, drug_subtype_id=drug_subtype_id)
-
-# Get all drugs in a drug subtype
-@router.get("/{drug_subtype_id}/drugs", response_model=List[Drug], status_code=200)
-async def get_drugSubtypeDrugs(drug_subtype_id: int, session: AsyncSession = Depends(get_session)) -> List[Drug]:
-    return await get_drug_subtype_drug_type(db_session=session, drug_subtype_id=drug_subtype_id)

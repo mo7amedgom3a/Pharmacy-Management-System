@@ -18,10 +18,10 @@ async def create_billing(session: AsyncSession, billing: BillingCreate) -> Billi
 
 async def get_billing(session: AsyncSession, billing_id: int) -> Billing:
     """Get a billing record from the database"""
-    billing = await session.exec(select(Billing).where(Billing.id == billing_id)).first()
+    billing = await session.exec(select(Billing).where(Billing.billing_id == billing_id))
     if not billing:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
-    return billing
+    return billing.first()
 
 
 async def get_all_billing(session: AsyncSession) -> list[Billing]:

@@ -13,7 +13,7 @@ async def get_drug_types(db_session: AsyncSession) -> List[DrugType]:
 
 async def get_drug_type_by_id(db_session: AsyncSession, drug_type_id: int) -> DrugType:
     """Get drug type by id"""
-    result = await db_session.execute(select(DrugType).filter(DrugType.id == drug_type_id))
+    result = await db_session.execute(select(DrugType).filter(DrugType.drug_type_id == drug_type_id))
     drug_type = result.scalar()
     if not drug_type:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Drug type not found")
