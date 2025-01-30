@@ -1,37 +1,33 @@
 from fastapi import APIRouter, Depends
 from sqlmodel.ext.asyncio.session import AsyncSession
 from dependencies import get_session
-from crud.drug import *
-from models.drug import DrugSubType, DrugType
+from crud.drug import DrugCrud
+from schemas.drug import DrugCreate
+from models.drug import Drug
+from typing import List
 
 router = APIRouter(prefix="/drug", tags=["Drug"])
-from typing import List, Optional
 
-# Get all drugs
+# Dependency Injection for DrugCrud
+async def get_drug_crud(session: AsyncSession = Depends(get_session)):
+    return DrugCrud(session)
+
 @router.get("/", response_model=List[Drug], status_code=200)
-async def get_drugs(session: AsyncSession = Depends(get_session)) -> List[Drug]:
-    return await get_all_drugs(session)
+async def get_drugs(drug_crud: DrugCrud = Depends(get_drug_crud)) -> List[Drug]:
+    return await drug_crud.get_all()
 
-# Get drug by id
 @router.get("/{drug_id}", response_model=Drug, status_code=200)
-async def get_drugById(drug_id: int, session: AsyncSession = Depends(get_session)) -> Drug:
-    return await get_drug(drug_id=drug_id, session=session)
+async def get_drug_by_id(drug_id: int, drug_crud: DrugCrud = Depends(get_drug_crud)) -> Drug:
+    return await drug_crud.get_by_id(drug_id)
 
-
-# Create a drug
 @router.post("/", response_model=Drug, status_code=201)
-async def create(drug: DrugCreate, session: AsyncSession = Depends(get_session)) -> Drug:
-    return await create_drug(drug=drug, session=session)
+async def create_drug(drug: DrugCreate, drug_crud: DrugCrud = Depends(get_drug_crud)) -> Drug:
+    return await drug_crud.create(drug)
 
-
-# Update a drug
 @router.put("/{drug_id}", response_model=Drug, status_code=200)
-async def update(drug_id: int, drug: Drug, session: AsyncSession = Depends(get_session)) -> Drug:
-    return await update_drug(drug_id=drug_id, updates=drug, session=session)
+async def update_drug(drug_id: int, drug: Drug, drug_crud: DrugCrud = Depends(get_drug_crud)) -> Drug:
+    return await drug_crud.update(drug_id, drug)
 
-
-# Delete a drug
 @router.delete("/{drug_id}", response_model=bool, status_code=200)
-async def delete(drug_id: int, session: AsyncSession = Depends(get_session)) -> bool:
-    return await delete_drug(drug_id=drug_id, session=session)
-
+async def delete_drug(drug_id: int, drug_crud: DrugCrud = Depends(get_drug_crud)) -> bool:
+    return await drug_crud.delete(drug_id)

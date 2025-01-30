@@ -39,14 +39,14 @@ app.add_middleware(
 )
 
 app.include_router(pharmacy.router)
-app.include_router(drug.router)
-app.include_router(drug_types.router)
-app.include_router(drug_subtypes.router)
 app.include_router(supplier.router)
 app.include_router(inventory.router)
+app.include_router(inventory_transactions.router)
+app.include_router(drug_types.router)
+app.include_router(drug_subtypes.router)
+app.include_router(drug.router)
 app.include_router(billing.router)
 app.include_router(employee.router)
-app.include_router(inventory_transactions.router)
 # Sample root endpoint
 @app.get("/")
 async def read_root():

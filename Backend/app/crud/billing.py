@@ -1,60 +1,64 @@
-from schemas.billing import BillingBase, BillingCreate, BillingRead
+from schemas.billing import BillingCreate
 from models.billing import Billing
-from sqlmodel.ext.asyncio.session import AsyncSession
-from sqlmodel import select
 from dependencies import save
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
 from fastapi import HTTPException, status
+from typing import List
 
+class BillingCrud:
+    def __init__(self, session: AsyncSession):
+        """Initialize BillingCrud with a database session"""
+        self.session = session
 
-async def create_billing(session: AsyncSession, billing: BillingCreate) -> Billing:
-    """Create a new billing record in the database"""
-    try:
-        billing_instance = Billing(**billing.model_dump())
-        await save(session, billing_instance)
-        return billing_instance
-    except Exception as e:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+    async def create(self, billing: BillingCreate) -> Billing:
+        """Create a new billing record"""
+        try:
+            billing_instance = Billing(**billing.model_dump())
+            await save(self.session, billing_instance)
+            return billing_instance
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
-
-async def get_billing(session: AsyncSession, billing_id: int) -> Billing:
-    """Get a billing record from the database"""
-    billing = await session.exec(select(Billing).where(Billing.billing_id == billing_id))
-    if not billing:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
-    return billing.first()
-
-
-async def get_all_billing(session: AsyncSession) -> list[Billing]:
-    """Get all billing records from the database"""
-    try:
-        result = await session.exec(select(Billing))
-        return result.all()
-    except Exception as e:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
-
-
-async def update_billing(session: AsyncSession, billing_id: int, updates: dict) -> Billing:
-    """Update a billing record in the database"""
-    billing = await session.get(Billing, billing_id)
-    if not billing:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
-    try:
-        for key, value in updates.items():
-            setattr(billing, key, value)
-        await session.commit()
+    async def get_by_id(self, billing_id: int) -> Billing:
+        """Get a billing record by ID"""
+        result = await self.session.execute(select(Billing).filter(Billing.billing_id == billing_id))
+        billing = result.scalar()
+        if not billing:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
         return billing
-    except Exception as e:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
+    async def get_all(self) -> List[Billing]:
+        """Get all billing records"""
+        try:
+            result = await self.session.execute(select(Billing))
+            return result.scalars().all()
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
-async def delete_billing(session: AsyncSession, billing_id: int) -> bool:
-    """Delete a billing record from the database"""
-    billing = await session.get(Billing, billing_id)
-    if not billing:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
-    try:
-        await session.delete(billing)
-        await session.commit()
-        return True
-    except Exception as e:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+    async def update(self, billing_id: int, updates: BillingCreate) -> Billing:
+        """Update a billing record"""
+        result = await self.session.execute(select(Billing).filter(Billing.billing_id == billing_id))
+        billing = result.scalar()
+        if not billing:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
+        try:
+            for key, value in updates.dict(exclude_unset=True).items():
+                setattr(billing, key, value)
+            await save(self.session, billing)
+            return billing
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+    async def delete(self, billing_id: int) -> bool:
+        """Delete a billing record"""
+        result = await self.session.execute(select(Billing).filter(Billing.billing_id == billing_id))
+        billing = result.scalar()
+        if not billing:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
+        try:
+            await self.session.delete(billing)
+            await self.session.commit()
+            return True
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
