@@ -1,0 +1,1987 @@
+<html dir="rtl"><head>
+<link href="https://fonts.googleapis.com/css?family=Libre Barcode 128" rel="stylesheet">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="سعر  بنفورا 30 قرص  - benphora 30 f.c. tablets price">
+<meta property="og:image" content="https://dwaprices.com/upload/1682950345.jpg ">
+<title>سعر بنفورا 30 قرص  | 2025  benphora 30 f.c. tablets 
+</title>
+<meta content="دليل اسعار الدواء بنفورا 30 قرص  " name="keywords">
+<link href="https://www.dwaprices.com/favicon.ico" rel="icon" type="image/x-icon">
+<meta content=" سعر بنفورا 30 قرص  - benphora 30 f.c. tablets - benfotiamine+methylcobalamine+pyridoxine hcl+folic acid+calcium d pantothenate+riboflavin" property="og:description">
+<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202501270101/show_ads_impl.js?bust=31090016"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="canonical" href="https://dwaprices.com/med.php?id=31712">
+
+
+
+
+
+
+
+<meta charset="UTF-8">
+
+<link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">  
+
+<meta content="width=device-width" name="viewport">
+
+<script src="/lib/jquery3.5.1.js"></script>
+<link href="/lib/bootstrap-4.5.3.css" rel="stylesheet">
+<script src="/lib/bootstrap-4.5.3.js"></script>
+
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+<link href="/styles.css?v=aaz7z" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VEDDXTY9WX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VEDDXTY9WX');
+</script>
+
+<!--
+
+<div align="center">
+<img src="https://i.imgur.com/9GRry9i.png"  width="350"  />
+</div>
+
+-->
+
+
+
+
+<!--
+<div id="promptSelect">
+<div id="divInsy"></div>
+<div id="contenttt">
+<p style='font-weight:bold;margin:5px auto;padding:3px;color:red'>
+اهلا بك عزيزي الزائر,هذا استبيان سريع لنحسن لك الموقع بما يتناسب معك ويظهر مرة واحدة فقط ويجب اكماله لتستطيع مواصلة استخدام الموقع
+</p>
+
+
+
+<span dir="rtl;font-size:13px">
+(
+قم باختيار ما يتناسب معك
+)
+أو
+اتركها فارغة اذا كانت الاجابة "لا"
+<br>
+</span>
+<hr style="margin:1px">
+
+<div class="divchekk">
+<input type="checkbox" id="isPharmacist" />
+<span style="margin-right:10px;font-size:17px">
+أنت صيدلي ؟
+</span>
+</div>
+<hr style="margin:3px">
+
+
+
+<div class="divchekk">
+<input type="checkbox" id="ownPharmacy" />
+<span style="margin-right:10px;font-size:17px">
+أنت تمتلك صيدلية؟
+</span>
+</div>
+<hr style="margin:3px">
+
+
+
+
+<div class="divchekk">
+<input type="checkbox" id="NotPharmacistWork" />
+<span style="margin-right:10px;font-size:17px" >
+أنت غير صيدلي ولكن تعمل في صيدلية؟
+</span>
+</div>
+<hr style="margin:3px">
+
+
+
+<div class="divchekk">
+<input type="checkbox" id="publicU" />
+<span style="margin-right:10px;font-size:17px" >
+أنت غير صيدلي ولا تعمل في صيدليات؟
+</span>
+</div>
+<hr style="margin:3px">
+
+
+
+
+<div class="divchekk">
+<input type="checkbox" id="first_visit" />
+<span style="margin-right:10px;font-size:17px" >
+هذه أول زيارة لك لموقعنا؟
+</span>
+</div>
+
+
+<hr style="margin:3px">
+
+<input class="form-control" maxlength="20" id="nameU" style="text-align:center;font-size:22px;width:250px;margin:5px auto" placeholder="اسمك " />
+
+<button disabled id="finishDataBtn" class="btn btn-success finishData" style="width:300px;margin:5px auto">
+  البيانات صحيحة, إرسال الآن
+  </button>
+
+<br>
+<p align="center" style="font-size:12px;direction:rtl">
+**
+إذا قمت بملء الاستبيان ببيانات صحيحة فلن يزعجك بالظهور مرة أخرى
+</p>
+
+<button id="cloose" class="btn btn-danger ">
+Close
+</button>
+</div>
+
+
+
+<style>
+.divchekk{
+direction:rtl;
+margin:5px 20px;
+text-align:right;
+font-weight:bold
+}
+
+/*
+input[type=checkbox]{
+-ms-transform: scale(2); 
+-moz-transform: scale(2);
+-webkit-transform: scale(2);
+-o-transform: scale(2);
+transform: scale(2);
+padding: 5px;
+}
+*/
+
+#promptSelect{
+display:none;
+position:fixed;
+min-height:200px;
+z-index:99999;
+right:0;
+left:0;
+top:20px;
+width:98%;
+margin:5px auto;
+text-align:center;
+border-radius:5px;
+background:yellow;
+}
+</style>
+-->
+
+
+
+<script>
+$(document).ready(function () {
+
+//location.href = "https://yo.fan/dwapage";
+
+/*
+if(location.href.indexOf('/analytics/') == -1 && location.href.indexOf('admin19eyad') == -1 ){
+var regName = (localStorage.getItem('nameU') ? localStorage.getItem('nameU') : '');
+var path_without_fbclid = (location.pathname+location.search)
+if(path_without_fbclid.indexOf("fbclid") != -1){
+path_without_fbclid = path_without_fbclid.substring(0,(path_without_fbclid.indexOf("fbclid") -1 ));
+}
+
+//console.log(regName);
+
+var intervalAnalytics =  setInterval(function () {
+$.ajax ({
+type:'post',
+url : 'https://dwaprices.com/analytics/server.php',
+data:{
+set_online_visitor : "1",
+title              : document.title,
+path               : path_without_fbclid,
+source             : document.referrer,
+hisName            : regName,
+ssion              :"5u035f4i6a8a7lmpg5cjp0u8uu" ,
+ip                 :"196.134.98.21"
+}
+});
+}, 30000);
+}
+*/
+
+
+/*
+var allLinkzz = document.getElementsByTagName("a");
+
+console.log(allLinkzz.length);
+
+for(i=0;i<allLinkzz.length;i++){
+var prhref   =  allLinkzz[i].href;
+if(prhref){
+//allLinkzz[i].href  = "https://pricesdwa.com?href="+prhref+"&sisson="+sssionn;
+//allLinkzz[i].href  = "https://pricesdwa.com?href="+prhref;
+
+}
+}
+*/
+
+
+/*
+console.log(location.href);
+if(location.href.indexOf("book.php?id=39") == -1 && location.href.indexOf("analytics") == -1){
+location.href = "https://dwaprices.com/book.php?id=39&fff=ddd";
+}
+*/
+
+
+
+
+});
+
+
+
+/*
+cloose.addEventListener("click",function(){
+promptSelect.style.display = "none" 
+});
+
+promptSelect.addEventListener("click",function(){
+finishDataBtn.disabled = false
+});
+
+$(document).on('click', '.finishData', function(){
+$('.finishData').fadeOut();
+$.ajax({
+type: 'POST',
+data: {
+'isPharmacist'      : isPharmacist.checked,
+'ownPharmacy'       : ownPharmacy.checked,
+'NotPharmacistWork' : NotPharmacistWork.checked,
+'publicU'           : publicU.checked,
+'first_visit'       : first_visit.checked,
+'nameU'             : nameU.value
+},
+success: function(){
+
+localStorage.setItem("RegisteredUser",true);
+localStorage.setItem("isPharmacist",isPharmacist.checked);
+localStorage.setItem("ownPharmacy",ownPharmacy.checked);
+localStorage.setItem("NotPharmacistWork",NotPharmacistWork.checked);
+localStorage.setItem("publicU",publicU.checked);
+localStorage.setItem("nameU",nameU.value);
+
+$('#contenttt').html("<p class='innerP' style='text-align:center;background:#00FF80;padding:10px;width:400px;margin:2px auto;'>Submitted Succefully,Thank you </p>");
+setTimeout(function(){ $('#promptSelect').fadeOut(); }, 2000);
+
+}
+});
+
+});
+
+if(localStorage.getItem("RegisteredUser")){
+promptSelect.style.display = "none";
+//itemsArr = JSON.parse(localStorage.getItem("cartItemsLocalStorage"));
+}else{
+
+//localStorage.setItem("RegisteredUser","true");
+
+}
+*/
+</script>
+
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9wSqI5i0iwGdf6L1CERNdmsTPgVu44ewj8QxTBYgsv1LCPUVF7YmWOvTappqB1139jAymxUW/RO8zmMqo4zlAAAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+d7vJfYtay4OUbdtRPZA3y7bKQLsxaMEPmxgfhBGqKXNrdkCQeJlUwqa6EBbSfjwFtJWTrWIioXeMW+y8bWAgQAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MzY4MTI4MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-4819595550402440?href=https%3A%2F%2Fdwaprices.com%2Fmed.php&amp;ers=2"></script></head><body><div id="headerAreaDiv">
+    
+
+<div style="margin:10px"><a href="/" style="text-decoration:none;">
+    <img style="height:40px; width:40px" src="https://dwaprices.com/files/circlemedhome.png"> 
+    
+    <span style="color:blue;font-weight:bold">
+    دليل دواء مصر
+</span></a></div>
+
+<div id="menu_button"> ☰ </div>
+
+
+
+</div>
+
+<div id="dvDesktop">
+
+<a style="text-decoration:none;margin-right:10px" href="/">
+    
+<img style="height:40px; width:40px" src="https://dwaprices.com/files/circlemedhome.png"> 
+
+<span style="color:blue;font-weight:bold">
+    دليل دواء مصر
+</span>
+</a>
+
+
+
+<div style="margin-right:30px"><a href="/login.php">
+ دخول
+</a></div>
+
+
+ 
+
+
+
+
+<div><a href="https://dwaprices.com/listprices.php">
+زيادات الاسعار
+</a></div>
+
+<!--
+<div><a href="https://dwaprices.com/ms/loginn.php">
+
+دخول ادارة صيدلية
+</a></div>
+-->
+
+<div><a href="https://dwaprices.com/astore/login.php">
+دخول اوردرات
+</a></div>
+
+
+
+<div><a href="https://dwaprices.com/contact_us.php">
+ اتصل بنا
+</a></div>
+
+
+
+
+<div><a href="/logout.php">
+ خروج
+</a></div>
+
+
+</div>
+
+
+
+
+<!--
+
+<div align="center"  >
+<a href="https://dwaprices.com/medhome.php" target="_blank">
+<img id="ppppppp" src="https://i.imgur.com/l3pckV1.png" style="height:100px;margin:10px 10px "   />
+</a>
+</div>
+
+-->
+
+
+
+
+<div id="menu_list">
+
+
+<div style="margin-right:30px"><a href="/login.php">
+ دخول
+</a></div>
+
+
+ 
+
+
+
+
+<div><a href="https://dwaprices.com/listprices.php">
+زيادات الاسعار
+</a></div>
+
+<!--
+<div><a href="https://dwaprices.com/ms/loginn.php">
+
+دخول ادارة صيدلية
+</a></div>
+-->
+
+<div><a href="https://dwaprices.com/astore/login.php">
+دخول اوردرات
+</a></div>
+
+
+
+<div><a href="https://dwaprices.com/contact_us.php">
+ اتصل بنا
+</a></div>
+
+
+
+
+<div><a href="/logout.php">
+ خروج
+</a></div>
+
+
+</div>
+
+
+
+
+<div class="flex-container" style="height:55;">
+
+
+
+<div>
+<a style="color:blue" href="https://dwaprices.com/book.php?id=39">
+<i class="fa fa-download"></i>
+<br>
+دليل الأدوية
+</a>
+</div>
+
+
+<div>
+<a style="color:blue" href="https://dwaprices.com/lastprices.php">
+<i class="fab fa-whatsapp" style="position:relative">
+<span class="beatNotification" style="font-size:13px;position:absolute;top:-12px;left:-12px;color:#fff;background:red;border-radius:4px;padding:3px 4px">
+50
+</span>
+</i>
+<br>
+زيادات الاسعار
+</a>
+</div>
+
+
+
+
+<div>
+<a style="color:blue" href="https://dwaprices.com/medhome.php">
+<img src="https://i.imgur.com/BaoLXp7.gif" height="30" style="">
+<br>
+اشتراك مميز
+</a>
+</div>
+
+
+
+<div>
+<a style="color:red" href="/phsearch.php">
+<i class="fas fa-prescription"></i>
+<br>
+صيدليات اونلاين
+</a>
+</div>
+
+
+
+
+<div>
+<a style="color:green;font-weight:bold" href="https://dwaprices.com/signin.php">
+<i class="fa fa-sign-in"></i>
+<br>
+دخول 
+</a>
+</div>
+
+
+</div>
+
+<hr style="margin:2px">
+
+
+<div class="searchHome" dir="ltr" style="margin:10px auto;position:relative">
+<div style="display:flex;font-size:10px">
+<div style="text-align:left">
+    <input type="checkbox" id="alphabetical" checked="" style="width:20px">
+ Alphabetical Order
+ <span id="resultzCount" style="font-size:10px;margin-left:10px;font-weight:bold;color:red">00</span>
+
+</div> 
+<div style="text-align:left">
+<input type="checkbox" id="popularity" style="width:20px">
+ Popularity Order   
+</div> 
+</div>
+
+<input id="inputSearch" name="myInput" class="form-control" type="text" placeholder="ابحث عن أي دواء هنا" autofocus="">
+<span id="xdel" style="font-size:20px;font-weight:bold;position:absolute;top:33px;right:12%;padding:4px;">X</span>
+
+<div id="responseDiv"></div>
+
+</div>
+
+
+
+<style>
+/*Show on mobile only*/
+@media only screen and (max-width:900px) {
+#xdel{
+//display:block;
+}
+}
+</style>
+
+
+<script>
+
+//localStorage.setItem("NotShowsearchHistory","1")
+
+$(document).on('click', '.inpNamee', function(){
+$(this).select();
+document.execCommand('copy');
+});
+
+
+
+/*
+if(!localStorage.getItem("searchHistory")){
+localStorage.setItem("searchHistory", '[]');
+}
+
+
+var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+
+if(searchHistory.length == 0 || localStorage.getItem("NotShowsearchHistory")){
+historyContainerID.style.display = 'none'; 
+}
+
+
+var histryLength;
+
+if(searchHistory.length>6){
+histryLength = 6;  
+}else{
+histryLength = searchHistory.length
+}
+
+searchHistory.reverse();
+for(i=0;i<histryLength;i++){
+searchHistoryDiv.innerHTML += "<a href='https://dwaprices.com/med.php?id="+searchHistory[i].id+"&src=history' class='insideHistoryDiv'>"+
+searchHistory[i].name.charAt(0).toUpperCase() + searchHistory[i].name.slice(1,18) +
+"</a>"
+}
+*/
+
+
+
+$(document).on('click', '.nameSoldTime', function(){
+//if(localStorage.getItem("pharmacy_found_name") != "aaa"){
+let id       = $(this).attr('data-id');
+//let dataName = $(this).attr('data-name');
+//searchHistory.push({id:id,name:dataName});
+//let searchHistoryString = JSON.stringify(searchHistory)
+//localStorage.setItem("searchHistory", searchHistoryString);
+
+$.ajax({
+type: 'POST',
+data: {
+'nameSoldTime' : id
+},
+success: function(response){}
+});
+//}
+});
+
+
+
+if(!localStorage.getItem("searchType")){
+localStorage.setItem("searchType", 'alphabetical');
+}
+
+if(localStorage.getItem("searchType") == 'alphabetical'){
+$('#alphabetical').prop('checked',true);
+$('#popularity').prop('checked',false);
+}else{
+$('#popularity').prop('checked',true);
+$('#alphabetical').prop('checked',false);
+};
+
+
+$(document).on('click', '#alphabetical ', function(){
+$('#popularity').prop('checked',false);
+inputSearch.focus();
+localStorage.setItem("searchType", 'alphabetical');
+});
+
+$(document).on('click', '#popularity ', function(){
+$('#alphabetical').prop('checked',false);
+inputSearch.focus();
+localStorage.setItem("searchType", 'popularity');
+});
+
+
+
+
+
+
+
+$(document).on('focusout', '#inputSearch', function(){$('#inputSearch').val("");});
+
+
+$(document).on('click', '#xdel ', function(){
+$('#inputSearch').val("");
+xdel.style.color = "red";
+xdel.style.backgroundColor = "#E6E6E6";
+inputSearch.focus();
+});
+
+
+
+$(document).on('keyup', '#inputSearch', function(){
+makeSearch();
+});
+
+$(document).on('click', '#inputSearch', function(){
+inputSearch.value = inputSearch.value.trim(); 
+makeSearch();
+});
+
+var order_by;
+
+function timeConverterzz(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp * 1000);
+  var months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+ // var hour = a.getHours();
+ // var min = a.getMinutes();
+ // var sec = a.getSeconds();
+  var time = date + '/' + month + '/' + year  ;
+  return time;
+}
+
+
+
+var approvedsubJS = '';
+
+var user_groupJS = '';
+
+
+
+
+function makeSearch(){
+if($('#inputSearch').val().length > 0){
+var searchq   = $('#inputSearch').val();
+//if($('#alphabetical').is(':checked')){order_by = 'name ASC'}else{order_by = 'sold_times DESC'};
+if(localStorage.getItem("searchType") == 'alphabetical'){order_by = 'name ASC'}else{order_by = 'sold_times DESC'};
+
+$.ajax({
+url:'https://dwaprices.com/routing.php',
+type: 'POST',
+data: {
+'search'   : 1,
+'searchq'  : searchq,
+'order_by' : order_by
+},
+success: function(response){
+var resprimary = JSON.parse(response);
+var metadata   = resprimary.metadata;
+var results    = resprimary.data;
+
+resultzCount.innerHTML = metadata;
+
+
+
+$('#responseDiv').html("<table id='tblDrug'></table>");
+for(i=0;i<results.length;i++){
+tblDrug.innerHTML += 
+"<tr style='padding:3px;margin:2px'><td><a target='_blank' class='nameSoldTime' data-id='"+results[i].id+"' data-name='"+results[i].name+"' style='text-align:left; line-height: 80%;' href='" + 
+"/med" + ".php?id="+results[i].id+"' target='_blank'>"+
+"<span  style='font-size:14px;font-weight:bold;color:"+(results[i].repeated == 0 ? 'blue' : 'red')+"'>" +results[i].name.charAt(0).toUpperCase() + results[i].name.slice(1)+"</span>"+
+"<span style='color:red;font-size:10px'> ("+results[i].sold_times+")</span>"+
+"<p style='font-size:11px;font-weight:bold;color:#000;margin-bottom:1px;'>"+results[i].active.slice(0,40)+"</p>"+
+"<p style='font-size:12px;font-weight:bold;margin-bottom:1px;color:blue;text-align:left;direction:rtl;'>"+results[i].arabic+"</p>"+
+
+
+"<p style='font-size:11px;margin-bottom:1px;color:green'>(<span style='color:red;font-weight:bold'>"+results[i].units+"</span> units) > "+
+"(unit price: <span style='color:red;font-weight:bold'>"+(    (+results[i].price / +results[i].units).toFixed(2)       )+"</span> L.E.)| <span style='color:blue'>"+results[i].sim_visits+" Sim_V</span>  </a></p>"+
+
+
+/*
+
+"(unit price: <span style='color:red;font-weight:bold'>"+(   (+results[i].price < 100 || approvedsubJS > 3 || user_groupJS > 1)  ?    (+results[i].price / +results[i].units).toFixed(2)  : ''      )+"</span> L.E.)| <span style='color:blue'>"+results[i].sim_visits+" Sim_V</span>  </a></p>"+
+
+
+
+*/
+
+
+
+
+
+
+
+//"<p style='font-size:11px;margin-bottom:1px;color:green'>(<span style='color:red;font-weight:bold'>"+results[i].units+"</span> units) > "+
+//"(<span style='color:blue'>"+results[i].percentage+"</span> %) </a></p>"+
+//"<span style='font-size:10px;display:block;text-align:left;color:red'>"  + (results[i].new_added_date ? 'date added: ' + timeConverterzz(results[i].new_added_date/1000) : '')   + "</span>" +
+
+//( results[i].availability != 0 ? ("<span style='font-size:11px;display:block;text-align:left;color:#29088A;'>"+ (results[i].availability > 0 ? ' متوافر بالصيدليات '  : ' ناقص بالصيدليات ' )+ results[i].availability   + "</span>") : ""  ) +
+
+
+"<span style='font-size:10px;display:block;text-align:left'>"+results[i].id+ "|"  +results[i].visits   + "V|"+
+"<span style='color:red'>" +  results[i].company.slice(0,13).toUpperCase() +"</span> | "+results[i].description.slice(0,13)+" ..| "+results[i].barcode+"</span>"+
+
+//"<span style='display:block;text-align:left'>"+
+//"<input class='inpNamee' style='width:60px' value='"+results[i].id+"'   />"+
+//"<input class='inpNamee' value='"+results[i].name+"'   />"+
+//"</span>"+
+
+"</td>"+
+
+"<td style='width:24%;background:#F2F2F2;padding:3px;text-align:center;margin:5px;line-height:20px'>"  +
+
+
+"<a target='_blank' href='https://dwaprices.com/" + ('med')+ ".php?id="+results[i].id+"'>"  +
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+"<span style='font-size:1em;font-weight:bold;color:red;'>"+(   (+results[i].price).toFixed(2)   )+"</span><span style='font-size:10px;'> L.E.</span>"+
+
+
+
+//"<span style='font-size:1em;font-weight:bold;color:red;'>"+(     (+results[i].price).toFixed(2)  )+"</span><span style='font-size:10px;'> L.E.</span>"+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+"<span style='display:block'>old: <del style='font-size:12px;color:#A4A4A4'> "+(+(results[i].oldprice ? results[i].oldprice : results[i].price )).toFixed(2)+"</del></span></a>"+
+"<span style='font-size:10px;display:block;color:red'>"+(results[i].Date_updated ? timeConverterzz((results[i].Date_updated/1000)) : '' )+"</span>" +
+//"<p style='font-size:14px;background:yellow;margin-bottom:1px'><a style='color:blue;font-weight:bold;font-size:17px' href='https://dwaprices.com/signin.php'> log in <br> <i class='fa fa-sign-in'></i> </a> </p>"+ 
+
+
+"</td></tr>"   
+}
+
+}
+
+});
+
+}else{
+$('#responseDiv').html("");
+}
+}
+
+
+$(document).on('click', '.inpNamee', function(){
+$(this).select();
+document.execCommand('copy');
+});
+
+
+
+</script>
+
+<div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4819595550402440" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 280px;"><div id="aswift_2_host" style="border: none; height: 280px; width: 765px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:765px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="765" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4819595550402440&amp;output=html&amp;h=280&amp;adk=2574532921&amp;adf=1602281170&amp;pi=t.aa~a.3053094330~rp.1&amp;w=765&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1738464742&amp;rafmt=1&amp;to=qs&amp;pwprc=4777520139&amp;format=765x280&amp;url=https%3A%2F%2Fdwaprices.com%2Fmed.php%3Fid%3D31712&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJMaW51eCIsIjYuOC4wIiwieDg2IiwiIiwiMTMyLjAuNjgzNC4xMTAiLG51bGwsMCxudWxsLCI2NCIsW1siTm90IEEoQnJhbmQiLCI4LjAuMC4wIl0sWyJDaHJvbWl1bSIsIjEzMi4wLjY4MzQuMTEwIl0sWyJHb29nbGUgQ2hyb21lIiwiMTMyLjAuNjgzNC4xMTAiXV0sMF0.&amp;dt=1738464742653&amp;bpp=1&amp;bdt=921&amp;idt=261&amp;shv=r20250129&amp;mjsv=m202501270101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;prev_fmts=0x0&amp;nras=2&amp;correlator=7825178778718&amp;frm=20&amp;pv=1&amp;u_tz=120&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=0&amp;ady=208&amp;biw=765&amp;bih=441&amp;scr_x=0&amp;scr_y=0&amp;eid=31090016%2C95335245&amp;oid=2&amp;pvsid=3104848820314293&amp;tmod=1570362987&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=10%2C10%2C10%2C10%2C800%2C0%2C780%2C580%2C780%2C441&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=128&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;fsb=1&amp;dtd=266" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CKeC3Ov9o4sDFURD9ggdUKsXYA" data-load-complete="true"></iframe></div></ins></div><div align="center" class="storeButtonsAppleAndroid">
+
+<a href="https://play.google.com/store/apps/details?id=com.dwaprices.app" target="blank">
+<img src="https://i.imgur.com/7PFm2OA.png" height="50" width="170" class="appBtnPlay">
+</a>
+<!--
+<a href="https://apple.co/3FkFq7J" target="blank">
+<img src="https://i.imgur.com/ZLCMvUL.png" height="50" width="170" class="appBtnPlay" />
+</a>
+-->
+</div>
+
+
+
+<p align="center" style="margin:2px auto">
+</p>
+
+
+<style>
+#headerAreaDiv{
+display:none;
+height:60px;
+position:relative;
+background:#E6E6E6;
+color:#000;
+}
+
+
+#dvDesktop{
+display:flex;
+flex-direction: row;
+justify-content: right;
+height:60px;
+padding-top:10px;
+background:#F2F2F2;
+}
+
+#dvDesktop div{
+text-align:right;
+border-radius:5px;
+margin:3px;
+padding:4px;
+height:35px;
+background:#000;
+box-shadow: 0 0 6px 1px rgb(0 0 0 / 23%);
+}
+
+
+#dvDesktop div a{
+text-decoration:none;
+color:#fff;
+font-weight:bold;
+font-size:1vw;
+}
+
+#menu_button{
+padding:0px;
+color: #000;
+font-size:40px;
+z-index:999;
+display:none;
+margin:8px;
+}
+
+#menu_list{
+display:none;
+margin-bottom:70px;
+width:100%;
+background:#E6E6E6;
+z-index:9999;
+transition: all 1s;
+}
+
+#menu_list div{
+margin: 10px;
+text-align:right;
+}
+
+#menu_list div a{
+text-decoration : none;
+font-weight:bold;
+
+background:#fff;
+font-size:17px;
+line-height:30px;
+border-radius:10px;
+padding:10px;
+color:blue;
+display: block;
+}
+#menu_list div a:hover {
+background: #eaeaea;
+}
+
+#dvDesktop div:hover {
+background: blue;
+}
+
+
+#inputSearch{
+height:50px;
+font-size:20px;
+border: 2px solid black;
+}
+
+.flex-container{
+display:flex;
+flex-direction: row;
+justify-content: space-around;
+width:100%;
+margin-top:1px;
+//background:#ECCEF5;
+}
+         
+.flex-container div{
+font-size:12px;
+color:blue;
+padding:3px;
+text-align:center;
+}
+.flex-container div i{
+font-size:18px;
+margin:4px;
+}
+#xdel{
+display:none;
+}
+
+
+/*Show on mobile only*/
+@media only screen and (max-width:900px) {
+#headerAreaDiv{
+display:flex;
+justify-content: space-between;
+padding:3px 10px;
+
+}
+#dvDesktop{
+display:none;
+}
+#menu_list{
+display:block;
+position: fixed;
+height: 100vh; 
+overflow-y: scroll;
+overflow-x: hidden;
+left: -1100px;
+}
+#menu_button{
+display:block;
+}
+
+}
+
+
+.insideHistoryDiv{
+background:#F7FE2E;
+width:30%;
+padding:2px;
+text-align:center;
+border-radius:5px;
+margin:2px;
+color:blue;
+font-size:12px;
+font-weight:bold;
+}
+
+.beatNotification{
+box-shadow: 0 0 6px 1px rgb(0 0 0 / 23%);
+animation: 1.5s ease 0s infinite beatnn;
+}
+
+
+@keyframes beatnn {
+0%, 50%, 100% { transform: scale(2, 1.5); }
+30%, 80% { transform: scale(0.82, 0.95); }
+}
+</style>
+
+
+<script>
+
+
+
+
+
+
+///////////////////// Customized Menu script ////////////////////////////////////////////////
+dvDesktop.innerHTML      += document.getElementById('menu_list').innerHTML;
+var menu_button          = document.getElementById("menu_button");
+var menu_list            = document.getElementById("menu_list");
+menu_button.onclick      = function(){
+if(menu_list.style.left  == '-100px'){
+menu_list.style.left     = '-1100px';
+menu_button.innerHTML    = "☰";
+}else{
+menu_list.style.left     = '-100px';
+menu_button.innerHTML    = " &#x2718; ";
+}}
+</script>
+
+
+ <main>   
+    
+<div class="container" align="center">
+    
+
+
+  
+
+
+
+
+
+
+  
+
+
+<div class="pricemetatagsarea" style="width:100%;padding:3px;border-radius:5px;margin:5px auto;background:#fff">
+<h2>
+ سعر  
+Benphora 30 f.c. tablets 2025 <br>بنفورا 30 قرص </h2>
+
+
+
+<img alt="بنفورا 30 قرص " title="بنفورا 30 قرص " style="width:350px; height:250px; object-fit: contain;border:1px solid #fff; border-radius:10px;" src="https://dwaprices.com/upload/1682950345.jpg">
+
+
+<div align="center">
+
+
+<div align="right" class="priceNewEl" style="margin:5px;border-radius:10px;padding:5px;box-shadow: 0 0 6px 1px rgb(0 0 0 / 23%); ">
+
+<p style="font-size:25px;font-weight:bold;margin:0">
+السعر الجديد الحالي للعلبة:
+</p><p style="text-align:center;margin:0;"><span style="color:red;font-size:60px;font-weight:700">
+    120    </span>
+    <span style="font-size:20px;color:#000">
+          جنيه
+    </span>
+    </p>
+ 
+ 
+ 
+
+<p align="center" class="orderElm">
+<!--
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<a href="https://dwaprices.com/aorder.php?id=31712">
+
+
+
+
+<button class="btn btn-success" style="font-size:22px">
+   لطلب شراء الدواء 
+   اضغط هنا
+<i class="fas fa-shopping-cart"></i>
+</button>
+</a>
+</p>
+ 
+ 
+<p style="font-size:15px;text-align:center;font-style: italic;">
+  السعر القديم:
+    <span style="color:green;">
+    100    </span>
+    جنيه
+  <br>
+  
+  
+<!--
+<div class='availableZone'>
+      
+      <p style='font-size:15px;margin-bottom:0;color:red;font-weight:bold'>
+          من فضلك أخبرنا إذا كان هذا الدواء ناقص أم متوافر؟
+      </p>
+      
+      <div align="center">
+          
+           <button class="btn btn-success available">
+     الدواء متوافر
+          </button>
+          
+          <button class="btn btn-danger notavailable">
+              الدواء ناقص
+          </button>
+          
+      </div>
+      
+      
+  </div>
+  
+  <script>
+      
+      
+$(document).on('click', '.notavailable', function(){
+$('.availableZone').hide(); 
+$.ajax({
+type : 'POST',
+data : {
+'notavailable' : 1
+}
+});	
+
+
+
+});
+
+
+
+  
+$(document).on('click', '.available', function(){
+  
+$.ajax({
+type : 'POST',
+data : {
+'available' : 1
+}
+});	
+$('.availableZone').hide(); 
+
+
+});
+</script>
+-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </p><hr style="margin:2px">
+  
+  
+  <div align="center">
+       
+<span style="font-size:11px">
+<i class="fas fa-eye"></i>
+180883</span>
+  </div>
+  
+  
+ 
+
+
+<p>
+    عدد الوحدات في العلبة:
+    <span style="color:red;font-size:30px">
+        
+     3    </span>
+    وحدة
+    
+    <br> سعر شريط بنفورا 30 قرص     
+  <span style="padding:5px;background:#CEF6E3;display:block">
+  سعر الشريط/ الوحدة:  <span style="color:red;font-size:32px;font-weight:bold">40.00</span> جنيه   </span>  
+<span style="display:block;font-size:10px">
+    (
+    اذا كان عدد الوحدات غير مضبوط من فضلك قم بإبلاغنا من خلال النموذج أسفله
+    )
+</span>
+</p>
+
+<hr style="margin:2px">
+<span style="font-size:10px;text-align:center;font-style: italic;display:block">
+  آخر تحديث للسعر:
+2024-07-25 </span>
+ 
+ <span style="font-size:10px;text-align:center;font-style: italic;">
+آخر زيارة للدواء:
+2025/02/02 05:52:00 am</span>
+</div>
+
+
+
+
+
+
+
+</div><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4819595550402440" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 280px;"><div id="aswift_3_host" style="border: none; height: 280px; width: 684px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div>
+
+
+<div align="center">
+
+<a href="https://dwaprices.com/similars.php?id=31712">
+<button class="btn btn-success" style="font-size:20px">
+لعرض البدائل اضغط هنا
+</button>
+</a>
+
+</div>
+
+
+
+<p id="usesLink" style="direction:rtl;text-align:right;font-size:18px">
+1- مقوى للاعصاب ومنشط للجهاز العصبى.<br>
+2- علاج التهابات الاعصاب الناتجة عن مرض السكر.<br>
+3- التهاب العصب البصرى <br>
+4- منشط عام للذاكرة والتركيز.<br>
+5- علاج حالات الانيميا وفقر الدم .<br>
+6- علاج حالات الخمول والضعف العام.<br>
+7- الالام الناتجة عن التهاب الاعصاب كآلام الظهر والرقبة.<br>
+تركيبة مميزة من مجموعة فيتامينات ب المركب ب12,ب1,ب6 ,ب2 وحمض الفوليك<br>
+<br>
+Benphora – بنفورا<br>
+ماهي اقراص بنفورا:-<br>
+. هي اقراص لعلاج نقص فيتامين ب والمساعدة على تحسين اعراض التهاب الاعصاب<br>
+تركيب بنفورا:-<br>
+بنفورا اقراص يحتوي علي:-<br>
+1- بنفوتيامين "فيتامين ب ا" بتركيز 150 مجم .<br>
+2- ميثايلكوبلامين "فيتامين ب 12 في صورة نشطة" بتركيز 500ميكروجرام.<br>
+3- فيتامين ب 6 بتركيز 10مجم.<br>
+4- فيتامين ب 2 بتركيز 10 مجم.<br>
+5- فيتامين ب 5  بتركيز 50مجم.<br>
+6 – فيتامين ب 9 "فولات – حمض الفوليك" بتركيز 170ميكروجرام.<br>
+<br>
+دواعي الاستعمال لاقراص بنفورا:-<br>
+تستخدم اقراص بنفورا للبالغين والاطفال فوق 12 سنة لعلاج امراض الدم والالتهابات العصبية الناتج عن نقص فيتامين ب "ب1 , ب2 , ب5,ب6,ب12".<br>
+<br>
+تستخدم اقراص بنفورا في علاج وتقوية الاعصاب الطرفية.<br>
+<br>
+تستخدم اقراص بنفورا في التخفيف من الالم الاعصاب .<br>
+<br>
+تستخدم اقراص بنفورا في تحسين التمثيل الغذائي للدهون والكربوهيدرات والبروتينات.<br>
+<br>
+<br>
+الجرعة وطريقة الاستخدام:-<br>
+<br>
+للبالغين والاطفال فوق سن 12 سنة : قرص مرة او مرتين يوميا بعد الاكل مع كوب ماء كبير.<br>
+<br>
+موانع الاستخدام :-<br>
+للمرضي الذين يعانون من حساسية من مكونات الدواء.<br>
+<br>
+الاستخدام اثناء الحمل والرضاعة :<br>
+يتم اسشارة الطبيب المعالج .<br>
+<br>
+العبوه:<br>
+<br>
+علبة بها 30 قرص .<br>
+<br>
+انتاج شركة جينيركا فارما للادوية<br>
+<br>
+<br>
+</p>
+
+<a target="_blank" href="https://dwaprices.com/database.php" class="btn btn-danger" style="margin:5px">  لطلب قاعدة بيانات الادوية اضغط هنا </a>
+
+
+<p style="color:red;font-weight:bold;font-size:22px;packground:#F2F2F2;padding:5px">
+ سعر
+ بنفورا 30 قرص  
+</p>
+
+<div class="adsenseContainer" align="center">
+<p style="margin:2px auto" align="center">
+Advertisement
+</p>
+
+
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819595550402440" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- hidePrice -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-4819595550402440" data-ad-slot="5740443428" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_1_host" style="border: none; height: 280px; width: 684px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<br>
+</div>
+
+
+
+<div style="text-align:right">
+<p>
+هذه هي المعلومات التي لدينا عن 
+   بنفورا 30 قرص  
+اذا كان لديك أي تحديث بخصوص السعر او التركيبة او عدد الوحدات في العلبة او اسم الشركة او الباركود من فضلك قم بإبلاغنا من خلال النموذج أسفله لنقوم بتعديل البيانات حالا, شكرا مقدما على المساعدة :)
+</p>
+ 
+ 
+</div>
+<table class="newwtbl" style="text-align:right">
+
+<tbody><tr><td>الاسم التجاري</td><td style="direction:ltr;text-align:center">Benphora 30 f.c. tablets</td></tr> 
+<tr><td>الاسم العلمي</td><td style="direction:ltr;text-align:center;word-break: break-all; ">Benfotiamine+methylcobalamine+pyridoxine hcl+folic acid+calcium d pantothenate+riboflavin</td></tr> 
+<tr><td>الشركة </td><td style="direction:ltr;text-align:center">organix &gt; generica pharma</td></tr> 
+<tr><td>عدد الوحدات </td><td style="direction:ltr;text-align:center">3</td></tr> 
+
+
+
+<tr><td>السعر الجديد </td><td style="direction:ltr;text-align:center">120</td></tr> 
+
+
+<tr><td>السعر القديم </td><td style="direction:ltr;text-align:center">100</td></tr> 
+
+<tr><td>تحديث السعر </td><td style="direction:ltr;text-align:center">2024-07-25</td></tr> 
+
+<tr><td>الباركود الدولي </td><td style="direction:ltr;text-align:center">6225000527638</td></tr> 
+<tr><td>   الفئة / التصنيف </td><td style="direction:ltr;text-align:center">vitamin b</td></tr> 
+</tbody></table>
+
+<div class="reportDiv" align="center">
+<p>
+    نموذج إبلاغ لتحديث البيانات<br> (شكرا مقدما لمساهمتكم في توفير البيانات الصحيحة)
+</p>
+
+<textarea class="form-control" id="reportTextarea" placeholder="اكتب هنا البيانات الصحيحة كالسعر او الشركة او التركيبة او عدد الوحدات او الباركود ...ثم اضغط الزر الأخضر الخاص بارسال البيانات" rows="5"></textarea>
+<div id="resDivv"></div>
+<button class="btn btn-success sendReportMSG">
+    اضغط هنا لإرسال البيانات لتعديلها
+</button>
+
+<script>
+$(document).on('click', '.sendReportMSG', function(){
+if(reportTextarea.value.length > 3){
+var reportMSG = reportTextarea.value;
+$.ajax({
+type : 'POST',
+data : {
+'reportMSG' : reportMSG
+},
+success: function(response){
+$('#resDivv').html("<p class='innerP' style='padding:10px;background:#9FF781'>Data SENT Successfully </p>");
+setTimeout(function(){ $('.innerP').fadeOut(); }, 500);
+}
+});
+
+$(this).hide();
+}
+});
+</script>
+
+<style>
+.newwtbl td{
+border:1px solid black;
+padding:3px;
+font-size:14px;
+}
+.reportDiv{
+padding:5px;
+background:#F5A9A9;
+}
+</style>
+
+</div><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4819595550402440" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 280px;"><div id="aswift_4_host" style="border: none; height: 280px; width: 684px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div>
+
+<p style="direction:ltr;text-align:left;font-size:18px">
+</p>
+
+<hr>
+<a href="https://dwaprices.com/book.php?id=39" target="_blank">
+<p style="background:#B40404;font-weight:bold;font-size:20px;padding:10px;color:#fff;border-radius:10px;box-shadow: 0 0 6px 1px rgb(0 0 0 / 23%);">
+
+لتحميل دليل اسعار الادوية كاملا بآخر تحديث 2025 اضغط هنا
+<i class="fa fa-download"></i>
+</p>
+</a>
+<hr>
+
+
+
+
+
+<p style="display:none;color:red;font-size:80px;font-weight:bold;background:#E0ECF8;border-radius:5px" class="priceEl"> 120 جنيه</p>
+
+
+
+
+
+
+
+
+
+
+
+<p style="background:green;font-weight:bold;font-size:20px;padding:10px;color:#fff">
+ لإظهار سعر الدواء الحالي أو لتحميل دليل الادوية كاملا فضلا اضغط اسفله
+    <br>
+    👇 👇 👇
+</p>
+
+<div align="center" class="hideAfter">
+
+<a id="reloadbtn" href="https://dwaprices.com/book.php?id=39">
+<button class="btn btn-success dlDlil">
+تحميل دليل الدواء
+</button>
+</a>
+
+<button class="btn btn-success showPrice">
+اظهار السعر
+</button>
+</div>
+<div align="center">
+
+<p style="display:none;color:red;font-size:80px;font-weight:bold;background:#E0ECF8;border-radius:5px" class="priceEl"> 120 جنيه</p>
+
+<div align="center" class="resDiv" style="background:#81F781;width:400px;margin:2px auto"></div>
+
+<p class="confirm" style="display:none;width:95%;padding:5px;border-radius:5px;">
+<label>
+اكتب هنا السعر المضبوط
+</label>
+<input id="newPrice" type="number" class="form-control" style="width:200px;font-size:20px" value="" placeholder="السعر المضبوط">
+<input id="reporterName" type="text" class="form-control" style="width:200px;font-size:15px;text-align:center" placeholder="الاسم">
+<button class="btn btn-primary yes-report">
+إبلاغ مشرف الموقع لتحديث السعر
+</button>
+
+</p>
+
+
+
+
+
+
+
+
+
+
+<div class="report" style="font-size:15px; border:1px solid black;width:90%;padding:3px;margin:3px auto;background:#DF0101;color:#fff;border-radius:5px;cursor:pointer">
+<br>
+<span style="padding:10px;margin:5px;background:#2E64FE;font-size:20px;border-radius:5px">
+ابلاغ لتعديل السعر
+</span>
+<br><br>
+
+⚠
+اضغط هنا للإبلاغ اذا كان السعر غير مضبوط
+<br>
+
+</div>
+
+<p align="center">
+
+</p><hr>
+<a href="https://dwaprices.com/indications.php?id=31712" style="font-weight:bold;color:blue;font-size:17px;">
+لعرض دواعي استعمال
+بنفورا 30 قرص     كاملة
+    اضغط هنا
+</a>
+<p></p>
+
+<h3>
+ سعر  
+benphora 30 f.c. tablets</h3>
+
+<p align="center" style="line-height:1.2">
+<span>الباركود الدولي</span><br><span class="barCoDe"> 6225000527638</span> </p>
+
+<style>
+@font-face {
+  font-family: libreee;
+  src: url(LibreBarcodeEAN13Text-Regular.ttf);
+}
+
+.barCoDe {
+font-family: 'libreee';
+font-size: 120px;
+padding:0;
+margin:0;
+line-height:1;
+}
+</style>
+
+<h5>ثمن دواء 
+Benphora 30 f.c. tablets | بنفورا 30 قرص  
+</h5>
+
+<p align="center">
+<a href="/composition.php?id=31712">
+<button class="btn btn-primary">
+لعرض تركيبة/المادة الفعالة لهذا الدواء اضغط هنا
+</button></a>
+</p>
+
+<a href="https://dwaprices.com/indications.php?id=31712">
+<button class="btn btn-danger">
+لعرض دواعي استعمالات 
+بنفورا 30 قرص  <br> Benphora 30 f.c. tablets 
+اضغط هنا
+</button>
+</a>
+
+</div>
+</div>
+
+<div class="commentsOuter">
+<h4>
+تعليقات المستخدمين عن دواء
+<br>
+Benphora 30 f.c. tablets<hr>
+</h4>
+<div>
+<div class="featuredItemPage" style="background:#E0F8F1"> <i class="fas fa-user"></i> <span style="color:blue"> ينفع للمريض الغده الدراقيه تناول الجرعه  صباحا بعد الفطار ولا بعد الغداء</span><hr style="margin:2px"><span style="font-size:10px" dir="ltr"> 2024/08/28 07:16:57 pm</span></div><div class="featuredItemPage" style="background:#E0F8F1"> <i class="fas fa-user"></i> <span style="color:blue"> الآثار الجانبية</span><hr style="margin:2px"><span style="font-size:10px" dir="ltr"> 2024/04/18 06:39:45 pm</span></div>  
+</div>
+
+<textarea class="form-control txtComment" rows="4" placeholder="تعليقك"></textarea>
+<p class="respDiv"></p>
+<button class="btn btn-success postComment">
+    نشر التعليق
+</button>
+
+</div><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4819595550402440" data-adsbygoogle-status="done" style="display: block; margin: 10px auto 5px; background-color: transparent; height: 280px;"><div id="aswift_5_host" style="border: none; height: 280px; width: 690px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div>
+
+<style>
+.commentsOuter{
+padding:5px;
+margin:5px;
+background:#F2F2F2;
+}
+.featuredItemPage{
+text-align:right;
+background:#E6E0F8;
+margin:10px auto;
+padding:5px;
+border-radius:5px;
+box-shadow: 0 0 4px 1px rgb(0 0 0 / 33%);
+}
+</style>
+<script>
+$(document).on('click', '.postComment', function(){
+var myComment = $('.txtComment').val();
+if(myComment.length > 4){
+$.ajax({
+url  :'',
+type : 'POST',
+data : {
+'comment' :  myComment
+}
+});
+$('.respDiv').html("<p class='innerP' style='text-align:center;background:#00FF80;padding:10px;width:400px;margin:2px auto;'>شكرا لك, سيتم نشر تعليقك بعد عرضه على مشرف الموقع </p>");
+setTimeout(function(){ $('.innerP').fadeOut();$('.txtComment').val("") }, 1000);
+
+}
+});
+
+</script>
+<div id="priceArea" style="width:95%;margin:10px auto;padding:15px 5px;"> 
+<h3>
+سعر
+بنفورا 30 قرص   
+</h3>
+</div>
+
+
+<div align="center" style="margin-top:5px;background:#F2F5A9;padding:5px">
+
+
+
+<h4>
+تصنيف الأدوية حسب الاستعمال
+</h4>
+
+<div align="center">
+<a id="shareLinkuses" href="https://www.facebook.com/sharer/sharer.php?u=https://dwaprices.com/" target="blank">
+<button style="width:350px;height:70px;margin:10px auto;background:#007bff;border:0;border-radius:5px;color:#fff;">
+<span style="font-size:30px;">Share to facebook</span>   
+<br>
+<span style="font-size:12px">
+   تمت مشاركته
+<span>
+18981</span>
+   مرة
+</span>
+</button>
+</a>
+</div>
+ 
+<p>
+اضغط على الاستعمال لعرض كل الادوية بهذا التصنيف
+ </p>
+
+<hr>
+<div id="usesareaa" align="center" style="display:flex; flex-wrap: wrap;justify-content: center;margin:10px auto;">
+ <div class="innerUsesitem"><a href="ause.php?id=5"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/vitamins.png"><br><p style="font-size:15px;margin:5px auto">فيتامينات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">117586 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=57"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/colon.png"><br><p style="font-size:15px;margin:5px auto">ادوية القولون</p><hr style="margin:2px"><span style="font-size:13px; color:#000">103803 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=6"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/cold.png"><br><p style="font-size:15px;margin:5px auto">ادوية البرد</p><hr style="margin:2px"><span style="font-size:13px; color:#000">87806 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=72"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/concentration.png"><br><p style="font-size:15px;margin:5px auto">زيادة التركيز والانتباه</p><hr style="margin:2px"><span style="font-size:13px; color:#000">82838 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=4"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/tonic.png"><br><p style="font-size:15px;margin:5px auto">مقوي للرجال</p><hr style="margin:2px"><span style="font-size:13px; color:#000">69315 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=52"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/muscle.png"><br><p style="font-size:15px;margin:5px auto">ادوية العضلات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">63264 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=1"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/acne.png"><br><p style="font-size:15px;margin:5px auto">حب الشباب</p><hr style="margin:2px"><span style="font-size:13px; color:#000">57859 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=63"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/prostate.png"><br><p style="font-size:15px;margin:5px auto">ادوية البروستاتا</p><hr style="margin:2px"><span style="font-size:13px; color:#000">56898 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=58"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/gases.png"><br><p style="font-size:15px;margin:5px auto">الانتفاخ والغازات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">56650 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=71"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/scar.png"><br><p style="font-size:15px;margin:5px auto">اخفاء الندبات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">56522 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=69"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/sperm.png"><br><p style="font-size:15px;margin:5px auto">زيادة الخصوبة وتأخر الانجاب</p><hr style="margin:2px"><span style="font-size:13px; color:#000">55021 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=22"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/delay.png"><br><p style="font-size:15px;margin:5px auto">للتأخير للرجال</p><hr style="margin:2px"><span style="font-size:13px; color:#000">54876 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=36"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/vitamind.png"><br><p style="font-size:15px;margin:5px auto">فيتامين D</p><hr style="margin:2px"><span style="font-size:13px; color:#000">51441 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=8"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/cough.png"><br><p style="font-size:15px;margin:5px auto">ادوية الكحة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">46396 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=21"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/diabetes.png"><br><p style="font-size:15px;margin:5px auto">ادوية السكر</p><hr style="margin:2px"><span style="font-size:13px; color:#000">41518 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=50"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/depression.png"><br><p style="font-size:15px;margin:5px auto">مضادات الاكتئاب</p><hr style="margin:2px"><span style="font-size:13px; color:#000">41171 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=24"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/mucus.png"><br><p style="font-size:15px;margin:5px auto">مذيبات البلغم</p><hr style="margin:2px"><span style="font-size:13px; color:#000">38057 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=48"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/inflammatory.png"><br><p style="font-size:15px;margin:5px auto">مضادات الالتهاب</p><hr style="margin:2px"><span style="font-size:13px; color:#000">33194 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=9"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/htn.png"><br><p style="font-size:15px;margin:5px auto">ادوية الضغط</p><hr style="margin:2px"><span style="font-size:13px; color:#000">33057 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=51"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/massage.png"><br><p style="font-size:15px;margin:5px auto">مساج العظام والعضلات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">32215 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=34"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/iron.png"><br><p style="font-size:15px;margin:5px auto">ادوية الحديد والانيميا</p><hr style="margin:2px"><span style="font-size:13px; color:#000">32201 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=19"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/cholesterol.png"><br><p style="font-size:15px;margin:5px auto">الكوليسترول</p><hr style="margin:2px"><span style="font-size:13px; color:#000">31655 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=10"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/antibiotic.png"><br><p style="font-size:15px;margin:5px auto">مضاد حيوي</p><hr style="margin:2px"><span style="font-size:13px; color:#000">31240 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=16"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/psycho.png"><br><p style="font-size:15px;margin:5px auto">امراض نفسية</p><hr style="margin:2px"><span style="font-size:13px; color:#000">30308 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=55"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/ulcer.png"><br><p style="font-size:15px;margin:5px auto">قرحة المعدة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">29487 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=3"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/analgesic.png"><br><p style="font-size:15px;margin:5px auto">المسكنات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">29421 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=37"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/anethesia.png"><br><p style="font-size:15px;margin:5px auto">مخدر موضعي</p><hr style="margin:2px"><span style="font-size:13px; color:#000">29084 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=41"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/allergy.png"><br><p style="font-size:15px;margin:5px auto">مضادات الحساسية</p><hr style="margin:2px"><span style="font-size:13px; color:#000">28501 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=30"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/migraine.png"><br><p style="font-size:15px;margin:5px auto">الصداع النصفي</p><hr style="margin:2px"><span style="font-size:13px; color:#000">27756 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=39"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/rheumatic.png"><br><p style="font-size:15px;margin:5px auto">الروماتيزم</p><hr style="margin:2px"><span style="font-size:13px; color:#000">25953 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=42"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/calm.png"><br><p style="font-size:15px;margin:5px auto">مهدئات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">25739 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=40"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/gout.png"><br><p style="font-size:15px;margin:5px auto">النقرس</p><hr style="margin:2px"><span style="font-size:13px; color:#000">25735 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=38"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/immunity.png"><br><p style="font-size:15px;margin:5px auto">مقويات المناعة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">24708 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=53"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/brain.png"><br><p style="font-size:15px;margin:5px auto">ادوية المخ</p><hr style="margin:2px"><span style="font-size:13px; color:#000">24424 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=66"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/appetizer.png"><br><p style="font-size:15px;margin:5px auto">فاتح الشهية</p><hr style="margin:2px"><span style="font-size:13px; color:#000">24121 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=65"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/emollient.png"><br><p style="font-size:15px;margin:5px auto">مرطب الجلد</p><hr style="margin:2px"><span style="font-size:13px; color:#000">23655 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=73"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/whitening.png"><br><p style="font-size:15px;margin:5px auto">تفتيح البشرة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">22812 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=11"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/antifungal.png"><br><p style="font-size:15px;margin:5px auto">مضاد فطريات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">22453 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=70"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/dandruff.png"><br><p style="font-size:15px;margin:5px auto">مضاد للقشرة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">21615 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=20"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/bronchodilator.png"><br><p style="font-size:15px;margin:5px auto">موسع الشعب</p><hr style="margin:2px"><span style="font-size:13px; color:#000">21181 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=35"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/calcium.png"><br><p style="font-size:15px;margin:5px auto">الكالسيوم للعظام</p><hr style="margin:2px"><span style="font-size:13px; color:#000">21106 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=28"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/contraceptive.png"><br><p style="font-size:15px;margin:5px auto">موانع الحمل</p><hr style="margin:2px"><span style="font-size:13px; color:#000">19463 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=46"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/zinc.png"><br><p style="font-size:15px;margin:5px auto">الزنك</p><hr style="margin:2px"><span style="font-size:13px; color:#000">19418 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=7"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/laxative.png"><br><p style="font-size:15px;margin:5px auto">الملينات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">19199 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=68"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/worms.png"><br><p style="font-size:15px;margin:5px auto">للديدان</p><hr style="margin:2px"><span style="font-size:13px; color:#000">19194 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=31"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/vitaminb.png"><br><p style="font-size:15px;margin:5px auto">فيتامين بي</p><hr style="margin:2px"><span style="font-size:13px; color:#000">19098 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=2"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/diarrhea.png"><br><p style="font-size:15px;margin:5px auto">الاسهال</p><hr style="margin:2px"><span style="font-size:13px; color:#000">18043 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=17"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/acidity.png"><br><p style="font-size:15px;margin:5px auto">الحموضة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">17796 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=67"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/digestion.png"><br><p style="font-size:15px;margin:5px auto">عسر الهضم</p><hr style="margin:2px"><span style="font-size:13px; color:#000">17789 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=59"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/spasm.png"><br><p style="font-size:15px;margin:5px auto">المغص والتقلصات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">17219 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=54"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/diuretic.png"><br><p style="font-size:15px;margin:5px auto">مدر البول</p><hr style="margin:2px"><span style="font-size:13px; color:#000">17127 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=64"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/healing.png"><br><p style="font-size:15px;margin:5px auto">تسريع الالتئام</p><hr style="margin:2px"><span style="font-size:13px; color:#000">16809 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=15"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/emollient.png"><br><p style="font-size:15px;margin:5px auto">ملطف للجلد</p><hr style="margin:2px"><span style="font-size:13px; color:#000">16601 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=44"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/oxidant.png"><br><p style="font-size:15px;margin:5px auto">مضادات اكسدة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">16110 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=18"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/psoriasis.png"><br><p style="font-size:15px;margin:5px auto">علاج الصدفية</p><hr style="margin:2px"><span style="font-size:13px; color:#000">15492 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=32"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/vitaminc.png"><br><p style="font-size:15px;margin:5px auto">فيتامين C</p><hr style="margin:2px"><span style="font-size:13px; color:#000">15424 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=45"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/clot.png"><br><p style="font-size:15px;margin:5px auto">مضاد جلطات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">14608 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=29"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/edema.png"><br><p style="font-size:15px;margin:5px auto">مضادات التورم</p><hr style="margin:2px"><span style="font-size:13px; color:#000">14453 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=25"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/antipyretic.png"><br><p style="font-size:15px;margin:5px auto">ادوية السخونة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">13209 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=12"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/antiviral.png"><br><p style="font-size:15px;margin:5px auto">مضاد فيروسات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">12575 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=56"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/hypotension.png"><br><p style="font-size:15px;margin:5px auto">انخفاض ضغط الدم</p><hr style="margin:2px"><span style="font-size:13px; color:#000">12534 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=14"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/tumor.png"><br><p style="font-size:15px;margin:5px auto">الاورام</p><hr style="margin:2px"><span style="font-size:13px; color:#000">12509 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=26"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/penicillin.png"><br><p style="font-size:15px;margin:5px auto">مضادات حيوية (بنسلين)</p><hr style="margin:2px"><span style="font-size:13px; color:#000">12379 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=33"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/folic.png"><br><p style="font-size:15px;margin:5px auto">حمض الفوليك</p><hr style="margin:2px"><span style="font-size:13px; color:#000">12089 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=60"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/vomit.png"><br><p style="font-size:15px;margin:5px auto">القيء والترجيع</p><hr style="margin:2px"><span style="font-size:13px; color:#000">11653 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=43"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/parasite.png"><br><p style="font-size:15px;margin:5px auto">مضاد طفيليات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">11080 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=47"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/asthma.png"><br><p style="font-size:15px;margin:5px auto">ادوية الازمة</p><hr style="margin:2px"><span style="font-size:13px; color:#000">11073 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=62"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/desinfectant.png"><br><p style="font-size:15px;margin:5px auto">المطهرات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">10737 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=61"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/nausea.png"><br><p style="font-size:15px;margin:5px auto">ادوية الغثيان</p><hr style="margin:2px"><span style="font-size:13px; color:#000">10332 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=49"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/aspirin.png"><br><p style="font-size:15px;margin:5px auto">الاسبرين</p><hr style="margin:2px"><span style="font-size:13px; color:#000">10327 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=27"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/sugar.png"><br><p style="font-size:15px;margin:5px auto">سكر صناعي</p><hr style="margin:2px"><span style="font-size:13px; color:#000">10135 <i class="fas fa-eye"></i> </span><p></p></a></div><div class="innerUsesitem"><a href="ause.php?id=23"><img loading="lazy" width="60" height="60" src="https://dwaprices.com/img/vaccine.png"><br><p style="font-size:15px;margin:5px auto">أمصال وتطعيمات</p><hr style="margin:2px"><span style="font-size:13px; color:#000">9857 <i class="fas fa-eye"></i> </span><p></p></a></div></div>
+<style>
+.innerUsesitem{
+position:relative;
+width:31%;
+margin:3px;
+padding:3px;
+font-size:18px;
+font-weight:bold;
+color:#fff;
+background:#fff;
+border-radius:10px;
+box-shadow: 0 0 6px 1px rgb(0 0 0 / 23%);
+}
+.innerUses a{
+text-decoration:none;
+}
+</style>
+<hr>   
+</div><div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4819595550402440" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 280px;"><div id="aswift_6_host" style="border: none; height: 280px; width: 690px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div>
+ 
+<script>
+$(document).on('click', '#shareLinkuses', function(){
+$.ajax({
+url  :'',
+type : 'POST',
+data : {
+'shareUses' : 1
+}
+});		
+});
+</script><hr>
+
+<br>
+</div>
+
+
+<div style="width:95%;margin:5px auto;background:#FBFBEF">
+<div align="center" style="width:95%;margin:10px auto; border:1px solid black">
+<p style="font-size:18px;font-weight:bold;color:red">
+تعرف على أسعار هذه الأدوية أيضاً
+ المشابهة لاسم الدواء الحالي
+<br>
+   اضغط على اسم الدواء لعرض سعره
+</p>
+<div align="right" style="width:90%;margin:10px auto;font-size:15px">
+<div style="font-size:16px;font-weight:bold;"><a class="track" href="med.php?id=31712">بنفورا 30 قرص </a></div><span>  <i class="fas fa-eye"></i> 180884 مشاهدات </span><hr style="margin:1px"><div style="font-size:16px;font-weight:bold;"><a class="track" href="med.php?id=15074">بنبروستيكس 10 مجم اس ار اقراص</a></div><span>  <i class="fas fa-eye"></i> 675 مشاهدات </span><hr style="margin:1px"></div>
+</div>
+<div align="center">
+<a style="color:white" href="/#usesareaa" target="blank">
+</a><p class="newbox"><a style="color:white" href="/#usesareaa" target="blank">
+جديد| اضغط هنا للبحث بعلاج الامراض الشائعة
+<img src="https://i.imgur.com/CByOCVI.gif" height="60" width="60" style="position:absolute;top:-20px;left:-30px" <="" p="">
+</a>
+<style>
+.newbox{
+position:relative;
+width:85%;
+margin:20px auto;
+padding:10px;
+font-weight:bold;
+color:#fff;
+background:#2E2EFE;
+border-radius:10px;
+box-shadow: 0 0 6px 1px rgb(0 0 0 / 23%);
+}
+</style>
+</p></div>
+</div> 
+
+<style>
+.linkAds{
+margin:15px auto;
+padding:15px;
+width:80%;
+border:1px solid transparent;
+border-radius:10px;
+text-align:center;
+background:#8A0808;
+color:#fff;
+font-size:22px;
+font-weight:bold;
+box-shadow: 0 0 8px 5px rgb(0 0 0 / 33%);
+}
+.linkaa{
+text-decoration:none;
+}
+</style>
+
+ 
+<hr>
+<div align="center">
+<a id="shareLink" href="https://www.facebook.com/sharer/sharer.php?u=https://dwaprices.com/med.php?id=31712" target="blank">
+<button class="btn btn-primary" style="width:350px;height:70px;font-size:30px;font-weight:bold;margin:5px auto;">
+Share to facebook
+</button>
+</a>
+
+<script>
+document.getElementById("shareLink").href       = "https://www.facebook.com/sharer/sharer.php?u=" + "https://dwaprices.com/med.php?id=31712";
+</script>
+<hr>
+<h4>
+ استعمالات
+بنفورا 30 قرص </h4>
+<p id="usesP" style="margin:10px;padding:5px">  1- مقوى للاعصاب ومنشط للجهاز العصبى.  <br> - 2- علاج التهابات الاعصاب الناتجة عن مرض السكر.  <br> - 3- التهاب العصب البصرى   <br> - 4- منشط عام للذاكرة والتركيز.  <br> - 5- علاج حالات الانيميا وفقر الدم .  <br> - 6- علاج حالات الخمول والضعف العام.  <br> - 7- الالام الناتجة عن التهاب الاعصاب كآلام الظهر والرقبة.  <br> - تركيبة مميزة من مجموعة فيتامينات ب المركب ب12,ب1,ب6 ,ب2 وحمض الفوليك  <br> -   <br> - Benphora – بنفورا  <br> - ماهي اقراص بنفورا:-  <br> - . هي اقراص لعلاج نقص فيتامين ب والمساعدة على تحسين اعراض التهاب الاعصاب  <br> - تركيب بنفورا:-  <br> - بنفورا اقراص يحتوي علي:-  <br> - 1- بنفوتيامين "فيتامين ب ا" بتركيز 150 مجم .  <br> - 2- ميثايلكوبلامين "فيتامين ب 12 في صورة نشطة" بتركيز 500ميكروجرام.  <br> - 3- فيتامين ب 6 بتركيز 10مجم.  <br> - 4- فيتامين ب 2 بتركيز 10 مجم.  <br> - 5- فيتامين ب 5  بتركيز 50مجم.  <br> - 6 – فيتامين ب 9 "فولات – حمض الفوليك" بتركيز 170ميكروجرام.  <br> -   <br> - دواعي الاستعمال لاقراص بنفورا:-  <br> - تستخدم اقراص بنفورا للبالغين والاطفال فوق 12 سنة لعلاج امراض الدم والالتهابات العصبية الناتج عن نقص فيتامين ب "ب1 , ب2 , ب5,ب6,ب12".  <br> -   <br> - تستخدم اقراص بنفورا في علاج وتقوية الاعصاب الطرفية.  <br> -   <br> - تستخدم اقراص بنفورا في التخفيف من الالم الاعصاب .  <br> -   <br> - تستخدم اقراص بنفورا في تحسين التمثيل الغذائي للدهون والكربوهيدرات والبروتينات.  <br> -   <br> -   <br> - الجرعة وطريقة الاستخدام:-  <br> -   <br> - للبالغين والاطفال فوق سن 12 سنة : قرص مرة او مرتين يوميا بعد الاكل مع كوب ماء كبير.  <br> -   <br> - موانع الاستخدام :-  <br> - للمرضي الذين يعانون من حساسية من مكونات الدواء.  <br> -   <br> - الاستخدام اثناء الحمل والرضاعة :  <br> - يتم اسشارة الطبيب المعالج .  <br> -   <br> - العبوه:  <br> -   <br> - علبة بها 30 قرص .  <br> -   <br> - انتاج شركة جينيركا فارما للادوية  <br> -   <br> -   <br> -   </p>
+<script>
+var usesP = document.getElementById("usesP");
+usesP.innerHTML  = usesP.innerHTML.replaceAll("\n", "  <br> - ");
+</script> 
+<style>
+#usesP{
+margin:5px auto;
+font-weight:bold;
+text-align:right;
+}
+</style>
+
+<h3 dir="ltr">Price of Benphora 30 f.c. tablets is  </h3>
+<span dir="ltr" class="redBold"> 120 L.E. </span>
+<br>
+<a target="_blank" href="https://www.google.com/search?tbm=isch&amp;q=benphora 30 f.c. tablets">
+<button style="font-size:20px" class="btn btn-danger lg">
+اضغط هنا لعرض صور الدواء
+</button></a>
+<hr>
+<div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4819595550402440" data-adsbygoogle-status="done" style="display: block; margin: 10px auto 16px; background-color: transparent; height: 280px;"><div id="aswift_7_host" style="border: none; height: 280px; width: 765px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div><div class="shareButtons">
+Share to
+<br>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://dwaprices.com/med.php?id=31712" id="fbLink" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="whatsapp://send?text=https://dwaprices.com/med.php?id=31712" id="waLink" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://twitter.com/share?url=https://dwaprices.com/med.php?id=31712" id="twLink" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+<hr> 
+<p>انقر لنسخ رابط مشاركة معلومات وسعر هذا الدواء</p>
+<textarea id="txtarea" dir="ltr" style="width:90%;height:30px">https://dwaprices.com/med.php?id=31712</textarea>
+</div>
+
+<script>
+
+$(document).ready(function(){
+    
+    
+document.getElementById("fbLink").href       = "https://www.facebook.com/sharer/sharer.php?u="+ window.location.href;
+document.getElementById("waLink").href       = "whatsapp://send?text="+ window.location.href.replace(" ","+");
+document.getElementById("twLink").href       = "https://twitter.com/share?url="+ window.location.href;
+document.getElementById("txtarea").innerHTML = window.location.href;
+document.getElementById("txtarea").onclick   = function() {
+this.select();
+document.execCommand('copy');
+};
+
+
+
+if( window.location.href.indexOf("fbclid") != -1){
+    
+var fbclid = window.location.href.indexOf("fbclid")-1;
+
+var newHref = window.location.href.substring(0,fbclid);
+
+ window.location.href = newHref;
+    
+//console.log(newHref);
+
+
+}
+
+
+
+
+
+$(document).on('click', '#shareLink', function(){
+$.ajax({
+url  :'',
+type : 'POST',
+data : {
+'shares' : 1
+}
+});		
+});
+
+$(document).on('click', '.track', function(){
+$.ajax({
+url  :'routing.php',
+type : 'POST',
+data : {
+'tracksuggestion' : 1
+}
+});		
+});
+
+$(document).on('click', '.report', function(){
+$(".confirm").slideToggle(); 
+$(this).hide();
+
+if(localStorage.getItem("reporterName")){reporterName.style.display = "none";}
+
+});
+$(document).on('click', '.cancel', function(){
+$(this).parent().hide();   
+});
+    
+$(document).on('click', '.yes-report', function(){
+
+var numNewPrice     = $("#newPrice").val();
+var reporterNamevar = (localStorage.getItem("reporterName") ? localStorage.getItem("reporterName") : reporterName.value);
+
+$.ajax({
+type : 'POST',
+data : {
+'reporting'       : 1,
+'newprice'        :  numNewPrice,
+'reporterNameGet' : reporterNamevar
+}
+});
+if(!localStorage.getItem("reporterName")){localStorage.setItem("reporterName",reporterName.value);}
+$(this).parent().html("شكرا , لقد تم الابلاغ للمشرف");   
+});
+
+$(document).on('click', '.newPricebtn', function(){
+var NewPriceN = $(".newPriceInput").val();
+$.ajax({
+type : 'POST',
+data : {
+newPriceI    :  NewPriceN
+},
+success: function(response){
+$('.resDiv').html("<p id='innerP'>Data Updated Successfully </p>");
+setTimeout(function(){ $('#innerP').fadeOut(); }, 500);
+}
+});
+});
+
+$(document).on('click', '.showPrice', function(){
+$('.hideAfter').hide();
+$('.priceEl').toggle();
+var urll = "https://dwaprices.com/med.php?id=31712"
+setTimeout(function(){
+location.reload();
+}, 10000);
+});
+
+$(document).on('click', '.btnToggle', function(){
+    
+$('.toggy').toggle();
+$('.hidethis').hide();
+$(this).hide();
+
+$.ajax({
+type : 'POST',
+data : {
+'showprice' : 1,
+}
+});
+
+setTimeout(function(){
+reloadbtn.href = urll;
+reloadbtn.click();
+}, 5000);
+
+});      
+
+$(document).on('click', '.orderPh', function(){
+$.ajax({
+type : 'POST',
+data : {
+'orderPh' : 1
+}
+});
+});
+
+$(document).on('click', '.reportRepeated', function(){
+$.ajax({
+type : 'POST',
+data : {
+'reportRepeated' : 1
+}
+});
+});
+
+$(document).on('click', '.appclick', function(){
+$.ajax({
+url  :'routing.php',
+type : 'POST',
+data : {
+'appclick' : 1
+}
+});
+});
+});
+// to hide all table rows <tr>  with empty <td>
+$('tr:has("td:empty")').hide();
+</script>
+
+
+</main>
+
+<div class="footer container">
+<!--
+<div align="center">
+<a href="https://dwaprices.com/drug-home-smart/" target="_blank" class="btn btn-primary" style="color:#fff">
+    حمل آخر اصدار من برنامج 
+    drug home smart
+    لادارة الصيدليات
+    2024
+</a>
+</div>
+-->
+
+
+<div align="center">
+<p>
+    يمكنكم تحميل تطبيقنا الرسمي لدليل اسعار الادوية من هنا
+</p>
+
+<a href="https://play.google.com/store/apps/details?id=com.dwaprices.app" target="blank">
+<img src="https://i.imgur.com/7PFm2OA.png" height="60" width="200" class="appBtnPlay">
+</a>
+
+</div>
+
+
+<div> 
+<h2>روابط سريعة</h2>
+
+
+<li><a download="" href="https://dwaprices.com/files/medhomepro62.apk">   pro 62  </a></li>
+
+
+<li><a href="https://dwaprices.com/landvid.php">   landing  </a></li>
+
+
+
+
+
+
+
+
+<li><a href="https://dwaprices.com/insert.php"> إضافة دواء جديد</a></li>
+<li><a href="https://dwaprices.com/add_pharmacy.php">أضف صيدليتك للموقع</a></li>
+<li><a href="https://dwaprices.com/contact_us.php">اتصل بنا</a></li>
+<li><a href="https://dwaprices.com/privacy.php">Privacy Policy</a></li>
+
+
+</div>
+
+<div> 
+<h2>عن الموقع</h2>
+<p>
+دليل دواء مصر هو محرك بحث دوائي يقدم لكم خدمة البحث عن ومعرفة معلومات وأسعار الأدوية بداخل جمهورية مصر العربية من خلال البحث في أضخم قاعدة بيانات دوائية تضم 25 ألف صنف دوائي تم ترتيبها وتنظيمها ومراجعة بياناتها على أيدي صيادلة خبراء متخصصين في علوم الدواء 
+<br>
+كما يعتبر موقع دليل دواء مصر هو الموقع الاول الذي يتيح امكانية البحث باللغتين العربية و الانجليزية ويقدم أيضا معلومات بخصوص المواد الفعالة والاستعمالات والاثار الجانبية والتداخلات الدوائية
+</p>
+<h2>
+   تنبيه واخلاء مسؤولية
+</h2>
+<p>
+جميع المعلومات الطبية والكتب والمواد العلمية التي ننشرها على موقع دليل دواء مصر غرضها فقط زيادة الوعي الطبي وتعزيز الثقافة الصحية لدى المستخدمين ولا تعتبر بأي حال من الأحوال بديلا عن الاستشارة الطبية المباشرة مع الطبيب المختص 
+ لذلك نحذر من استخدام أي معلومة أو دواء في الموقع بدون الرجوع واستشارة الطبيب الخاص بك
+</p>
+</div>
+  
+
+
+
+
+
+<div> 
+<h2>ستجدنا هنا</h2>
+<li><a href="https://www.facebook.com/pharmacy4">صفحتنا على فيسبوك</a></li>
+</div>
+
+
+<div class="getDb"> 
+<a target="_blank" href="https://dwaprices.com/database.php"> <button id="newSearchButton" class="btn btn-danger btn-lg">للحصول على قاعدة بيانات الادوية</button></a>
+<br>
+<br>
+</div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+    
+$(document).ready(function(){
+
+
+$(document).on('click', '#ppppppp', function(){
+   
+$.ajax({
+url  :'',
+type : 'POST',
+data : {
+'howmanyclicksonbanner' : 1
+}
+});	
+
+
+});
+
+});
+</script>
+
+
+<p id="copyrightContainer" style="font-family: amiri, sans-serif;background:#D8D8D8"> 
+جميع الحقوق محفوظة 
+<a href="https://dwaprices.com/" id="copyRightsDiv" style="font-family: amiri, sans-serif;">
+   دليل دواء مصر
+</a>© 2025
+</p><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4819595550402440&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;abgtt=6&amp;lmt=1738464742&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fdwaprices.com%2Fmed.php%3Fid%3D31712&amp;pra=5&amp;wgl=1&amp;aihb=0&amp;asro=0&amp;ailel=1~2~4~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~29~30~34&amp;aiael=1~2~3~4~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~29~30~34&amp;aicel=33~38&amp;aifxl=29_18~30_19&amp;aiixl=29_5~30_6&amp;aiapm=0.15&amp;aiapmi=0.33938&amp;aief=1&amp;uach=WyJMaW51eCIsIjYuOC4wIiwieDg2IiwiIiwiMTMyLjAuNjgzNC4xMTAiLG51bGwsMCxudWxsLCI2NCIsW1siTm90IEEoQnJhbmQiLCI4LjAuMC4wIl0sWyJDaHJvbWl1bSIsIjEzMi4wLjY4MzQuMTEwIl0sWyJHb29nbGUgQ2hyb21lIiwiMTMyLjAuNjgzNC4xMTAiXV0sMF0.&amp;dt=1738464742609&amp;bpp=42&amp;bdt=878&amp;idt=257&amp;shv=r20250129&amp;mjsv=m202501270101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=7825178778718&amp;frm=20&amp;pv=2&amp;u_tz=120&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=765&amp;bih=441&amp;scr_x=0&amp;scr_y=0&amp;eid=31090016%2C95335245&amp;oid=2&amp;pvsid=3104848820314293&amp;tmod=1570362987&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=10%2C10%2C10%2C10%2C800%2C0%2C780%2C580%2C780%2C441&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=296" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20250129/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>
+null

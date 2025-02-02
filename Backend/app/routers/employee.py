@@ -5,8 +5,8 @@ from schemas.employee import EmployeeCreate
 from crud.employee import EmployeeCrud
 from models.employee import Employee
 from typing import List
-
-router = APIRouter(prefix="/employee", tags=["Employee"])
+from auth.dependencies import require_role, roles
+router = APIRouter(prefix="/employee", tags=["Employee"], dependencies=[Depends(require_role(roles["admin"]))])
 
 # Dependency Injection for EmployeeCrud
 async def get_employee_crud(session: AsyncSession = Depends(get_session)):

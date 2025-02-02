@@ -5,8 +5,8 @@ from schemas.drug_subtypes import DrugSubtypeCreate, DrugSubtypeUpdate
 from crud.drug_subtypes import DrugSubtypeCrud
 from models.drug import DrugSubType
 from typing import List
-
-router = APIRouter(prefix="/drug_subtypes", tags=["Drug Subtypes"])
+from auth.dependencies import require_role, roles
+router = APIRouter(prefix="/drug_subtypes", tags=["Drug Subtypes"], dependencies=[Depends(require_role(roles["admin"]))])
 
 # Dependency Injection for DrugSubtypeCrud
 async def get_drug_subtype_crud(session: AsyncSession = Depends(get_session)):

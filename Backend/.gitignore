@@ -5,4 +5,7 @@ __pycache__
 .lib
 env
 *.pyc
+*chrome*
+chromedriver-linux64/
+*.log
 *.pyo

@@ -5,8 +5,8 @@ from schemas.supplier import SupplierCreate
 from models.supplier import Supplier
 from crud.supplier import SupplierCrud
 from typing import List
-
-router = APIRouter(prefix="/supplier", tags=["Supplier"])
+from auth.dependencies import require_role, roles
+router = APIRouter(prefix="/supplier", tags=["Supplier"], dependencies=[Depends(require_role(roles["admin"]))])
 
 # Dependency Injection for SupplierCrud
 async def get_supplier_crud(session: AsyncSession = Depends(get_session)):

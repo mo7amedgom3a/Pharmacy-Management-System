@@ -7,7 +7,7 @@ from .supplier import router as supplier_router
 from .drug_types import router as drug_types_router
 from .drug_subtypes import router as drug_subtypes_router
 from .inventory_transactions import router as inventory_transactions_router
-
+from .auth import router as auth_router
 __all__ = [
     "pharmacy_router",
     "drug_router",
@@ -17,5 +17,6 @@ __all__ = [
     "supplier_router",
     "drug_types_router",
     "drug_subtypes_router",
-    "inventory_transactions_router"
+    "inventory_transactions_router",
+    "auth_router"
 ]

@@ -5,6 +5,8 @@ class DrugBase(BaseModel):
     name: str
     type: Optional[str] = None
     manufacturer: Optional[str] = None
+    image_url: Optional[str] = None
+    barcode: Optional[str] = None
     description: Optional[str] = None
     supplier_id: Optional[int] = None
     drug_sub_type_id: Optional[int] = None

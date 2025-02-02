@@ -5,8 +5,9 @@ from models.inventory import Inventory
 from models.inventory_transactions import Transaction
 from fastapi import HTTPException, status
 from typing import List
+from models.employee import Employee
 
-class InventoryTransactionCrud:
+class TransactionCrud:
     def __init__(self, session: AsyncSession):
         """Initialize InventoryTransactionCrud with a database session"""
         self.session = session
