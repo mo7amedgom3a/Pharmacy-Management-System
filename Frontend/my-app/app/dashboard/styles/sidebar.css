@@ -1,0 +1,36 @@
+/* styles/sidebar.css */
+
+/* Main container */
+.main-container {
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #0f75dc;
+  width: 16rem;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Completely hide the sidebar when closed */
+.sidebar.closed {
+  display: none;
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* When sidebar is open, content takes normal width */
+.sidebar-visible .content {
+  margin-left: 16rem;
+}
+
+/* When sidebar is hidden, content expands fully */
+.sidebar-hidden .content {
+  margin-left: 0;
+
+}
