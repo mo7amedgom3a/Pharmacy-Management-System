@@ -16,13 +16,19 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
 } from "@/components/ui/sidebar"
-import { Home, Pill, ShoppingCart, ClipboardList } from 'lucide-react'
+import { Home, Pill, ShoppingCart, ClipboardList, Users, ListTodoIcon, BriefcaseMedical   } from 'lucide-react'
+
 
 const navItems = [
   { href: "/dashboard", label: "dashboard.overview", icon: <Home size={20} /> },
   { href: "/dashboard/drug-list", label: "dashboard.drugList", icon: <Pill size={20} /> },
-  { href: "/dashboard/billing", label: "dashboard.billing", icon: <ShoppingCart size={20} /> },
-  { href: "/dashboard/inventory", label: "dashboard.inventory", icon: <ClipboardList size={20} /> },
+  { href: "/dashboard/billing", label: "dashboard.billing", icon: < ClipboardList size={20} /> },
+  { href: "/dashboard/inventory", label: "dashboard.inventory", icon: <ShoppingCart size={20} /> },
+  { href: "/dashboard/employees", label: "employees.title", icon: <Users size={20} /> },
+  { href: "/dashboard/transactions", label: "transactions.title", icon: <ListTodoIcon size={20} /> },
+  { href: "/dashboard/pharmacy", label: "pharmacies", icon: <BriefcaseMedical size={20} /> },
+  { href: "/dashboard/supplier", label: "suppliers", icon: <ListTodoIcon size={20} /> },
+  
 ]
 interface SidebarComponentProps {
   isOpen: boolean
@@ -48,7 +54,7 @@ export function SidebarComponent({ isOpen, toggleSidebar }: SidebarComponentProp
           <SidebarHeader className="p-4 border-b border-gray-400">
         <div className="flex items-center justify-between">
           <div className={cn("flex items-center gap-2", !isOpen && "hidden")}>
-            <Pill className="h-6 w-6 text-primary" />
+            <BriefcaseMedical className="h-6 w-6 text-primary" />
             <span className="font-bold text-lg">PharmaCare</span>
           </div>
         </div>
