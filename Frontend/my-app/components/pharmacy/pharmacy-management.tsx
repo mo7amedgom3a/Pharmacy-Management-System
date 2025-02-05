@@ -1,29 +1,50 @@
 "use client"
 
-import { useState } from "react"
-import { pharmaciesData, type Pharmacy } from "./mockData"
+import { useState, useEffect } from "react"
+import { fetchPharmacies, updatePharmacy, createPharmacy, deletePharmacy } from "./api/pharmacy"
 import { PharmacyTable } from "./PharmacyTable"
 import { PharmacyModal } from "./PharmacyModal"
 import { Button } from "@/components/ui/button"
 
+interface Pharmacy {
+  pharmacy_id: number
+  name: string
+  contact_info: string
+  location: string
+}
+
 export default function PharmacyManagement() {
-  const [pharmacies, setPharmacies] = useState<Pharmacy[]>(pharmaciesData)
+  const [pharmacies, setPharmacies] = useState<Pharmacy[]>([])
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingPharmacy, setEditingPharmacy] = useState<Pharmacy | null>(null)
 
-  const handleAddPharmacy = (newPharmacy: Pharmacy) => {
-    setPharmacies([...pharmacies, { ...newPharmacy, id: pharmacies.length + 1 }])
+  useEffect(() => {
+    fetchPharmacies().then(setPharmacies)
+  }, [])
+
+  // update 
+  useEffect(() => {
+    if (editingPharmacy) {
+      updatePharmacy(editingPharmacy)
+    }
+  }, [editingPharmacy])
+
+  const handleAddPharmacy = async (newPharmacy: Pharmacy) => {
+    const createdPharmacy = await createPharmacy(newPharmacy)
+    setPharmacies([...pharmacies, createdPharmacy])
     setIsModalOpen(false)
   }
 
-  const handleEditPharmacy = (updatedPharmacy: Pharmacy) => {
-    setPharmacies(pharmacies.map((pharmacy) => (pharmacy.id === updatedPharmacy.id ? updatedPharmacy : pharmacy)))
+  const handleEditPharmacy = async (updatedPharmacy: Pharmacy) => {
+    const editedPharmacy = await updatePharmacy(updatedPharmacy)
+    setPharmacies(pharmacies.map((pharmacy) => (pharmacy.pharmacy_id === editedPharmacy.pharmacy_id ? editedPharmacy : pharmacy)))
     setIsModalOpen(false)
     setEditingPharmacy(null)
   }
 
-  const handleDeletePharmacy = (id: number) => {
-    setPharmacies(pharmacies.filter((pharmacy) => pharmacy.id !== id))
+  const handleDeletePharmacy = async (id: number) => {
+    await deletePharmacy(id)
+    setPharmacies(pharmacies.filter((pharmacy) => pharmacy.pharmacy_id !== id))
   }
 
   return (
@@ -53,4 +74,3 @@ export default function PharmacyManagement() {
     </div>
   )
 }
-

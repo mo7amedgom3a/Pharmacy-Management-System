@@ -3,8 +3,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/LanguageContext"
 import DeleteDialog from "../DeleteDialog"
-import { useState } from "react"
-
+import { useState, useEffect } from "react"
+import { isAdmin } from "@/hooks/useAuth"
 interface InventoryTableProps {
   inventory: InventoryItem[]
   onEdit: (item: InventoryItem) => void
@@ -15,6 +15,12 @@ export function InventoryTable({ inventory, onEdit, onDelete }: InventoryTablePr
   const { t } = useLanguage()
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [itemToDelete, setItemToDelete] = useState<InventoryItem | null>(null)
+  const [authToken, setAuthToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setAuthToken(token);
+  }, []);
 
   const handleDeleteClick = (item: InventoryItem) => {
     setItemToDelete(item)
@@ -54,9 +60,9 @@ export function InventoryTable({ inventory, onEdit, onDelete }: InventoryTablePr
                 <Button onClick={() => onEdit(item)} variant="outline" className="mr-2">
                   {t("edit")}
                 </Button>
-                <Button onClick={() => handleDeleteClick(item)} variant="destructive">
+               {isAdmin(authToken) && <Button onClick={() => handleDeleteClick(item)} variant="outline">
                   {t("delete")}
-                </Button>
+                </Button>}
               </TableCell>
             </TableRow>
           ))}

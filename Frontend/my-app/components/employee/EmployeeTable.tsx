@@ -3,8 +3,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/LanguageContext"
 import DeleteDialog from "../DeleteDialog"
-import { useState } from "react"
-
+import { useState, useEffect } from "react"
+import { isAdmin } from "@/hooks/useAuth"
 interface EmployeeTableProps {
   employees: Employee[]
   onEdit: (employee: Employee) => void
@@ -15,6 +15,12 @@ export function EmployeeTable({ employees, onEdit, onDelete }: EmployeeTableProp
   const { t } = useLanguage()
   const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null)
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
+  const [authToken, setAuthToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setAuthToken(token);
+  }, []);
 
   const handleDeleteClick = (employee: Employee) => {
     setSelectedEmployee(employee)
@@ -59,9 +65,9 @@ export function EmployeeTable({ employees, onEdit, onDelete }: EmployeeTableProp
                 <Button onClick={() => onEdit(employee)} variant="outline" className="mr-2">
                   {t("edit")}
                 </Button>
-                <Button onClick={() => handleDeleteClick(employee)} variant="destructive">
+                {isAdmin(authToken) && <Button onClick={() => handleDeleteClick(employee)} variant="outline">
                   {t("delete")}
-                </Button>
+                </Button>}
               </TableCell>
             </TableRow>
           ))}

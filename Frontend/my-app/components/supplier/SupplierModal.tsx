@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
-import type { Supplier } from "./mockData"
+import { Supplier } from "./api/supplier"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-
 import { Button } from "@/components/ui/button"
 
 interface SupplierModalProps {
@@ -13,10 +12,10 @@ interface SupplierModalProps {
 
 export function SupplierModal({ supplier, onSave, onClose }: SupplierModalProps) {
     const [formData, setFormData] = useState<Supplier>({
-        id: supplier?.id || 0,
+        supplier_id: supplier?.supplier_id || 0,
         name: "",
-        phone: "",
-        location: "",
+        contact_info: "",
+        address: "",
     })
 
     useEffect(() => {
@@ -49,20 +48,21 @@ export function SupplierModal({ supplier, onSave, onClose }: SupplierModalProps)
                             </label>
                             <Input id="name" name="name" value={formData.name} onChange={handleChange} className="col-span-3" />
                         </div>
+                        <div className="grid grid-cols-4 items-center gap-4"></div>
                         <div className="grid grid-cols-4 items-center gap-4">
-                            <label htmlFor="phone" className="text-right">
+                            <label htmlFor="contact_info" className="text-right">
                                 Phone
                             </label>
-                            <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} className="col-span-3" />
+                            <Input id="contact_info" name="contact_info" value={formData.contact_info} onChange={handleChange} className="col-span-3" />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
-                            <label htmlFor="location" className="text-right">
+                            <label htmlFor="address" className="text-right">
                                 Location
                             </label>
                             <Input
-                                id="location"
-                                name="location"
-                                value={formData.location}
+                                id="address"
+                                name="address"
+                                value={formData.address}
                                 onChange={handleChange}
                                 className="col-span-3"
                             />

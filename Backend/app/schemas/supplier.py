@@ -4,8 +4,6 @@ from typing import Optional
 class SupplierBase(BaseModel):
     name: str
     address: Optional[str] = None
-    phone: Optional[str] = None
-    email: Optional[str] = None
     contact_info: Optional[str] = None
 
 class SupplierCreate(SupplierBase):

@@ -1,6 +1,6 @@
-import type { Pharmacy } from "./mockData"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
+import { Pharmacy } from "./api/pharmacy"
 import DeleteDialog from "../DeleteDialog"
 import { useState } from "react"
 
@@ -40,15 +40,15 @@ export function PharmacyTable({ pharmacies, onEdit, onDelete }: PharmacyTablePro
         </TableHeader>
         <TableBody>
           {pharmacies.map((pharmacy) => (
-            <TableRow key={pharmacy.id}>
+            <TableRow key={pharmacy.pharmacy_id}>
               <TableCell>{pharmacy.name}</TableCell>
-              <TableCell>{pharmacy.phone}</TableCell>
+              <TableCell>{pharmacy.contact_info}</TableCell>
               <TableCell>{pharmacy.location}</TableCell>
               <TableCell>
                 <Button onClick={() => onEdit(pharmacy)} variant="outline" className="mr-2">
                   Edit
                 </Button>
-                <Button onClick={() => handleDeleteClick(pharmacy.id)} variant="destructive">
+                <Button onClick={() => handleDeleteClick(pharmacy.pharmacy_id)} variant="destructive">
                   Delete
                 </Button>
               </TableCell>

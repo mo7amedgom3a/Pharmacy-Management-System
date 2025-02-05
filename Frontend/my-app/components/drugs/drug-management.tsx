@@ -9,6 +9,7 @@ import { DrugInfoCard } from "./drug-info-card"
 import Image from "next/image"
 import { useLanguage } from "@/contexts/LanguageContext"
 import DeleteDialog from "../DeleteDialog"
+import { isAdmin } from "@/hooks/useAuth"
 
 export default function DrugManagement() {
   const { t } = useLanguage()
@@ -20,6 +21,12 @@ export default function DrugManagement() {
   const [isSlideVisible, setIsSlideVisible] = useState(false)
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
   const [drugToDelete, setDrugToDelete] = useState<Drug | null>(null)
+  const [authToken, setAuthToken] = useState<string | null>(null);
+  
+    useEffect(() => {
+      const token = localStorage.getItem("authToken");
+      setAuthToken(token);
+    }, []);
 
   useEffect(() => {
     if (isDialogOpen) {
@@ -111,9 +118,9 @@ export default function DrugManagement() {
                 <Button variant="outline" className="mr-2" onClick={() => openInfoDialog(drug)}>
                   {t("drugList.moreInfo")}
                 </Button>
-                <Button variant="destructive" onClick={() => confirmDeleteDrug(drug)}>
-                  {t("delete")}
-                </Button>
+               {isAdmin(authToken) && <Button variant="outline" onClick={() => confirmDeleteDrug(drug)}>
+                  {t("drugList.delete")}
+                </Button>}
               </TableCell>
             </TableRow>
           ))}

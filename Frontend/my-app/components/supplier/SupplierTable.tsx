@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Supplier } from "./mockData";
+import { Supplier } from "./api/supplier";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import DeleteDialog from "../DeleteDialog";
@@ -40,15 +40,15 @@ export function SupplierTable({ suppliers, onEdit, onDelete }: SupplierTableProp
         </TableHeader>
         <TableBody>
           {suppliers.map((supplier) => (
-            <TableRow key={supplier.id}>
+            <TableRow key={supplier.supplier_id}>
               <TableCell>{supplier.name}</TableCell>
-              <TableCell>{supplier.phone}</TableCell>
-              <TableCell>{supplier.location}</TableCell>
+              <TableCell>{supplier.contact_info}</TableCell>
+              <TableCell>{supplier.address}</TableCell>
               <TableCell>
                 <Button onClick={() => onEdit(supplier)} variant="outline" className="mr-2">
                   Edit
                 </Button>
-                <Button onClick={() => handleDeleteClick(supplier.id)} variant="destructive">
+                <Button onClick={() => handleDeleteClick(supplier.supplier_id)} variant="destructive">
                   Delete
                 </Button>
               </TableCell>

@@ -37,6 +37,12 @@ interface SidebarComponentProps {
   isOpen: boolean
   toggleSidebar: () => void
 }
+const extractNameFromToken = (token: string) => {
+  const payload = token.split(".")[1]
+  const decodedPayload = atob(payload)
+  const { name } = JSON.parse(decodedPayload)
+  return name
+}
 
 export function SidebarComponent({ isOpen, toggleSidebar }: SidebarComponentProps) {
   const pathname = usePathname()
@@ -106,8 +112,7 @@ export function SidebarComponent({ isOpen, toggleSidebar }: SidebarComponentProp
                 A
               </div>
               <div className={cn("flex flex-col", !isOpen && "hidden")}>
-                <span className="font-medium">Admin User</span>
-                <span className="text-sm text-gray-500">admin@pharmacy.com</span>
+                <span className="font-medium">Hello {extractNameFromToken(authToken)} 👋</span>
               </div>
             </div>
           </SidebarFooter>

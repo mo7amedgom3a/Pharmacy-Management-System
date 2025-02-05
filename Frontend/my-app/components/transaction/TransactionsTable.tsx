@@ -3,7 +3,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/LanguageContext"
 import DeleteDialog from "../DeleteDialog"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { isAdmin } from "@/hooks/useAuth"
 
 interface TransactionsTableProps {
   transactions: Transaction[]
@@ -15,6 +16,13 @@ interface TransactionsTableProps {
 export function TransactionsTable({ transactions, inventory, onEdit, onDelete }: TransactionsTableProps) {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [selectedTransactionId, setSelectedTransactionId] = useState<number | null>(null)
+  const [authToken, setAuthToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setAuthToken(token);
+  }, []);
+
 
   const getDrugName = (inventoryItemId: number) => {
     const item = inventory.find((item) => item.id === inventoryItemId)
@@ -58,9 +66,9 @@ export function TransactionsTable({ transactions, inventory, onEdit, onDelete }:
                 <Button onClick={() => onEdit(transaction)} variant="outline" className="mr-2">
                   {t("edit")}
                 </Button>
-                <Button onClick={() => handleDeleteClick(transaction.id)} variant="destructive">
+                {isAdmin(authToken) && <Button onClick={() => handleDeleteClick(transaction.id)} variant="destructive">
                   {t("delete")}
-                </Button>
+                </Button>}
               </TableCell>
             </TableRow>
           ))}

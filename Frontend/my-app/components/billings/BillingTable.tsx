@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import type { BillingRow, Drug } from "./lib/mockData"
@@ -6,7 +6,7 @@ import DrugDetailsModal from "./DrugDetailsModal"
 import BillingForm from "./BillingForm"
 import DeleteDialog from "../DeleteDialog"
 import { useLanguage } from "@/contexts/LanguageContext"
-
+import { isAdmin } from "@/hooks/useAuth"
 interface BillingTableProps {
   billings: BillingRow[]
   onUpdate: (billing: BillingRow) => void
@@ -21,6 +21,12 @@ export default function BillingTable({ billings, onUpdate, onDelete, onAdd }: Bi
   const [isAdding, setIsAdding] = useState(false)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [selectedBillingId, setSelectedBillingId] = useState<string | null>(null)
+  const [authToken, setAuthToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setAuthToken(token);
+  }, []);
 
   const handleDrugDetails = (drugs: Drug[]) => {
     setSelectedDrugs(drugs)
@@ -67,9 +73,9 @@ export default function BillingTable({ billings, onUpdate, onDelete, onAdd }: Bi
                 <Button variant="outline" size="sm" className="mr-2" onClick={() => handleEdit(billing)}>
                   {t("billingDetails.updatebilling")}
                 </Button>
-                <Button variant="destructive" size="sm" onClick={() => handleDelete(billing.id)}>
+                {isAdmin(authToken) && <Button variant="destructive" size="sm" onClick={() => handleDelete(billing.id)}>
                   {t("delete")}
-                </Button>
+                </Button>}
               </TableCell>
             </TableRow>
           ))}

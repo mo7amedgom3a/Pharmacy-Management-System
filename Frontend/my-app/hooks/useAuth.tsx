@@ -4,7 +4,6 @@ import { HOST, PORT } from "@/config"
 export function useAuth() {
   const [authToken, setAuthToken] = useState<string | null>(null)
   
-
   useEffect(() => {
     // Check if there's a token in localStorage when the component mounts
     const token = localStorage.getItem("authToken")
@@ -28,7 +27,8 @@ export function useAuth() {
         throw new Error("Login failed")
       }
 
-      const data = await response.text()
+      let data = await response.text()
+      data = data.replace(/"/g, '') // Remove double quotes from the token
       setAuthToken(data)
       localStorage.setItem("authToken", data)
       return data
@@ -46,6 +46,13 @@ export function useAuth() {
   return { authToken, login, logout }
 }
 
+export function getAuthToken (): string {
+  const token = localStorage.getItem("authToken")
+  if (!token) {
+    throw new Error("No auth token found")
+  }
+  return token
+}
 export function isAdmin (authToken: string | null): boolean {
   if (!authToken) {
     return false
