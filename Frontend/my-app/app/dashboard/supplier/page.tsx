@@ -1,9 +1,19 @@
+"use client"
+import { useState, useEffect } from "react";
 import Suppliers from "@/components/supplier";
+import { isAdmin } from "@/hooks/useAuth";
 
 export default function SupplierPage() {
-  return (
-    <div className="container mx-auto p-4">
-      <Suppliers />
-    </div>
-  );
+  const [authToken, setAuthToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setAuthToken(token);
+  }, []);
+
+  if (!authToken || !isAdmin(authToken)) {
+    return <h1>Unauthorized</h1>;
+  }
+
+  return <Suppliers />;
 }

@@ -9,6 +9,7 @@ interface PharmacySelectorProps {
 
 export function PharmacySelector({ pharmacies, selectedPharmacy, onSelectPharmacy }: PharmacySelectorProps) {
   return (
+    
     <Select
       onValueChange={(value) =>
         onSelectPharmacy(pharmacies.find((p) => p.id === Number.parseInt(value)) || pharmacies[0])

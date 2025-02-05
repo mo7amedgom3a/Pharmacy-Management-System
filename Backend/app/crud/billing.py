@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from fastapi import HTTPException, status
 from typing import List
+from models.pharmacy import Pharmacy
 
 class BillingCrud:
     def __init__(self, session: AsyncSession):
@@ -28,6 +29,15 @@ class BillingCrud:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Billing record not found")
         return billing
 
+    async def get_by_name(self, name: str) -> List[Billing]:
+        """Get billing records by name"""
+        try:
+            result = await self.session.execute(select(Billing).filter(Billing.customer_name.like(f"%{name}%")))
+            return result.scalars().all()
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+
     async def get_all(self) -> List[Billing]:
         """Get all billing records"""
         try:
@@ -35,6 +45,17 @@ class BillingCrud:
             return result.scalars().all()
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+
+    # get all billing for a pharmacy
+    async def get_all_by_pharmacy(self, pharmacy_id: int) -> List[Billing]:
+        """Get all billing records for a pharmacy"""
+        try:
+            result = await self.session.execute(select(Billing).filter(Billing.pharmacy_id == pharmacy_id))
+            return result.scalars().all()
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+        
 
     async def update(self, billing_id: int, updates: BillingCreate) -> Billing:
         """Update a billing record"""

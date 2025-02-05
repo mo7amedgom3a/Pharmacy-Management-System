@@ -18,9 +18,15 @@ const translations = {
     "Are you sure you want to delete this?": "Are you sure you want to delete this?",
     "update": "Update",
     "edit": "Edit",
+    "save": "Save",
+    "search": "Search",
+    "Actions": "Actions",
+    "cancel": "Cancel",
     "delete": "Delete",
-    "dashboard.title": "Pharmacy Dashboard",
+    "Pharmacies": "Pharmacies",
+    "suppliers": "Suppliers",
 
+    "dashboard.title": "Pharmacy Dashboard",
     "drugList.title": "Drug List",
     "drugList.name": "Name",
     "drugList.addDrug": "Add Drug",
@@ -29,12 +35,10 @@ const translations = {
     "drugList.quantity": "Quantity",
     "drugList.type": "Type",
     "drugList.price": "Price",
-    "drugList.action": "Action",
     "drugList.expirationDate": "Expiration Date",
-    "drugList.description": "Description",
+    "drugList.Description": "Description",
     "drugList.manufacturer": "Manufacturer",
     "drugList.supplier": "Supplier",
-    "drugList.update": "Update",
     "drugList.minQuantity": "Min Quantity",
     "drugList.totalQuantity": "Total Quantity",
     "drugList.currentQuantity": "Current Quantity",
@@ -49,14 +53,16 @@ const translations = {
     "billingDetails.status": "Status",
     "billingDetails.addBilling": "Generate New Bill",
     "billingDetails.drugDetails": "Drug Details",
+    "billingDetails.updatebilling": "Update Billing",
+    
     
 
 
     "lowStock.title": "Low Stock Alert",
     "lowStock.message": "{drug} is running low. Current quantity: {quantity}",
 
-    "search.placeholder": "Search drugs, transactions, or customers...",
-    "search.button": "Search",
+   
+    
     languageToggle: "عربي",
     "dashboard.overview": "Overview",
     "dashboard.drugList": "Drug List",
@@ -67,25 +73,55 @@ const translations = {
     "employees.name": "Name",
     "employees.position": "Position",
     "employees.salary": "Salary",
-    "employees.action": "Action",
+    "employees.role": "Role",
+    "employees.phone": "Phone",
+    "employees.address": "Address",
+   
     "inventory.title": "Inventory",
     "inventory.name": "Name",
     "inventory.quantity": "Quantity",
     "inventory.price": "Price",
     "inventory.expirationDate": "Expiration Date",
     "inventory.action": "Action",
+    "inventory.minQuantity": "Min Quantity",
+    "inventory.currentQuantity": "Current Quantity",
+
+
     "transactions.title": "Transactions",
-    "transactions.customer": "Customer",
+    "transactions.drug_name": "Drug Name",
+    "transactions.type": "Type",
+    "transactions.quantity": "Quantity",
     "transactions.date": "Date",
     "transactions.amount": "Amount",
+    
+
 
   },
   ar: {
     "Update": "تحديث",
     "save": "حفظ",
     "edit": "تعديل",
+    "Actions": "الإجراءات",
+    "update": "تحديث",
     "delete": "حذف",
     "cancel": "إلغاء",
+    "search": "بحث",
+    "Pharmacies": "الصيدليات",
+    "Billings": "الفواتير",
+    "Employees": "الموظفين",
+    "Inventory": "المخزون",
+    "suppliers": "الموردين",
+    "IN": "داخل",
+    "OUT": "خارج",
+    "Select Pharmacy": "اختر الصيدلية",
+    "Select Inventory": "اختر المخزون",
+    "Add New Item": "إضافة عنصر جديد",
+    "Add New Supplier": "إضافة مورد جديد",
+    "Add New Pharmacy": "إضافة صيدلية جديدة",
+    "Add New Employee": "إضافة موظف جديد",
+    "Add New Transaction": "إضافة معاملة جديدة",
+
+
     "dashboard.title": "لوحة تحكم الصيدلية",
 
 
@@ -118,13 +154,12 @@ const translations = {
     "billingDetails.addBilling": "إنشاء فاتورة جديدة",
     "billingDetails.updatebilling": "تحديث الفاتورة",
     "billingDetails.drugDetails": "تفاصيل الدواء",
+    
     "Are you sure you want to delete this?": "هل أنت متأكد أنك تريد حذف هذه البيانات؟",
     
     "billingDetails.generateBill": "إنشاء فاتورة جديدة",
     "lowStock.title": "تنبيه المخزون المنخفض",
     "lowStock.message": "{drug} على وشك النفاد. الكمية الحالية: {quantity}",
-    "search.placeholder": "البحث عن الأدوية أو المعاملات أو العملاء...",
-    "search.button": "بحث",
     languageToggle: "English",
 
     "dashboard.overview": "نظرة عامة",
@@ -133,23 +168,35 @@ const translations = {
     
     
     "dashboard.inventory": "المخزون",
-    "inventory.comingSoon": "قريبًا",
+
     "employees.title": "الموظفين",
     "employees.name": "الاسم",
     "employees.position": "المنصب",
     "employees.salary": "المرتب",
-    "employees.action": "تعديل",
+    "employees.role": "الدور",
+    "employees.phone": "الهاتف",
+    "employees.address": "العنوان",
+    "employees.username": "اسم المستخدم",
+    "employees.password": "كلمة المرور", 
+
+    
     "inventory.title": "المخزون",
     "inventory.name": "الاسم",
     "inventory.quantity": "الكمية",
     "inventory.price": "السعر",
     "inventory.expirationDate": "تاريخ انتهاء الصلاحية",
-    "inventory.action": "تعديل",
+    "inventory.minQuantity": "الحد الأدنى للكمية",
+    "inventory.currentQuantity": "الكمية الحالية",
+
+
+
+
     "transactions.title": "المعاملات",
-    "transactions.customer": "العميل",
+    "transactions.drug_name": "اسم الدواء",
+    "transactions.type": "نوع العملية",
+    "transactions.quantity": "الكمية",
     "transactions.date": "التاريخ",
-    "transactions.amount": "المبلغ",
-    "transactions.status": "الحالة",
+
     
   },
 }

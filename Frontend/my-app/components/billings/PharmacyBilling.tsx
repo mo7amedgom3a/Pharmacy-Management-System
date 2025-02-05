@@ -5,8 +5,10 @@ import { pharmacies, billingData, type BillingRow, type Pharmacy } from "./lib/m
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import BillingTable from "./BillingTable"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function PharmacyBilling() {
+  const { t } = useLanguage()
   const [selectedPharmacy, setSelectedPharmacy] = useState<Pharmacy | null>(pharmacies[0] || null)
   const [billings, setBillings] = useState<BillingRow[]>(billingData[pharmacies[0]?.id] || [])
 
@@ -33,9 +35,11 @@ export default function PharmacyBilling() {
   return (
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
-        <CardTitle>Pharmacy Billing System</CardTitle>
+        <CardTitle>{t("Billings")}</CardTitle>
       </CardHeader>
       <CardContent>
+        <p><b>{t("Pharamcies")}</b></p>
+        
         <Select onValueChange={handlePharmacyChange} defaultValue={pharmacies[0]?.id}>
           <SelectTrigger className="w-[180px] mb-4">
             <SelectValue placeholder="Select Pharmacy" />

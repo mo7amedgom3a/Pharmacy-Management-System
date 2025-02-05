@@ -36,3 +36,11 @@ async def delete_inventory(inventory_id: int, inventory_crud: InventoryCrud = De
 @router.get("/{inventory_id}/drugs", response_model=List[Drug], status_code=200, dependencies=[Depends(require_role(roles["admin"] or roles["pharmacist"]))])
 async def get_inventory_drugs(inventory_id: int, inventory_crud: InventoryCrud = Depends(get_inventory_crud)) -> List[Drug]:
     return await inventory_crud.get_drugs(inventory_id)
+# get all inventory for a pharmacy
+@router.get("/pharmacy/{pharmacy_id}", response_model=List[Inventory], status_code=200, dependencies=[Depends(require_role(roles["admin"] or roles["pharmacist"]))])
+async def get_inventory_by_pharmacy(pharmacy_id: int, inventory_crud: InventoryCrud = Depends(get_inventory_crud)) -> List[Inventory]:
+    return await inventory_crud.get_by_pharmacy(pharmacy_id)
+
+@router.get("/drug/{drug_id}", response_model=Inventory, status_code=200, dependencies=[Depends(require_role(roles["admin"] or roles["pharmacist"]))])
+async def get_inventory_by_drug(drug_id: int, inventory_crud: InventoryCrud = Depends(get_inventory_crud)) -> Inventory:
+    return await inventory_crud.get_by_drug(drug_id)

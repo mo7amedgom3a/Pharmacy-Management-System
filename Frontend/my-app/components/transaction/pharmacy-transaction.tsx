@@ -14,8 +14,10 @@ import { DrugSelector } from "./DrugSelector"
 import { TransactionsTable } from "./TransactionsTable"
 import { TransactionModal } from "./TransactionModal"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function PharmacyTransaction() {
+  const { t } = useLanguage()
   const [selectedPharmacy, setSelectedPharmacy] = useState<Pharmacy | null>(pharmacies[0] || null)
   const [selectedDrug, setSelectedDrug] = useState<InventoryItem | null>(null)
   const [inventory, setInventory] = useState<InventoryItem[]>(inventoryData)
@@ -61,7 +63,7 @@ export default function PharmacyTransaction() {
     <div className="container mx-auto p-4">
       <div className="flex space-x-4 mb-4">
         <div>
-          <label className="block mb-2">Select Pharmacy</label>
+          <label className="block mb-2">{t("Select Pharmacy")}</label>
           <PharmacySelector
             pharmacies={pharmacies}
             selectedPharmacy={selectedPharmacy}
@@ -70,7 +72,7 @@ export default function PharmacyTransaction() {
         </div>
         {selectedPharmacy && (
           <div>
-            <label className="block mb-2">Select Inventory</label>
+            <label className="block mb-2">{t("Select Inventory")}</label>
             <DrugSelector inventory={filteredInventory} selectedDrug={selectedDrug} onSelectDrug={setSelectedDrug} />
           </div>
         )}
@@ -78,7 +80,7 @@ export default function PharmacyTransaction() {
       {selectedPharmacy && selectedDrug && (
         <>
           <Button onClick={() => setIsModalOpen(true)} className="my-4">
-            Add New Transaction
+            {t("Add New Transaction")}
           </Button>
           <TransactionsTable
             transactions={filteredTransactions}

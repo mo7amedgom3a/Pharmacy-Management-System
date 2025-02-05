@@ -6,8 +6,9 @@ import { PharmacySelector } from "./PharmacySelector"
 import { EmployeeTable } from "./EmployeeTable"
 import { EmployeeModal } from "./EmployeeModal"
 import { Button } from "@/components/ui/button"
-
+import { useLanguage } from "@/contexts/LanguageContext"
 export default function PharmacyEmployeeManagement() {
+    const { t } = useLanguage()
     const [selectedPharmacy, setSelectedPharmacy] = useState<Pharmacy | null>(pharmacies[0] || null)
     const [employees, setEmployees] = useState<Employee[]>(employeesData)
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -44,7 +45,7 @@ export default function PharmacyEmployeeManagement() {
             {selectedPharmacy && (
                 <>
                     <Button onClick={() => setIsModalOpen(true)} className="mb-4">
-                        Add New Employee
+                        {t("Add New Employee")}
                     </Button>
                     <EmployeeTable
                         employees={filteredEmployees}

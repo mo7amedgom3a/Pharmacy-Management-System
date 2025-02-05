@@ -95,7 +95,7 @@ export default function DrugManagement() {
             <TableHead>{t("drugList.name")}</TableHead>
             <TableHead>{t("drugList.type")}</TableHead>
             <TableHead>{t("drugList.price")}</TableHead>
-            <TableHead>{t("drugList.action")}</TableHead>
+            <TableHead>{t("Actions")}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

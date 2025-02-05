@@ -55,10 +55,13 @@ class Login:
             return HTTPException(status_code=400, detail="Incorrect username or password")
         if not Hash().verify(user_login.password, user.hashed_password):
             return HTTPException(status_code=400, detail="Incorrect username or password")
+        # get employee 
+        employee = await self.session.execute(select(Employee).where(Employee.employee_id == user.employee_id))
         user_payload = UserPayload(
             username=user.username,
             user_id=user.id,
             employee_id=user.employee_id,
+            pharmacy_id=employee.scalars().first().pharmacy_id,
             role=user.role
         )
         return self.jwt_handler.create_access_token(user_payload.dict())

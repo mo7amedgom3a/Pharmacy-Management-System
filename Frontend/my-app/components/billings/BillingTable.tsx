@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import type { BillingRow, Drug } from "./lib/mockData"
 import DrugDetailsModal from "./DrugDetailsModal"
 import BillingForm from "./BillingForm"
+import DeleteDialog from "../DeleteDialog"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 interface BillingTableProps {
   billings: BillingRow[]
@@ -13,9 +15,12 @@ interface BillingTableProps {
 }
 
 export default function BillingTable({ billings, onUpdate, onDelete, onAdd }: BillingTableProps) {
+  const { t } = useLanguage()
   const [selectedDrugs, setSelectedDrugs] = useState<Drug[] | null>(null)
   const [editingBilling, setEditingBilling] = useState<BillingRow | null>(null)
   const [isAdding, setIsAdding] = useState(false)
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
+  const [selectedBillingId, setSelectedBillingId] = useState<string | null>(null)
 
   const handleDrugDetails = (drugs: Drug[]) => {
     setSelectedDrugs(drugs)
@@ -26,17 +31,16 @@ export default function BillingTable({ billings, onUpdate, onDelete, onAdd }: Bi
   }
 
   const handleDelete = (id: string) => {
-    onDelete(id)
+    setSelectedBillingId(id)
+    setDeleteDialogOpen(true)
   }
 
-  const handleSubmit = (billing: BillingRow) => {
-    if (editingBilling) {
-      onUpdate(billing)
-    } else {
-      onAdd(billing)
+  const confirmDelete = () => {
+    if (selectedBillingId) {
+      onDelete(selectedBillingId)
+      setSelectedBillingId(null)
+      setDeleteDialogOpen(false)
     }
-    setEditingBilling(null)
-    setIsAdding(false)
   }
 
   return (
@@ -44,10 +48,10 @@ export default function BillingTable({ billings, onUpdate, onDelete, onAdd }: Bi
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Customer Name</TableHead>
-            <TableHead>Total Amount</TableHead>
-            <TableHead>Paid Amount</TableHead>
-            <TableHead>Actions</TableHead>
+            <TableHead>{t("billingDetails.customer")}</TableHead>
+            <TableHead>{t("billingDetails.amount")}</TableHead>
+            <TableHead>{t("billingDetails.paidAmount")}</TableHead>
+            <TableHead>{t("billingDetails.status")}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -58,13 +62,13 @@ export default function BillingTable({ billings, onUpdate, onDelete, onAdd }: Bi
               <TableCell>${billing.paidAmount.toFixed(2)}</TableCell>
               <TableCell>
                 <Button variant="outline" size="sm" className="mr-2" onClick={() => handleDrugDetails(billing.drugs)}>
-                  Drug Details
+                  {t("billingDetails.drugDetails")}
                 </Button>
                 <Button variant="outline" size="sm" className="mr-2" onClick={() => handleEdit(billing)}>
-                  Edit
+                  {t("billingDetails.updatebilling")}
                 </Button>
                 <Button variant="destructive" size="sm" onClick={() => handleDelete(billing.id)}>
-                  Delete
+                  {t("delete")}
                 </Button>
               </TableCell>
             </TableRow>
@@ -72,20 +76,26 @@ export default function BillingTable({ billings, onUpdate, onDelete, onAdd }: Bi
         </TableBody>
       </Table>
       <Button className="mt-4" onClick={() => setIsAdding(true)}>
-        Add New Billing
+        {t("billingDetails.addBilling")}
       </Button>
       {selectedDrugs && <DrugDetailsModal drugs={selectedDrugs} onClose={() => setSelectedDrugs(null)} />}
       {(editingBilling || isAdding) && (
         <BillingForm
           billing={editingBilling}
-          onSubmit={handleSubmit}
+          onSubmit={onUpdate}
           onCancel={() => {
             setEditingBilling(null)
             setIsAdding(false)
           }}
         />
       )}
+      {deleteDialogOpen && (
+        <DeleteDialog
+          open={deleteDialogOpen}
+          onOpenChange={setDeleteDialogOpen}
+          onConfirm={confirmDelete}
+        />
+      )}
     </div>
   )
 }
-

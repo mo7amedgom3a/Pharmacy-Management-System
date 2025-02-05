@@ -68,6 +68,7 @@ class InventoryCrud:
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
+
     async def get_drugs(self, inventory_id: int) -> List[Drug]:
         """Retrieve all drugs in an inventory"""
         inventory = await self.session.get(Inventory, inventory_id)
@@ -78,3 +79,21 @@ class InventoryCrud:
             return result.scalars().all()
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+        
+
+    async def get_by_drug(self, drug_id: int) -> Inventory:
+        """Retrieve an inventory item by drug ID"""
+        result = await self.session.execute(select(Inventory).where(Inventory.drug_id == drug_id))
+        inventory = result.scalar()
+        if not inventory:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
+        return inventory
+    
+    async def get_by_pharmacy(self, pharmacy_id: int) -> List[Inventory]:
+        """Retrieve all inventory items for a pharmacy"""
+        try:
+            result = await self.session.execute(select(Inventory).where(Inventory.pharmacy_id == pharmacy_id))
+            return result.scalars().all()
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+        

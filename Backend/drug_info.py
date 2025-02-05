@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from extract_drug_info import extract_drug_info
 import json
 
 def get_drug_info(drug_id):
@@ -28,13 +29,15 @@ def get_drug_info(drug_id):
         
         # Wait for elements to load
         wait = WebDriverWait(driver, 10)
-        # print the full page source
-        print(driver.page_source)
+        
+        # Get the full page source
+        page_source = driver.page_source
+        
+        # pass the page source to the extract_drug_info.py file
+        data = extract_drug_info(page_source)
+
+        return data
+
     
     finally:
         driver.quit()
-
-if __name__ == "__main__":
-    drug_id = int(input("enter the is : "))  # Replace with the drug ID you want to fetch
-    drug_info = get_drug_info(drug_id)
-    print(json.dumps(drug_info, indent=2, ensure_ascii=False))

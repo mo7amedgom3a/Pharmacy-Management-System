@@ -76,7 +76,7 @@ export function DrugInfoCard({ drug, isOpen, onClose, onEdit, isVisible }: DrugI
               </div>
             </CardContent>
             <CardFooter className="justify-end p-4">
-              <Button onClick={onEdit}>{t("drugList.update")}</Button>
+              <Button onClick={onEdit}>{t("update")}</Button>
             </CardFooter>
           </Card>
         </div>

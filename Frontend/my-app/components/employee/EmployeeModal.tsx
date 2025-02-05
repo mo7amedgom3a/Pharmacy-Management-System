@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import type { Employee } from "./mockData"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-
+import { useLanguage } from "@/contexts/LanguageContext"
 import { Button } from "@/components/ui/button"
 
 interface EmployeeModalProps {
@@ -13,6 +13,8 @@ interface EmployeeModalProps {
 }
 
 export function EmployeeModal({ employee, onSave, onClose, pharmacyId }: EmployeeModalProps) {
+    const { t } = useLanguage()
+
     const [formData, setFormData] = useState<Employee>({
         id: employee?.id || 0,
         pharmacyId,
@@ -45,31 +47,31 @@ export function EmployeeModal({ employee, onSave, onClose, pharmacyId }: Employe
         <Dialog open={true} onOpenChange={onClose}>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>{employee ? "Edit Employee" : "Add New Employee"}</DialogTitle>
+                    <DialogTitle>{employee ? t("employees.title") : t("employees.title")}</DialogTitle>
                 </DialogHeader>
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-4 py-4">
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="name" className="text-right">
-                                Name
+                                {t("employees.name")}
                             </label>
                             <Input id="name" name="name" value={formData.name} onChange={handleChange} className="col-span-3" />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="role" className="text-right">
-                                Role
+                                {t("employees.role")}
                             </label>
                             <Input id="role" name="role" value={formData.role} onChange={handleChange} className="col-span-3" />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="phone" className="text-right">
-                                Phone
+                                {t("employees.phone")}
                             </label>
                             <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} className="col-span-3" />
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="salary" className="text-right">
-                                Salary
+                                {t("employees.salary")}
                             </label>
                             <Input
                                 id="salary"
@@ -82,7 +84,7 @@ export function EmployeeModal({ employee, onSave, onClose, pharmacyId }: Employe
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="address" className="text-right">
-                                Address
+                                {t("employees.address")}
                             </label>
                             <Input
                                 id="address"
@@ -94,7 +96,7 @@ export function EmployeeModal({ employee, onSave, onClose, pharmacyId }: Employe
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="username" className="text-right">
-                                Username
+                                {t("employees.username")}
                             </label>
                             <Input
                                 id="username"
@@ -106,7 +108,7 @@ export function EmployeeModal({ employee, onSave, onClose, pharmacyId }: Employe
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="password" className="text-right">
-                                Password
+                                {t("employees.password")}
                             </label>
                             <Input
                                 id="password"
@@ -119,7 +121,7 @@ export function EmployeeModal({ employee, onSave, onClose, pharmacyId }: Employe
                         </div>
                     </div>
                     <DialogFooter>
-                        <Button type="submit">{employee ? "Update" : "Add"}</Button>
+                        <Button type="submit">{employee ? t("employees.update") : t("employees.save")}</Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

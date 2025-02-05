@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import type { InventoryItem } from "./mockData"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 interface InventoryModalProps {
     item: InventoryItem | null
@@ -13,6 +13,8 @@ interface InventoryModalProps {
 }
 
 export function InventoryModal({ item, onSave, onClose, pharmacyId }: InventoryModalProps) {
+    const { t } = useLanguage()
+
     const [formData, setFormData] = useState<InventoryItem>({
         id: item?.id || 0,
         pharmacyId,
@@ -43,13 +45,13 @@ export function InventoryModal({ item, onSave, onClose, pharmacyId }: InventoryM
         <Dialog open={true} onOpenChange={onClose}>
             <DialogContent>
                 <DialogHeader>
-                    <DialogTitle>{item ? "Edit Inventory Item" : "Add New Inventory Item"}</DialogTitle>
+                    <DialogTitle>{item ? t("inventory.title") : t("inventory.title")}</DialogTitle>
                 </DialogHeader>
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-4 py-4">
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="drugName" className="text-right">
-                                Drug Name
+                                {t("inventory.name")}
                             </label>
                             <Input
                                 id="drugName"
@@ -61,7 +63,7 @@ export function InventoryModal({ item, onSave, onClose, pharmacyId }: InventoryM
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="totalQuantity" className="text-right">
-                                Total Quantity
+                                {t("inventory.quantity")}
                             </label>
                             <Input
                                 id="totalQuantity"
@@ -74,7 +76,7 @@ export function InventoryModal({ item, onSave, onClose, pharmacyId }: InventoryM
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="currentQuantity" className="text-right">
-                                Current Quantity
+                                {t("inventory.currentQuantity")}
                             </label>
                             <Input
                                 id="currentQuantity"
@@ -87,7 +89,7 @@ export function InventoryModal({ item, onSave, onClose, pharmacyId }: InventoryM
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="price" className="text-right">
-                                Price
+                                {t("inventory.price")}
                             </label>
                             <Input
                                 id="price"
@@ -101,7 +103,7 @@ export function InventoryModal({ item, onSave, onClose, pharmacyId }: InventoryM
                         </div>
                         <div className="grid grid-cols-4 items-center gap-4">
                             <label htmlFor="minimumQuantity" className="text-right">
-                                Minimum Quantity
+                                {t("inventory.minQuantity")}
                             </label>
                             <Input
                                 id="minimumQuantity"
@@ -114,7 +116,7 @@ export function InventoryModal({ item, onSave, onClose, pharmacyId }: InventoryM
                         </div>
                     </div>
                     <DialogFooter>
-                        <Button type="submit">{item ? "Update" : "Add"}</Button>
+                        <Button type="submit">{item ? t("update") : t("save")}</Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

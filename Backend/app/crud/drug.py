@@ -28,7 +28,7 @@ class DrugCrud:
 
     async def get_by_name(self, drug_name: str) -> Drug:
         """Get a drug by name"""
-        result = await self.session.exec(select(Drug).where(Drug.name == drug_name))
+        result = await self.session.exec(select(Drug).where(Drug.name.ilike(f"%{drug_name}%")))
         drug = result.first()
         if not drug:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Drug not found")

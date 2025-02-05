@@ -23,5 +23,6 @@ class UserLogin(BaseModel):
 class UserPayload(BaseModel):
     username: str
     user_id: int
+    pharmacy_id: Optional[int]
     employee_id: int
     role: str

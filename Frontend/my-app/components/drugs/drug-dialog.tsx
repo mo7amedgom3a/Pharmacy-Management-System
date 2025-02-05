@@ -173,7 +173,7 @@ export function DrugDialog({ drug, isOpen, onClose, onUpdate, onAdd, isAdding, i
           </div>
           <DialogFooter className="p-4">
             <Button type="submit" onClick={handleSubmit}>
-              {isAdding ? t("drugList.addDrug") : t("drugList.update")}
+              {isAdding ? t("save") : t("update")}
             </Button>
           </DialogFooter>
         </div>

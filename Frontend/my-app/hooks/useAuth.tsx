@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react"
-
-interface AuthResponse {
-  token: string
-}
-
+import './envConfig'
+import { HOST, PORT } from "@/config"
 export function useAuth() {
   const [authToken, setAuthToken] = useState<string | null>(null)
+  
 
   useEffect(() => {
     // Check if there's a token in localStorage when the component mounts
@@ -15,24 +13,25 @@ export function useAuth() {
     }
   }, [])
 
-  const login = async (email: string, password: string): Promise<string | null> => {
+  const login = async (username: string, password: string): Promise<string | null> => {
     try {
-      // Replace this with your actual API call
-      const response = await fetch("/api/login", {
+      const response = await fetch(`http://${HOST}:${PORT}/auth/login`, {
         method: "POST",
         headers: {
+          "accept": "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       })
 
       if (!response.ok) {
         throw new Error("Login failed")
       }
 
-      const data: AuthResponse = await response.json()
-      setAuthToken(data.token)
-      return data.token
+      const data = await response.text()
+      setAuthToken(data)
+      localStorage.setItem("authToken", data)
+      return data
     } catch (error) {
       console.error("Login error:", error)
       return null
@@ -47,3 +46,12 @@ export function useAuth() {
   return { authToken, login, logout }
 }
 
+export function isAdmin (authToken: string | null): boolean {
+  if (!authToken) {
+    return false
+  }
+  // Decode the token and check if the user is an admin
+  const [, payload] = authToken.split(".")
+  const decodedPayload = JSON.parse(atob(payload))
+  return decodedPayload.role === "admin"
+}

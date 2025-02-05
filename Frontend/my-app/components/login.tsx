@@ -42,8 +42,8 @@ export default function LoginPage() {
             <Card className="w-full max-w-md">
                 <CardHeader className="space-y-1">
                     <div className="flex justify-center mb-4">
-                        <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
-                            <span className="text-white text-2xl font-bold"><img src="../app/public/pharmacy-symbol.png"></img></span>
+                        <div className="w-16 h-16  rounded-full flex items-center justify-center">
+                            <span className="text-white text-2xl font-bold"><img src="https://github.com/mo7amedgom3a/Pharmacy-Management-System/blob/main/Frontend/my-app/app/public/pharmacy-symbol.png?raw=true"></img></span>
                         </div>
                     </div>
                     <CardTitle className="text-2xl text-center">Pharmacy Management System</CardTitle>
@@ -56,7 +56,7 @@ export default function LoginPage() {
                                 <label htmlFor="email">Email</label>
                                 <Input
                                     id="email"
-                                    type="email"
+                                    type="text"
                                     placeholder="admin@pharmacy.com"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}

@@ -20,6 +20,16 @@ async def get_all_billing(billing_crud: BillingCrud = Depends(get_billing_crud))
 async def get_billing_by_id(billing_id: int, billing_crud: BillingCrud = Depends(get_billing_crud)) -> Billing:
     return await billing_crud.get_by_id(billing_id)
 
+# get billing by customer name
+@router.get("/name/{name}", response_model=List[Billing], status_code=200)
+async def get_billing_by_name(name: str, billing_crud: BillingCrud = Depends(get_billing_crud)) -> List[Billing]:
+    return await billing_crud.get_by_name(name)
+
+# get billing by pharmacy
+@router.get("/pharmacy/{pharmacy_id}", response_model=List[Billing], status_code=200)
+async def get_billing_by_pharmacy(pharmacy_id: int, billing_crud: BillingCrud = Depends(get_billing_crud)) -> List[Billing]:
+    return await billing_crud.get_all_by_pharmacy(pharmacy_id)
+
 @router.post("/", response_model=Billing, status_code=201)
 async def create_billing(billing: BillingCreate, billing_crud: BillingCrud = Depends(get_billing_crud)) -> Billing:
     return await billing_crud.create(billing)
