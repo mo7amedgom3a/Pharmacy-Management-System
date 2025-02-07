@@ -1,6 +1,5 @@
-import type { Pharmacy } from "./mockData"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-
+import { Pharmacy } from "../pharmacy/api/pharmacy"
 interface PharmacySelectorProps {
   pharmacies: Pharmacy[]
   selectedPharmacy: Pharmacy | null
@@ -11,16 +10,16 @@ export function PharmacySelector({ pharmacies, selectedPharmacy, onSelectPharmac
   return (
     <Select
       onValueChange={(value) =>
-        onSelectPharmacy(pharmacies.find((p) => p.id === Number.parseInt(value)) || pharmacies[0])
+        onSelectPharmacy(pharmacies.find((p) => p.pharmacy_id === Number.parseInt(value)) || pharmacies[0])
       }
-      value={selectedPharmacy?.id.toString()}
+      value={selectedPharmacy?.pharmacy_id.toString()}
     >
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Select a pharmacy" />
       </SelectTrigger>
       <SelectContent>
         {pharmacies.map((pharmacy) => (
-          <SelectItem key={pharmacy.id} value={pharmacy.id.toString()}>
+          <SelectItem key={pharmacy.pharmacy_id} value={pharmacy.pharmacy_id.toString()}>
             {pharmacy.name}
           </SelectItem>
         ))}

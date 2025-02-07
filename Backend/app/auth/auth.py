@@ -9,16 +9,15 @@ from schemas.user import UserPayload
 from auth.hash import Hash
 from models.employee import Employee
 from schemas.employee import EmployeeCreate
-
+from schemas.user import UserRead
 
 
 class Register:
     def __init__(self, session: AsyncSession):
         self.session = session
 
-    async def create(self, user: UserCreate) -> User:
-        try:
-            user_data = user.dict()
+    async def create(self, user: UserCreate) -> Employee:
+            user_data = user.model_dump()
             user_data['hashed_password'] = Hash().bcrypt(user.password)
             # map user_data into employee create
             employee_data = EmployeeCreate(**user_data)
@@ -27,21 +26,23 @@ class Register:
             await save(self.session, employee_model)
             user_data['employee_id'] = employee_model.employee_id
             user_model = User(
-                username=user_data['username'],
-                hashed_password=user_data['hashed_password'],
-                employee_id=user_data['employee_id'],
-                role=user_data['role'],
-                pharmacy_id=user_data.get('pharmacy_id'),
-                name=user_data.get('name'),
-                salary=user_data.get('salary'),
-                address=user_data.get('address')
+            username=user_data['username'],
+            hashed_password=user_data['hashed_password'],
+            employee_id=user_data['employee_id'],
+            role=user_data['role'],
+            pharmacy_id=user_data.get('pharmacy_id'),
+            name=user_data.get('name'),
+            salary=user_data.get('salary'),
+            address=user_data.get('address')
             )
-                
+            
             await save(self.session, user_model)
+            return employee_model
 
-            return user_model
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=str(e))
+
+
+
+    
 
 class Login:
     def __init__(self, session: AsyncSession, jwt_handler: JWTHandler):

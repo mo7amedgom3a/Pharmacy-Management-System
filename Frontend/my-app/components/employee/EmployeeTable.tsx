@@ -1,7 +1,7 @@
-import type { Employee } from "./mockData"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { Employee } from "./api/employee"
 import DeleteDialog from "../DeleteDialog"
 import { useState, useEffect } from "react"
 import { isAdmin } from "@/hooks/useAuth"
@@ -29,7 +29,7 @@ export function EmployeeTable({ employees, onEdit, onDelete }: EmployeeTableProp
 
   const handleDeleteConfirm = () => {
     if (selectedEmployee) {
-      onDelete(selectedEmployee.id)
+      onDelete(selectedEmployee.employee_id)
       setIsDeleteDialogOpen(false)
       setSelectedEmployee(null)
     }
@@ -46,7 +46,6 @@ export function EmployeeTable({ employees, onEdit, onDelete }: EmployeeTableProp
         <TableHeader>
           <TableRow>
             <TableHead>{t("employees.name")}</TableHead>
-            <TableHead>{t("employees.role")}</TableHead>
             <TableHead>{t("employees.phone")}</TableHead>
             <TableHead>{t("employees.salary")}</TableHead>
             <TableHead>{t("employees.address")}</TableHead>
@@ -55,9 +54,8 @@ export function EmployeeTable({ employees, onEdit, onDelete }: EmployeeTableProp
         </TableHeader>
         <TableBody>
           {employees.map((employee) => (
-            <TableRow key={employee.id}>
+            <TableRow key={employee.employee_id}>
               <TableCell>{employee.name}</TableCell>
-              <TableCell>{employee.role}</TableCell>
               <TableCell>{employee.phone}</TableCell>
               <TableCell>${employee.salary.toLocaleString()}</TableCell>
               <TableCell>{employee.address}</TableCell>

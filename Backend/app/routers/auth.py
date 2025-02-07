@@ -9,6 +9,7 @@ from schemas.user import UserLogin
 from auth.jwt_handler import JWTHandler
 from auth.dependencies import require_role
 from fastapi.security import OAuth2PasswordBearer
+from models.employee import Employee
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
@@ -20,8 +21,8 @@ async def get_register(session: AsyncSession = Depends(get_session)):
 async def get_login(session: AsyncSession = Depends(get_session), jwt_handler: JWTHandler = Depends(JWTHandler)):
     return Login(session, jwt_handler)
 
-@router.post("/register", response_model=User, status_code=201, dependencies=[Depends(require_role("admin"))])
-async def register(user: UserCreate, register: Register = Depends(get_register)) -> User:
+@router.post("/register", response_model=Employee, status_code=201)
+async def register(user: UserCreate, register: Register = Depends(get_register)) -> Employee:
     return await register.create(user)
 
 @router.post("/login", response_model=str, status_code=200)

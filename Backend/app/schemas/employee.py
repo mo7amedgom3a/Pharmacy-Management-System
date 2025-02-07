@@ -4,13 +4,14 @@ from typing import Optional
 class EmployeeBase(BaseModel):
     pharmacy_id: int
     name: str
-    role: str
-    phone: Optional[str] = None
+    phone: str
     salary: float
     address: str
 
 class EmployeeCreate(EmployeeBase):
     pass
+
+
 
 class EmployeeRead(EmployeeBase):
     employee_id: int

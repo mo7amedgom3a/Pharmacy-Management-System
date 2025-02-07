@@ -1,3 +1,4 @@
+from models.pharmacy import Pharmacy
 from schemas.inventory import InventoryBase, InventoryCreate
 from models.inventory import Inventory
 from sqlmodel.ext.asyncio.session import AsyncSession
@@ -12,15 +13,17 @@ class InventoryCrud:
         """Initialize InventoryCrud with a database session"""
         self.session = session
 
+
     async def create(self, inventory_data: InventoryCreate) -> Inventory:
         """Create a new inventory entry"""
         try:
             inventory = Inventory(**inventory_data.dict())
-            inventory.current_quantity = inventory.total_quantity
             await save(self.session, inventory)
             return inventory
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+
 
     async def get_by_id(self, inventory_id: int) -> Inventory:
         """Retrieve an inventory item by ID"""
@@ -29,6 +32,8 @@ class InventoryCrud:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
         return inventory
 
+
+
     async def get_all(self) -> List[Inventory]:
         """Retrieve all inventory items"""
         try:
@@ -36,6 +41,8 @@ class InventoryCrud:
             return result.scalars().all()
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+
 
     async def update(self, inventory_id: int, updates: InventoryBase) -> Inventory:
         """Update an inventory record"""
@@ -47,14 +54,13 @@ class InventoryCrud:
             for key, value in updates.dict(exclude_unset=True).items():
                 setattr(inventory, key, value)
 
-            # Ensure current quantity stays accurate
-            inventory.current_quantity = min(inventory.total_quantity, inventory.current_quantity)
-
             await self.session.commit()
             await self.session.refresh(inventory)
             return inventory
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+
 
     async def delete(self, inventory_id: int) -> bool:
         """Delete an inventory record"""
@@ -69,25 +75,7 @@ class InventoryCrud:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
 
-    async def get_drugs(self, inventory_id: int) -> List[Drug]:
-        """Retrieve all drugs in an inventory"""
-        inventory = await self.session.get(Inventory, inventory_id)
-        if not inventory:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
-        try:
-            result = await self.session.execute(select(Drug).where(Drug.drug_id == inventory.drug_id))
-            return result.scalars().all()
-        except Exception as e:
-            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
-        
-
-    async def get_by_drug(self, drug_id: int) -> Inventory:
-        """Retrieve an inventory item by drug ID"""
-        result = await self.session.execute(select(Inventory).where(Inventory.drug_id == drug_id))
-        inventory = result.scalar()
-        if not inventory:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Inventory not found")
-        return inventory
+   
     
     async def get_by_pharmacy(self, pharmacy_id: int) -> List[Inventory]:
         """Retrieve all inventory items for a pharmacy"""
@@ -97,3 +85,4 @@ class InventoryCrud:
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
         
+

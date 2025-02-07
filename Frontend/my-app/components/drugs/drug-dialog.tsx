@@ -3,37 +3,39 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import type { Drug } from "./mockData"
+import { Drug } from "./api/drug"
+import { fetchInventoryByPharmacy, Inventory } from "../inventory/api/inventory"
 import { useLanguage } from "@/contexts/LanguageContext"
-
 interface DrugDialogProps {
   drug: Drug | null
   isOpen: boolean
   onClose: () => void
-  onUpdate: (updatedDrug: Drug) => void
-  onAdd: (newDrug: Drug) => void
+  updateDrug: (updatedDrug: Drug) => Promise<void>
+  addDrug: (newDrug: Drug) => Promise<void>
   isAdding: boolean
-  isVisible: boolean
+  isVisible: boolean,
 }
 
 const emptyDrug: Drug = {
-  id: "",
-  name: "",
-  type: "",
-  price: 0,
-  image: "/placeholder.svg?height=100&width=100",
-  total_quantity: 0,
-  current_quantity: 0,
-  min_quantity: 0,
-  description: "",
-  manufacturer: "",
-  supplier: "",
+    drug_id: 0,
+    name: "",
+    type: "",
+    image_url: "",
+    barcode: "",
+    inventory_id: 0,
+    manufacturer: "",
+    description: "",
+    price_per_unit: 0,
+    total_quantity: 0,
+    current_quantity: 0,
+    min_quantity: 0,
 }
 
-export function DrugDialog({ drug, isOpen, onClose, onUpdate, onAdd, isAdding, isVisible }: DrugDialogProps) {
+export function DrugDialog({ drug, isOpen, onClose, updateDrug, addDrug, isAdding, isVisible }: DrugDialogProps) {
   const { t } = useLanguage()
   const [editedDrug, setEditedDrug] = useState<Drug>(emptyDrug)
-
+  const [drugInventory, setDrugInventory] = useState<Inventory[]>([])
+  const [inventory, setInventory] = useState<Inventory>()
   useEffect(() => {
     setEditedDrug(drug || emptyDrug)
   }, [drug])
@@ -48,9 +50,9 @@ export function DrugDialog({ drug, isOpen, onClose, onUpdate, onAdd, isAdding, i
 
   const handleSubmit = () => {
     if (isAdding) {
-      onAdd(editedDrug)
+      addDrug(editedDrug)
     } else {
-      onUpdate(editedDrug)
+      updateDrug(editedDrug)
     }
   }
 
@@ -65,6 +67,7 @@ export function DrugDialog({ drug, isOpen, onClose, onUpdate, onAdd, isAdding, i
           </DialogHeader>
           <div className="grid gap-3 p-4">
             <div className="grid grid-cols-3 items-center gap-2">
+                
               <label htmlFor="name" className="text-right text-sm">
                 {t("drugList.name")}
               </label>
@@ -77,10 +80,10 @@ export function DrugDialog({ drug, isOpen, onClose, onUpdate, onAdd, isAdding, i
               <Input id="type" name="type" value={editedDrug.type} onChange={handleChange} className="col-span-2" />
             </div>
             <div className="grid grid-cols-3 items-center gap-2">
-              <label htmlFor="image" className="text-right text-sm">
+              <label htmlFor="image_url" className="text-right text-sm">
                 {t("drugList.image")}
               </label>
-              <Input id="image" name="image" value={editedDrug.image} onChange={handleChange} className="col-span-2" />
+              <Input id="image_url" name="image_url" value={editedDrug.image_url} onChange={handleChange} className="col-span-2" />
             </div>
             <div className="grid grid-cols-3 items-center gap-2">
               <label htmlFor="manufacturer" className="text-right text-sm">
@@ -94,18 +97,7 @@ export function DrugDialog({ drug, isOpen, onClose, onUpdate, onAdd, isAdding, i
                 className="col-span-2"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-2">
-              <label htmlFor="supplier" className="text-right text-sm">
-                {t("drugList.supplier")}
-              </label>
-              <Input
-                id="supplier"
-                name="supplier"
-                value={editedDrug.supplier}
-                onChange={handleChange}
-                className="col-span-2"
-              />
-            </div>
+
             <div className="grid grid-cols-1 items-center gap-2">
               <label htmlFor="description" className="text-sm">
                 {t("drugList.Description")}
@@ -119,14 +111,14 @@ export function DrugDialog({ drug, isOpen, onClose, onUpdate, onAdd, isAdding, i
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-2">
-              <label htmlFor="price" className="text-right text-sm">
+              <label htmlFor="price_per_unit" className="text-right text-sm">
                 {t("drugList.price")}
               </label>
               <Input
-                id="price"
-                name="price"
+                id="price_per_unit"
+                name="price_per_unit"
                 type="number"
-                value={editedDrug.price}
+                value={editedDrug.price_per_unit}
                 onChange={handleChange}
                 className="col-span-2"
               />

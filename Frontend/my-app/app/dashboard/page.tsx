@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { isAdmin } from "@/hooks/useAuth";
 import LoginPage from "@/components/login";
 import Link from "next/link";
+import LoadingComponent from "@/components/loading";
 export default function DashboardOverview() {
   const [authToken, setAuthToken] = useState<string | null>(null);
   useEffect(() => {
@@ -12,7 +13,7 @@ export default function DashboardOverview() {
     setAuthToken(token);
   }, []);
   if (authToken === null) {
-    return <h1>Unauthorized</h1>;
+    <LoadingComponent />;
   }
   return (
     <>

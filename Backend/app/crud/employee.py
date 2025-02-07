@@ -5,6 +5,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from fastapi import HTTPException, status
 from typing import List
+from schemas.user import UserRead
+from models.pharmacy import Pharmacy
 
 class EmployeeCrud:
     def __init__(self, session: AsyncSession):
@@ -36,20 +38,27 @@ class EmployeeCrud:
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
-    async def update(self, employee_id: int, updates: EmployeeCreate) -> Employee:
+    async def get_by_pharmacy_id(self, pharmacy_id: int) -> List[UserRead]:
+        """Get all employees in a pharmacy"""
+        try:
+            result = await self.session.execute(select(Employee).join(Pharmacy).filter(Pharmacy.pharmacy_id == pharmacy_id))
+            return result.scalars().all()
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+        
+    async def update_employee(self, employee_id: int, updates: EmployeeCreate) -> Employee:
         """Update an employee record"""
-        result = await self.session.execute(select(Employee).filter(Employee.employee_id == employee_id))
-        employee = result.scalar()
+        employee = await self.session.get(Employee, employee_id)
         if not employee:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Employee not found")
         try:
             for key, value in updates.dict(exclude_unset=True).items():
                 setattr(employee, key, value)
-            await save(self.session, employee)
+            await self.session.commit()
             return employee
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
-
+        
     async def delete(self, employee_id: int) -> bool:
         """Delete an employee record"""
         result = await self.session.execute(select(Employee).filter(Employee.employee_id == employee_id))

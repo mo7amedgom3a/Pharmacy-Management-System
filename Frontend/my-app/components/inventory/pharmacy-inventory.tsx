@@ -1,48 +1,94 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { pharmacies, inventoryData, type Pharmacy, type InventoryItem } from "./mockData"
+import { Inventory, createInventory, fetchInventoryByPharmacy, CreateInventoryinterface } from "./api/inventory"
+import { Pharmacy, fetchPharmacies } from "../pharmacy/api/pharmacy"
 import { PharmacySelector } from "./PharmacySelector"
-import { DrugSelector } from "../transaction/DrugSelector"
+import { InventorySelector } from "../InventorySelector"
 import { InventoryTable } from "./InventoryTable"
+import { Drug, getDrugsByInventoryId, createDrug, updateDrug, deleteDrug } from "../drugs/api/drug"
 import { InventoryModal } from "./InventoryModal"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { InventoryCreateDialog } from "./inventory_create"
+
 export default function PharmacyInventory() {
   const { t } = useLanguage()
-  const [selectedPharmacy, setSelectedPharmacy] = useState<Pharmacy | null>(pharmacies[0] || null)
-  const [selectedDrug, setSelectedDrug] = useState<InventoryItem | null>(null)
-  const [inventory, setInventory] = useState<InventoryItem[]>(inventoryData)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [editingItem, setEditingItem] = useState<InventoryItem | null>(null)
 
+  // States
+  const [pharmacies, setPharmacies] = useState<Pharmacy[]>([])
+  const [selectedPharmacy, setSelectedPharmacy] = useState<Pharmacy | null>(null)
+  const [inventory, setInventory] = useState<Inventory[]>([])
+  const [selectedInventory, setSelectedInventory] = useState<Inventory | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [editingItem, setEditingItem] = useState<Drug | null>(null)
+  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
+  const [drugs, setDrugInventory] = useState<Drug[]>([])
+  // Fetch pharmacies
+  useEffect(() => {
+    fetchPharmacies().then((data) => {
+      setPharmacies(data)
+      if (data.length > 0) setSelectedPharmacy(data[0]) // Default selection
+    })
+  }, [])
+
+  // Fetch inventory when pharmacy changes
   useEffect(() => {
     if (selectedPharmacy) {
-      const firstInventoryItem = inventoryData.find(item => item.pharmacyId === selectedPharmacy.id) || null
-      setSelectedDrug(firstInventoryItem)
+      fetchInventoryByPharmacy(selectedPharmacy.pharmacy_id).then(setInventory)
+      setSelectedInventory(null) // Reset selected inventory
     }
   }, [selectedPharmacy])
 
-  const filteredInventory = selectedPharmacy ? inventory.filter((item) => item.pharmacyId === selectedPharmacy.id) : []
+  // Fetch drugs when inventory changes
+  useEffect(() => {
+    if (selectedInventory) {
+      getDrugsByInventoryId(selectedInventory.inventory_id).then(setDrugInventory)
+    }
+  }, [selectedInventory])
 
-  const handleAddItem = (newItem: InventoryItem) => {
-    setInventory([...inventory, { ...newItem, id: inventory.length + 1 }])
-    setIsModalOpen(false)
+  // Inventory CRUD handlers
+  const handleAddItem = (newItem: Drug) => {
+    newItem.inventory_id = selectedInventory?.inventory_id || 0
+    createDrug(newItem).then((data) => {
+      setDrugInventory([...drugs, data])
+      setIsModalOpen(false)
+    })
   }
 
-  const handleEditItem = (updatedItem: InventoryItem) => {
-    setInventory(inventory.map((item) => (item.id === updatedItem.id ? updatedItem : item)))
-    setIsModalOpen(false)
-    setEditingItem(null)
+  const handleEditItem = (updatedItem: Drug) => {
+    if (selectedInventory?.inventory_id !== undefined) {
+      updateDrug(updatedItem.drug_id, updatedItem).then((data) => {
+        setDrugInventory(drugs.map((item) => (item.drug_id === data.drug_id ? data : item)))
+        setIsModalOpen(false)
+      })
+    }
   }
 
-  const handleDeleteItem = (id: number) => {
-    setInventory(inventory.filter((item) => item.id !== id))
+  const handleDeleteItem = (drug_id: number) => {
+    if (selectedInventory?.inventory_id !== undefined) {
+      deleteDrug(drug_id).then(() => {
+        setDrugInventory(drugs.filter((item) => item.drug_id !== drug_id))
+      })
+    }
+  }
+
+  const handleOpenEditModal = (item: Drug) => {
+    setEditingItem(item)
+    setIsModalOpen(true)
+  }
+
+  const handleCreateInventory = (newInventory: CreateInventoryinterface) => {
+    createInventory(newInventory).then((data) => {
+      setInventory([...inventory, data])
+    })
+    setIsCreateDialogOpen(false)
   }
 
   return (
     <div className="container mx-auto p-4">
       <div className="flex space-x-4 mb-4">
+        {/* Pharmacy Selector */}
         <div>
           <label className="block mb-2">{t("Select Pharmacy")}</label>
           <PharmacySelector
@@ -51,28 +97,38 @@ export default function PharmacyInventory() {
             onSelectPharmacy={setSelectedPharmacy}
           />
         </div>
+
+        {/* Inventory Selector */}
         {selectedPharmacy && (
           <div>
             <label className="block mb-2">{t("Select Inventory")}</label>
-            <DrugSelector inventory={filteredInventory} selectedDrug={selectedDrug} onSelectDrug={setSelectedDrug} />
+            <InventorySelector
+              inventory={inventory}
+              selectedInventory={selectedInventory}
+              onSelectInventory={setSelectedInventory}
+            />
           </div>
         )}
-      </div>
-      {selectedPharmacy && (
-        <>
-          <Button onClick={() => setIsModalOpen(true)} className="my-4">
-            {t("Add New Item")}
+
+        {/* Create New Inventory Button */}
+        <div>
+          <label className="block mb-2">{t("Create New Inventory")}</label>
+          <Button onClick={() => setIsCreateDialogOpen(true)}>
+            {t("Create New Inventory")}
           </Button>
-          <InventoryTable
-            inventory={filteredInventory}
-            onEdit={(item) => {
-              setEditingItem(item)
-              setIsModalOpen(true)
-            }}
-            onDelete={handleDeleteItem}
+        </div>
+
+        {/* Inventory Create Dialog */}
+        {isCreateDialogOpen && (
+          <InventoryCreateDialog
+            pharmacyId={selectedPharmacy?.pharmacy_id || 0}
+            onClose={() => setIsCreateDialogOpen(false)}
+            onSave={handleCreateInventory}
           />
-        </>
-      )}
+        )}
+      </div>
+
+      {/* Inventory Modal */}
       {isModalOpen && (
         <InventoryModal
           item={editingItem}
@@ -81,8 +137,23 @@ export default function PharmacyInventory() {
             setIsModalOpen(false)
             setEditingItem(null)
           }}
-          pharmacyId={selectedPharmacy?.id || 0}
         />
+      )}
+
+      {/* Inventory Table */}
+      {selectedPharmacy && (
+        <>
+          <Button onClick={() => setIsModalOpen(true)} className="my-4">
+            {t("Add New Item")}
+          </Button>
+          {selectedInventory && (
+            <InventoryTable
+              drugs={drugs}
+              onEdit={handleOpenEditModal}
+              onDelete={handleDeleteItem}
+            />
+          )}
+        </>
       )}
     </div>
   )
