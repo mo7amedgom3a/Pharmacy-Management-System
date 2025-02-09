@@ -26,12 +26,12 @@ async def get_transaction_by_id(transaction_id: int, transaction_crud: Transacti
 
 @router.get("/pharmacy/{pharmacy_id}", response_model=List[Transaction], status_code=200)
 async def get_transaction_by_pharmacy(pharmacy_id: int, transaction_crud: TransactionCrud = Depends(get_transaction_crud)) -> List[Transaction]:
-    return await transaction_crud.get_by_pharmacy(pharmacy_id)
+    return await transaction_crud.get_transaction_by_pharmacy(pharmacy_id)
 
 @router.get("/inventory/{inventory_id}", response_model=List[Transaction], status_code=200)
 async def get_transaction_by_inventory(inventory_id: int, transaction_crud: TransactionCrud = Depends(get_transaction_crud)) -> List[Transaction]:
-    return await transaction_crud.get_by_inventory(inventory_id)
+    return await transaction_crud.get_transaction_by_inventory(inventory_id)
 
 @router.get("/drug/{drug_id}", response_model=List[Transaction], status_code=200)
 async def get_transaction_by_drug(drug_id: int, transaction_crud: TransactionCrud = Depends(get_transaction_crud)) -> List[Transaction]:
-    return await transaction_crud.get_by_drug(drug_id)
+    return await transaction_crud.get_transaction__by_drug(drug_id)

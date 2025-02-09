@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { pharmacies, billingData, type BillingRow, type Pharmacy } from "./lib/mockData"
+import { Billing, getBillingByPharmacy, getBillingById, updateBilling, createBilling, deleteBilling } from "./api/billing"
+import { Pharmacy, fetchPharmacies } from "../pharmacy/api/pharmacy"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import BillingTable from "./BillingTable"
@@ -9,44 +10,80 @@ import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function PharmacyBilling() {
   const { t } = useLanguage()
-  const [selectedPharmacy, setSelectedPharmacy] = useState<Pharmacy | null>(pharmacies[0] || null)
-  const [billings, setBillings] = useState<BillingRow[]>(billingData[pharmacies[0]?.id] || [])
+  const [selectedPharmacy, setSelectedPharmacy] = useState<Pharmacy | null>(null)
+  const [selectedBilling, setSelectedBilling] = useState<Billing | null>(null)
+  const [pharmacies, setPharmacies] = useState<Pharmacy[]>([])
+  const [billings, setBillings] = useState<Billing[]>([])
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+  // fetch all pharmacies
+  useEffect(() => {
+    fetchPharmacies().then(setPharmacies)
+  }, [])
+
+  // fetch billings by pharmacy
+  useEffect(() => {
+    if (selectedPharmacy) {
+      getBillingByPharmacy(selectedPharmacy.pharmacy_id).then(setBillings)
+    }
+  }, [selectedPharmacy])
 
   const handlePharmacyChange = (pharmacyId: string) => {
-    const pharmacy = pharmacies.find((p) => p.id === pharmacyId) || null
-    setSelectedPharmacy(pharmacy)
-    setBillings(billingData[pharmacyId] || [])
+    setSelectedPharmacy(pharmacies.find((pharmacy) => pharmacy.pharmacy_id === Number(pharmacyId)) || null)
   }
 
-  const handleBillingUpdate = (updatedBilling: BillingRow) => {
-    setBillings((prevBillings) =>
-      prevBillings.map((billing) => (billing.id === updatedBilling.id ? updatedBilling : billing)),
-    )
+  // handle update billing
+  const handleBillingUpdate = (billing: Billing) => {
+    updateBilling(billing.billing_id, billing).then((updatedBilling) => {
+      setBillings((prevBillings) =>
+        prevBillings.map((prevBilling) => (prevBilling.billing_id === updatedBilling.billing_id ? updatedBilling : prevBilling))
+      )
+      handleDialogClose()
+    })
   }
 
-  const handleBillingDelete = (billingId: string) => {
-    setBillings((prevBillings) => prevBillings.filter((billing) => billing.id !== billingId))
+  // handle delete billing
+  const handleBillingDelete = (billingId: number) => {
+    deleteBilling(billingId).then(() => {
+      setBillings((prevBillings) => prevBillings.filter((prevBilling) => prevBilling.billing_id !== billingId))
+      handleDialogClose()
+    })
   }
 
-  const handleBillingAdd = (newBilling: BillingRow) => {
-    setBillings((prevBillings) => [...prevBillings, newBilling])
+  // create new billing
+  const handleBillingAdd = (billing: Billing) => {
+    billing.pharmacy_id = selectedPharmacy?.pharmacy_id || 0
+    createBilling(billing).then((newBilling) => {
+      setBillings((prevBillings) => [...prevBillings, newBilling])
+      handleDialogClose()
+    })
+  }
+
+  const handleDialogOpen = (billing: Billing | null) => {
+    setSelectedBilling(billing)
+    setIsDialogOpen(true)
+  }
+
+  const handleDialogClose = () => {
+    setSelectedBilling(null)
+    setIsDialogOpen(false)
   }
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
+    <Card className="flex w-full w-full flex-grow-1"> 
       <CardHeader>
         <CardTitle>{t("Billings")}</CardTitle>
       </CardHeader>
       <CardContent>
         <p><b>{t("Pharamcies")}</b></p>
         
-        <Select onValueChange={handlePharmacyChange} defaultValue={pharmacies[0]?.id}>
-          <SelectTrigger className="w-[180px] mb-4">
+        <Select onValueChange={handlePharmacyChange} defaultValue={pharmacies[0]?.pharmacy_id.toString()}>
+          <SelectTrigger className="w-full mb-4">
             <SelectValue placeholder="Select Pharmacy" />
           </SelectTrigger>
           <SelectContent>
             {pharmacies.map((pharmacy) => (
-              <SelectItem key={pharmacy.id} value={pharmacy.id}>
+              <SelectItem key={pharmacy.pharmacy_id} value={pharmacy.pharmacy_id.toString()}>
                 {pharmacy.name}
               </SelectItem>
             ))}
@@ -58,6 +95,9 @@ export default function PharmacyBilling() {
             onUpdate={handleBillingUpdate}
             onDelete={handleBillingDelete}
             onAdd={handleBillingAdd}
+            onDialogOpen={handleDialogOpen}
+            onDialogClose={handleDialogClose}
+            isDialogOpen={isDialogOpen}
           />
         )}
       </CardContent>

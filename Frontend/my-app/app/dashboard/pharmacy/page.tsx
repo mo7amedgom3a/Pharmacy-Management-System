@@ -17,7 +17,7 @@ export default function Home() {
   }
 
   if (!isAdmin(authToken)) {
-    return <h1>Unauthorized</h1>;
+    return <LoadingComponent />;
   }
 
   return <Pharmacy />;

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import type { Drug } from "./lib/mockData"
+import { Drug } from "../drugs/api/drug"
 import { useLanguage } from "@/contexts/LanguageContext"
 
 interface DrugDetailsModalProps {
@@ -20,7 +20,7 @@ export default function DrugDetailsModal({ drugs, onClose }: DrugDetailsModalPro
         </DialogHeader>
         <div className="grid gap-6">
           {drugs.map((drug) => (
-            <Card key={drug.id}>
+            <Card key={drug.drug_id}>
               <CardHeader>
                 <CardTitle>{drug.name}</CardTitle>
                 <CardDescription>{drug.type}</CardDescription>
@@ -29,7 +29,7 @@ export default function DrugDetailsModal({ drugs, onClose }: DrugDetailsModalPro
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Image
-                      src={drug.image || "/placeholder.svg"}
+                      src={drug.image_url || "/placeholder.svg"}
                       alt={drug.name}
                       width={200}
                       height={200}
@@ -44,7 +44,7 @@ export default function DrugDetailsModal({ drugs, onClose }: DrugDetailsModalPro
                       <strong>{t("drugList.manufacturer")}:</strong> {drug.manufacturer}
                     </p>
                     <p>
-                      <strong>{t("drugList.price")}:</strong> ${drug.price.toFixed(2)}
+                      <strong>{t("drugList.price")}:</strong> ${drug.price_per_unit.toFixed(2)}
                     </p>
                     <p>
                       <strong>{t("drugList.quantity")}:</strong> {drug.current_quantity}

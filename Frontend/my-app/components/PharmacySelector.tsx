@@ -11,13 +11,14 @@ interface PharmacySelectorProps {
 export const PharmacySelector: React.FC<PharmacySelectorProps> = ({ pharmacies, selectedPharmacy, onSelectPharmacy }) => {
     return (
         <Select
+        
             value={selectedPharmacy?.pharmacy_id.toString() || ""}
             onValueChange={(value) => {
                 const selected = pharmacies.find(p => p.pharmacy_id === Number(value))
                 if (selected) onSelectPharmacy(selected)
             }}
         >
-            <SelectTrigger className="border rounded-md">
+            <SelectTrigger className="border rounded-md p-2">
                 <SelectValue placeholder="Select Pharmacy" />
             </SelectTrigger>
             <SelectContent>

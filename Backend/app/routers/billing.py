@@ -5,6 +5,7 @@ from schemas.billing import BillingCreate
 from crud.billing import BillingCrud
 from models.billing import Billing
 from typing import List
+from models.drug import Drug
 
 router = APIRouter(prefix="/billing", tags=["Billing"])
 
@@ -29,6 +30,11 @@ async def get_billing_by_name(name: str, billing_crud: BillingCrud = Depends(get
 @router.get("/pharmacy/{pharmacy_id}", response_model=List[Billing], status_code=200)
 async def get_billing_by_pharmacy(pharmacy_id: int, billing_crud: BillingCrud = Depends(get_billing_crud)) -> List[Billing]:
     return await billing_crud.get_all_by_pharmacy(pharmacy_id)
+
+# get drugs by billing
+@router.get("/{billing_id}/drugs", response_model=List[Drug], status_code=200)
+async def get_drugs_by_billing(billing_id: int, billing_crud: BillingCrud = Depends(get_billing_crud)) -> List[Drug]:
+    return await billing_crud.get_drugs(billing_id)
 
 @router.post("/", response_model=Billing, status_code=201)
 async def create_billing(billing: BillingCreate, billing_crud: BillingCrud = Depends(get_billing_crud)) -> Billing:

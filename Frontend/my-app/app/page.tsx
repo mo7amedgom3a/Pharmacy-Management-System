@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import LoginPage from "@/components/login";
 import DashboardOverview from "./dashboard/page";
-import WrappedDashboardLayout from "./dashboard/WrappedDashboardLayout";
 export default function Home() {
   const [token, setToken] = useState<string | null>(null);
 

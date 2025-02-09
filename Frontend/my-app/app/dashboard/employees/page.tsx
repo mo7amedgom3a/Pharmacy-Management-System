@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Employees from "@/components/employees";
 import { isAdmin } from "@/hooks/useAuth";
+import LoadingComponent from "@/components/loading";
 
 export default function EmployeesPage() {
   const [authToken, setAuthToken] = useState<string | null>(null);
@@ -12,7 +13,7 @@ export default function EmployeesPage() {
   }, []);
 
   if (!authToken || !isAdmin(authToken)) {
-    return <h1>Unauthorized</h1>;
+    return <LoadingComponent />;
   }
 
   return <Employees />;

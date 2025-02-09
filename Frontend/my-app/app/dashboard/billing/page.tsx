@@ -2,6 +2,7 @@
 // import { BillingDetails } from "@/components/billings/billing-details"
 import PharmacyBilling from "@/components/billings/PharmacyBilling"
 import { useState, useEffect } from "react";
+import LoadingComponent from "@/components/loading";
 export default function BillingPage() {
   const [authToken, setAuthToken] = useState<string | null>(null);
   useEffect(() => {
@@ -9,7 +10,7 @@ export default function BillingPage() {
     setAuthToken(token);
   }, []);
   if (authToken === null) {
-    return <h1>Unauthorized</h1>;
+    return <LoadingComponent />;
   }
   return (
     <>

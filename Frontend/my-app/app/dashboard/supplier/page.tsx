@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Suppliers from "@/components/supplier";
 import { isAdmin } from "@/hooks/useAuth";
-
+import LoadingComponent from "@/components/loading";
 export default function SupplierPage() {
   const [authToken, setAuthToken] = useState<string | null>(null);
 
@@ -12,7 +12,7 @@ export default function SupplierPage() {
   }, []);
 
   if (!authToken || !isAdmin(authToken)) {
-    return <h1>Unauthorized</h1>;
+    return <LoadingComponent />;
   }
 
   return <Suppliers />;

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
 import { Button } from "@/components/ui/button"
 import { Drug, deleteDrug, updateDrug, createDrug, getDrugsByInventoryId } from "./api/drug"
 import { DrugDialog } from "./drug-dialog"
@@ -143,30 +145,31 @@ export default function DrugManagement() {
   )
 
   return (
-    <div className="container mx-auto p-4 relative">
-      <h1 className="text-2xl font-bold mb-4">{t("drugList.title")}</h1>
-
-      <div className="mb-4">
-        <label className="block mb-2 p-2">{t("Select Pharmacy")}</label>
-        <PharmacySelector
-         
-          pharmacies={pharmacies}
-          selectedPharmacy={selectedPharmacy}
-          onSelectPharmacy={setSelectedPharmacy}
-        />
-      </div>
-
-      {/* Inventory Selector */}
-      {selectedPharmacy && (
-        <div className="mb-4">
-          <label className="block mb-2">{t("Select Inventory")}</label>
-          <InventorySelector
-        inventory={inventory}
-        selectedInventory={selectedInventory}
-        onSelectInventory={setSelectedInventory}
+    <Card className="flex w-full w-full flex-grow-1">
+      <CardHeader>
+        <CardTitle className="text-2xl font-bold mb-4">{t("drugList.title")}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="">
+          <label className="block mb-2 p-2">{t("Select Pharmacy")}</label>
+          <PharmacySelector
+            pharmacies={pharmacies}
+            selectedPharmacy={selectedPharmacy}
+            onSelectPharmacy={setSelectedPharmacy}
           />
         </div>
-      )}
+
+        {/* Inventory Selector */}
+        {selectedPharmacy && (
+          <div className="mb-4">
+            <label className="block mb-2">{t("Select Inventory")}</label>
+            <InventorySelector
+              inventory={inventory}
+              selectedInventory={selectedInventory}
+              onSelectInventory={setSelectedInventory}
+            />
+          </div>
+        )}
 
         <div className="flex mb-4">
           <Button onClick={openAddDrugDialog} className="mr-4">
@@ -211,34 +214,34 @@ export default function DrugManagement() {
         </Table>
 
         {isDialogOpen && !isAddingDrug && !isEditMode && selectedDrug && (
-        <DrugInfoCard
-          drug={selectedDrug}
-          isOpen={isDialogOpen}
-          onClose={closeDialog}
-          onEdit={handleEditClick}
-        />
-      )}
+          <DrugInfoCard
+            drug={selectedDrug}
+            isOpen={isDialogOpen}
+            onClose={closeDialog}
+            onEdit={handleEditClick}
+          />
+        )}
 
-      {(isAddingDrug || isEditMode) && (
-        <DrugDialog
-          drug={selectedDrug}
-          isOpen={isDialogOpen}
-          onClose={closeDialog}
-          updateDrug={updateDrugHandler}
-          addDrug={addDrug}
-          isAdding={isAddingDrug}
-          isVisible={isSlideVisible}
-        />
-      )}
+        {(isAddingDrug || isEditMode) && (
+          <DrugDialog
+            drug={selectedDrug}
+            isOpen={isDialogOpen}
+            onClose={closeDialog}
+            updateDrug={updateDrugHandler}
+            addDrug={addDrug}
+            isAdding={isAddingDrug}
+            isVisible={isSlideVisible}
+          />
+        )}
 
-      {isDeleteDialogOpen && drugToDelete && (
-        <DeleteDialog
-        open={isDeleteDialogOpen}
-        onOpenChange={setIsDeleteDialogOpen}
-        onConfirm={handleDeleteDrug}
-        />
-      )}
-    
-    </div>
+        {isDeleteDialogOpen && drugToDelete && (
+          <DeleteDialog
+            open={isDeleteDialogOpen}
+            onOpenChange={setIsDeleteDialogOpen}
+            onConfirm={handleDeleteDrug}
+          />
+        )}
+      </CardContent>
+    </Card>
   )
 }

@@ -2,12 +2,12 @@
 
 import type { ReactNode } from "react"
 import { LanguageProvider } from "@/contexts/LanguageContext"
-import { DashboardLayout } from "./DashboardLayout"
+import ToggleableSidebar from "./DashboardLayout"
 
 export default function WrappedDashboardLayout({ children }: { children: ReactNode }) {
   return (
     <LanguageProvider>
-      <DashboardLayout>{children}</DashboardLayout>
+      <ToggleableSidebar>{children}</ToggleableSidebar>
     </LanguageProvider>
   )
 }

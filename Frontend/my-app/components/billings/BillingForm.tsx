@@ -1,46 +1,70 @@
 import { useState, useEffect } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import type { BillingRow } from "./lib/mockData"
+import { Billing } from "./api/billing"
+import { Drug, getDrugs } from "../drugs/api/drug"
 import { useLanguage } from "@/contexts/LanguageContext"
 
 interface BillingFormProps {
-  billing?: BillingRow | null
-  onSubmit: (billing: BillingRow) => void
+  billing?: Billing | null
+  onAdd: (data: Omit<Billing, "id">) => void
+  onEdit: (data: Omit<Billing, "id">) => void
   onCancel: () => void
 }
 
-export default function BillingForm({ billing, onSubmit, onCancel }: BillingFormProps) {
+export default function BillingForm({ billing, onAdd, onEdit, onCancel }: BillingFormProps) {
   const { t } = useLanguage()
-  const [formData, setFormData] = useState<Omit<BillingRow, "id" | "drugs">>({
-    customerName: "",
-    totalAmount: 0,
-    paidAmount: 0,
+  const [drugs, setDrugs] = useState<Drug[]>([])
+  const [selectedDrug, setSelectedDrug] = useState<Drug | null>(null)
+  useEffect(() => {
+    getDrugs().then(setDrugs)
+  }, [])
+  const [formData, setFormData] = useState<Omit<Billing, "id" | "drugs">>({
+    billing_id: 0,
+    pharmacy_id: billing?.pharmacy_id || 0,
+    customer_name: "",
+    total_amount: 0,
+    paid_amount: 0,
+    drug_id: undefined,
+    quantity: 0,
+    price: 0,
   })
 
   useEffect(() => {
     if (billing) {
       setFormData({
-        customerName: billing.customerName,
-        totalAmount: billing.totalAmount,
-        paidAmount: billing.paidAmount,
+        billing_id: billing.billing_id,
+        pharmacy_id: billing.pharmacy_id,
+        customer_name: billing.customer_name,
+        total_amount: billing.total_amount,
+        paid_amount: billing.paid_amount,
+        drug_id: billing.drug_id,
+        quantity: billing.quantity,
+        price: billing.price,
       })
     }
   }, [billing])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: name === "customerName" ? value : Number.parseFloat(value) }))
+    setFormData((prev) => ({ ...prev, [name]: name === "customer_name" ? value : Number.parseFloat(value) }))
+  }
+
+  const handleDrugChange = (drugId: number) => {
+    const selected = drugs.find((drug) => drug.drug_id === drugId) || null
+    setSelectedDrug(selected)
+    setFormData((prev) => ({ ...prev, drug_id: drugId }))
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    onSubmit({
-      id: billing?.id || Date.now().toString(),
-      ...formData,
-      drugs: billing?.drugs || [],
-    })
+    if (billing) {
+      onEdit(formData)
+    } else {
+      onAdd(formData)
+    }
   }
 
   return (
@@ -52,42 +76,85 @@ export default function BillingForm({ billing, onSubmit, onCancel }: BillingForm
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="customerName" className="text-right">
+              <label htmlFor="customer_name" className="text-right">
                 {t("billingDetails.customer")}
               </label>
               <Input
-                id="customerName"
-                name="customerName"
-                value={formData.customerName}
+                id="customer_name"
+                name="customer_name"
+                value={formData.customer_name}
                 onChange={handleChange}
                 className="col-span-3"
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="totalAmount" className="text-right">
+              <label htmlFor="total_amount" className="text-right">
                 {t("billingDetails.amount")}
               </label>
               <Input
-                id="totalAmount"
-                name="totalAmount"
+                id="total_amount"
+                name="total_amount"
                 type="number"
-                value={formData.totalAmount}
+                value={formData.total_amount}
                 onChange={handleChange}
                 className="col-span-3"
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="paidAmount" className="text-right">
+              <label htmlFor="paid_amount" className="text-right">
                 {t("billingDetails.paidAmount")}
               </label>
               <Input
-                id="paidAmount"
-                name="paidAmount"
+                id="paid_amount"
+                name="paid_amount"
                 type="number"
-                value={formData.paidAmount}
+                value={formData.paid_amount}
                 onChange={handleChange}
                 className="col-span-3"
               />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <label htmlFor="quantity" className="text-right">
+                {t("billingDetails.quantity")}
+              </label>
+              <Input
+                id="quantity"
+                name="quantity"
+                type="number"
+                value={formData.quantity}
+                onChange={handleChange}
+                className="col-span-3"
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <label htmlFor="price" className="text-right">
+                {t("billingDetails.price")}
+              </label>
+              <Input
+                id="price"
+                name="price"
+                type="number"
+                value={formData.price}
+                onChange={handleChange}
+                className="col-span-3"
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <label htmlFor="drug" className="text-right">
+                {t("billingDetails.drug")}
+              </label>
+              <Select onValueChange={(value) => handleDrugChange(Number(value))}>
+                <SelectTrigger className="col-span-3">
+                  <SelectValue placeholder={t("billingDetails.selectDrug")} />
+                </SelectTrigger>
+                <SelectContent>
+                  {drugs.map((drug) => (
+                    <SelectItem key={drug.drug_id} value={drug.drug_id.toString()}>
+                      {drug.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
           <div className="flex justify-end gap-4">

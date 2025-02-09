@@ -1,19 +1,18 @@
-import type { Transaction, InventoryItem } from "./mockData"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
+import { Transaction } from "./api/transaction"
 import { useLanguage } from "@/contexts/LanguageContext"
 import DeleteDialog from "../DeleteDialog"
 import { useState, useEffect } from "react"
 import { isAdmin } from "@/hooks/useAuth"
-
+import { Drug } from "../drugs/api/drug"
+import { DrugInfoCard } from "../drugs/drug-info-card"
 interface TransactionsTableProps {
-  transactions: Transaction[]
-  inventory: InventoryItem[]
-  onEdit: (transaction: Transaction) => void
-  onDelete: (id: number) => void
+  transactions: Transaction[],
+  drug: Drug,
 }
 
-export function TransactionsTable({ transactions, inventory, onEdit, onDelete }: TransactionsTableProps) {
+export function TransactionsTable({ transactions, drug }: TransactionsTableProps) {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [selectedTransactionId, setSelectedTransactionId] = useState<number | null>(null)
   const [authToken, setAuthToken] = useState<string | null>(null);
@@ -23,24 +22,17 @@ export function TransactionsTable({ transactions, inventory, onEdit, onDelete }:
     setAuthToken(token);
   }, []);
 
-
-  const getDrugName = (inventoryItemId: number) => {
-    const item = inventory.find((item) => item.id === inventoryItemId)
-    return item ? item.drugName : "Unknown"
-  }
-
   const { t } = useLanguage()
 
   const handleDeleteClick = (id: number) => {
     setSelectedTransactionId(id)
     setDeleteDialogOpen(true)
   }
-
-  const handleConfirmDelete = () => {
-    if (selectedTransactionId !== null) {
-      onDelete(selectedTransactionId)
-      setDeleteDialogOpen(false)
-    }
+  const handleDate = (date: string) => {
+    return new Date(date).toLocaleDateString()
+  }
+  const handleTime = (date: string) => {
+    return new Date(date).toLocaleTimeString()
   }
 
   return (
@@ -52,33 +44,38 @@ export function TransactionsTable({ transactions, inventory, onEdit, onDelete }:
             <TableHead>{t("transactions.type")}</TableHead>
             <TableHead>{t("transactions.quantity")}</TableHead>
             <TableHead>{t("transactions.date")}</TableHead>
+            <TableHead>{t("transactions.time")}</TableHead>
             <TableHead>{t("Actions")}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {transactions.map((transaction) => (
-            <TableRow key={transaction.id}>
-              <TableCell>{getDrugName(transaction.inventoryItemId)}</TableCell>
-              <TableCell>{transaction.type}</TableCell>
+            <TableRow key={transaction.transaction_id}>
+              <TableCell>{drug.name}</TableCell>
+              <TableCell>{transaction.transaction_type}</TableCell>
               <TableCell>{transaction.quantity}</TableCell>
-              <TableCell>{transaction.date}</TableCell>
+              <TableCell>{handleDate(transaction.transaction_date)}</TableCell>
+              <TableCell>{handleTime(transaction.transaction_date)}</TableCell>
               <TableCell>
-                <Button onClick={() => onEdit(transaction)} variant="outline" className="mr-2">
-                  {t("edit")}
-                </Button>
-                {isAdmin(authToken) && <Button onClick={() => handleDeleteClick(transaction.id)} variant="destructive">
-                  {t("delete")}
-                </Button>}
+                <Button onClick={() => setSelectedTransactionId(transaction.transaction_id)}> More Details </Button>
+                {selectedTransactionId === transaction.transaction_id && (
+                  <DrugInfoCard 
+                    drug={drug} 
+                    onClose={() => setSelectedTransactionId(null)} 
+                    isOpen={selectedTransactionId === transaction.transaction_id} 
+                    onEdit={() => { /* handle edit logic here */ }} 
+                  />
+                )}
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <DeleteDialog
+      {/* <DeleteDialog
         open={deleteDialogOpen}
         onOpenChange={setDeleteDialogOpen}
         onConfirm={handleConfirmDelete}
-      />
+      /> */}
     </>
   )
 }

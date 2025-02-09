@@ -7,7 +7,7 @@ class TransactionBase(BaseModel):
     drug_id: Optional[int] = None
     transaction_type: str
     quantity: int  
-    transaction_date: datetime
+    transaction_date: datetime = datetime.now()
 
 
 class TransactionCreate(TransactionBase):

@@ -6,6 +6,7 @@ from sqlalchemy.future import select
 from fastapi import HTTPException, status
 from typing import List
 from models.pharmacy import Pharmacy
+from models.drug import Drug
 
 class BillingCrud:
     def __init__(self, session: AsyncSession):
@@ -56,6 +57,12 @@ class BillingCrud:
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
         
+
+    # get drugs for a billing
+    async def get_drugs(self, billing_id: int) -> List[Drug]:
+        drugs = await self.session.execute(select(Drug).join(Billing).filter(Billing.billing_id == billing_id))
+        return drugs.scalars().all()
+    
 
     async def update(self, billing_id: int, updates: BillingCreate) -> Billing:
         """Update a billing record"""
