@@ -5,15 +5,17 @@ import { Button } from "@/components/ui/button"
 import { Drug, getDrugs } from "../drugs/api/drug"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { Inventory } from "./api/inventory"
+import { getDrugsByPharmacyId } from "../drugs/api/drug"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface InventoryModalProps {
     item: Drug | null
     onSave: (item: Drug) => void
-    onClose: () => void
+    onClose: () => void,
+    pharmacy_id?: number,
 }
 
-export function InventoryModal({ item, onSave, onClose }: InventoryModalProps) {
+export function InventoryModal({ item, onSave, onClose, pharmacy_id }: InventoryModalProps) {
     const { t } = useLanguage()
     const [drugs, setDrugs] = useState<Drug[]>([])
 
@@ -29,10 +31,12 @@ export function InventoryModal({ item, onSave, onClose }: InventoryModalProps) {
         min_quantity: 0,
     })
 
-    // Fetch the list of drugs
+    // Fetch the list of drugs with the pharmacy_id
     useEffect(() => {
-        getDrugs().then(setDrugs)
-    }, [])
+        if (pharmacy_id !== undefined) {
+            getDrugsByPharmacyId(pharmacy_id).then(setDrugs)
+        }
+    }, [item])
 
     // Populate form when editing an item
     useEffect(() => {

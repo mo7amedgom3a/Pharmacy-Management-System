@@ -6,7 +6,9 @@ from auth.jwt_handler import JWTHandler
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 roles = {
     "admin": "admin",
-    "pharmacist": "pharmacist"
+    "pharmacist": "pharmacist",
+    "cashier": "cashier",
+    "صيدلي": "صيدلي",
 }
 
 def get_current_user(token: str = Security(oauth2_scheme), jwt_handler: JWTHandler = Depends(JWTHandler)):

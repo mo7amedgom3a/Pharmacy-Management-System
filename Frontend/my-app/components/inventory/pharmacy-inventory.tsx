@@ -10,6 +10,7 @@ import { Drug, getDrugsByInventoryId, createDrug, updateDrug, deleteDrug } from 
 import { InventoryModal } from "./InventoryModal"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { isAdmin, getAuthToken, getTokenPayload } from "@/hooks/useAuth"
 import { InventoryCreateDialog } from "./inventory_create"
 
 export default function PharmacyInventory() {
@@ -24,13 +25,18 @@ export default function PharmacyInventory() {
   const [editingItem, setEditingItem] = useState<Drug | null>(null)
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
   const [drugs, setDrugInventory] = useState<Drug[]>([])
+  const isAdminUser = isAdmin(getAuthToken())
+
   // Fetch pharmacies
   useEffect(() => {
-    fetchPharmacies().then((data) => {
-      setPharmacies(data)
-      if (data.length > 0) setSelectedPharmacy(data[0]) // Default selection
+    fetchPharmacies().then((pharmacies_data) => {
+      const filteredPharmacies = isAdminUser 
+        ? pharmacies_data 
+        : pharmacies_data.filter((pharmacy: Pharmacy) => pharmacy.pharmacy_id === getTokenPayload(getAuthToken()).pharmacy_id)
+      setPharmacies(filteredPharmacies)
+      if (filteredPharmacies.length > 0) setSelectedPharmacy(filteredPharmacies[0]) // Default selection
     })
-  }, [])
+  }, [isAdminUser])
 
   // Fetch inventory when pharmacy changes
   useEffect(() => {
@@ -111,12 +117,14 @@ export default function PharmacyInventory() {
         )}
 
         {/* Create New Inventory Button */}
-        <div>
-          <label className="block mb-2">{t("Create New Inventory")}</label>
-          <Button onClick={() => setIsCreateDialogOpen(true)}>
-            {t("Create New Inventory")}
-          </Button>
-        </div>
+        {isAdminUser && (
+          <div>
+            <label className="block mb-2">{t("Create New Inventory")}</label>
+            <Button onClick={() => setIsCreateDialogOpen(true)}>
+              {t("Create New Inventory")}
+            </Button>
+          </div>
+        )}
 
         {/* Inventory Create Dialog */}
         {isCreateDialogOpen && (
@@ -131,6 +139,7 @@ export default function PharmacyInventory() {
       {/* Inventory Modal */}
       {isModalOpen && (
         <InventoryModal
+          pharmacy_id={selectedPharmacy?.pharmacy_id || 0}
           item={editingItem}
           onSave={editingItem ? handleEditItem : handleAddItem}
           onClose={() => {

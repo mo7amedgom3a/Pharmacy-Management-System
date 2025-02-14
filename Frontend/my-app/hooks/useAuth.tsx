@@ -53,6 +53,11 @@ export function getAuthToken (): string {
   }
   return token
 }
+// function return payload of the token
+export function getTokenPayload (authToken: string): any {
+  const [, payload] = authToken.split(".")
+  return JSON.parse(atob(payload))
+}
 export function isAdmin (authToken: string | null): boolean {
   if (!authToken) {
     return false

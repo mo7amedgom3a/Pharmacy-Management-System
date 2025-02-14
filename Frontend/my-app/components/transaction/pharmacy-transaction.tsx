@@ -12,6 +12,7 @@ import { TransactionModal } from "./TransactionModal"
 import { DrugSelector } from "./DrugSelector"
 import { TransactionCreate } from "./api/transaction"
 import { Button } from "@/components/ui/button"
+import { isAdmin, getAuthToken, getTokenPayload } from "@/hooks/useAuth"
 
 import { useLanguage } from "@/contexts/LanguageContext"
 
@@ -30,7 +31,12 @@ export default function PharmacyTransaction() {
 
   // get all pharmacies
   useEffect(() => {
-    fetchPharmacies().then(setPharmacies)
+    fetchPharmacies().then((pharmacies_data) => {
+      const filteredPharmacies = isAdmin(getAuthToken()) 
+        ? pharmacies_data 
+        : pharmacies_data.filter((pharmacy: Pharmacy) => pharmacy.pharmacy_id === getTokenPayload(getAuthToken()).pharmacy_id)
+      setPharmacies(filteredPharmacies)
+    })
   }, [])
   // get all inventory by pharmacy
   useEffect(() => {
@@ -69,6 +75,7 @@ export default function PharmacyTransaction() {
       drug_id: selectedDrug.drug_id,
       inventory_id: selectedInventory.inventory_id,
       pharmacy_id: selectedPharmacy.pharmacy_id,
+      transaction_date: new Date().toISOString(), // add transaction_date
     }
    
     createTransaction(newTransaction).then((newTransaction) => {

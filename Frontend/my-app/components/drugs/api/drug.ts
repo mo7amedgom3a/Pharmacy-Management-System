@@ -29,6 +29,17 @@ export const getDrugs = async (): Promise<Drug[]> => {
     }
     return response.json();
 };
+export const getDrugsByPharmacyId = async (pharmacy_id: number): Promise<Drug[]> => {
+    const response = await fetch(`${API_BASE_URL}/pharmacy/${pharmacy_id}`, {
+        headers: {
+            Authorization: `Bearer ${getAuthToken()}`,
+        },
+    });
+    if (!response.ok) {
+        throw new Error("Failed to fetch drugs by pharmacy ID");
+    }
+    return response.json();
+};
 
 export const getDrugById = async (drug_id: number): Promise<Drug> => {
     const response = await fetch(`${API_BASE_URL}/${drug_id}`, {

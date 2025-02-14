@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import BillingTable from "./BillingTable"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { isAdmin, getAuthToken, getTokenPayload } from "@/hooks/useAuth"
 
 export default function PharmacyBilling() {
   const { t } = useLanguage()
@@ -18,7 +19,12 @@ export default function PharmacyBilling() {
 
   // fetch all pharmacies
   useEffect(() => {
-    fetchPharmacies().then(setPharmacies)
+    fetchPharmacies().then((pharmacies_data) => {
+      const filteredPharmacies = isAdmin(getAuthToken()) 
+        ? pharmacies_data 
+        : pharmacies_data.filter((pharmacy: Pharmacy) => pharmacy.pharmacy_id === getTokenPayload(getAuthToken()).pharmacy_id)
+      setPharmacies(filteredPharmacies)
+    })
   }, [])
 
   // fetch billings by pharmacy
@@ -92,6 +98,7 @@ export default function PharmacyBilling() {
         {selectedPharmacy && (
           <BillingTable
             billings={billings}
+            pharmacy_id = {selectedPharmacy?.pharmacy_id}
             onUpdate={handleBillingUpdate}
             onDelete={handleBillingDelete}
             onAdd={handleBillingAdd}

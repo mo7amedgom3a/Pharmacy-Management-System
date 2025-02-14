@@ -53,7 +53,7 @@ export function DrugInfoCard({ drug, isOpen, onClose, onEdit }: DrugInfoCardProp
                                 </div>
                                 <div>
                                     <h3 className="font-semibold">{t("drugList.price")}</h3>
-                                    <p>${drug?.price_per_unit.toFixed(2)}</p>
+                                    <p>${drug?.price_per_unit}</p>
                                 </div>
                                 <div>
                                     <h3 className="font-semibold">{t("drugList.manufacturer")}</h3>

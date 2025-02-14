@@ -12,7 +12,6 @@ from models.employee import Employee
 from crud.inventory import Inventory
 from crud.drug import DrugCrud
 
-
 class TransactionCrud:
     def __init__(self, session: AsyncSession):
         """Initialize InventoryTransactionCrud with a database session"""
@@ -63,6 +62,7 @@ class TransactionCrud:
         return transaction
 
     async def get_transaction_by_pharmacy(self, pharmacy_id: int) -> List[Transaction]:
+    
         """Retrieve transactions by pharmacy ID"""
         result = await self.session.execute(select(Transaction).where(Transaction.pharmacy_id == pharmacy_id))
         return result.scalars().all()

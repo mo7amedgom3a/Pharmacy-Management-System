@@ -3,7 +3,7 @@ import { getAuthToken } from "@/hooks/useAuth";
 import { Drug } from "@/components/drugs/api/drug";
 export interface Billing {
     billing_id: number;
-    pharmacy_id?: number;
+    pharmacy_id: number;
     customer_name: string;
     total_amount: number;
     paid_amount: number;

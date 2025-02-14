@@ -5,6 +5,7 @@ from sqlmodel import select
 from dependencies import save
 from fastapi import HTTPException, status
 from models.inventory import Inventory
+from models.pharmacy import Pharmacy
 class DrugCrud:
     def __init__(self, session: AsyncSession):
         """Initialize DrugCrud with a database session"""
@@ -26,7 +27,16 @@ class DrugCrud:
         if not drug:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Drug not found")
         return drug
-    
+    # get drugs by pharmacy_id
+    async def get_by_pharmacy_id(self, pharmacy_id: int) -> list[Drug]:
+        """Get a drug by pharmacy ID"""
+        result = await self.session.exec(
+            select(Drug)
+            .join(Inventory, Drug.inventory_id == Inventory.inventory_id)
+            .join(Pharmacy, Inventory.pharmacy_id == Pharmacy.pharmacy_id)
+            .where(Pharmacy.pharmacy_id == pharmacy_id)
+        )
+        return result.all()
     # get by inventory_id
     async def get_by_inventory_id(self, inventory_id: int) -> list[Drug]:
         """Get a drug by inventory ID"""

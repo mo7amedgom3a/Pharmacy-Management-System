@@ -4,26 +4,30 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Billing } from "./api/billing"
-import { Drug, getDrugs } from "../drugs/api/drug"
+import { Drug, getDrugsByPharmacyId } from "../drugs/api/drug"
 import { useLanguage } from "@/contexts/LanguageContext"
 
 interface BillingFormProps {
   billing?: Billing | null
   onAdd: (data: Omit<Billing, "id">) => void
-  onEdit: (data: Omit<Billing, "id">) => void
+  onEdit: (data: Omit<Billing, "id">) => void,
+  pharmacy_id?: number,
   onCancel: () => void
 }
 
-export default function BillingForm({ billing, onAdd, onEdit, onCancel }: BillingFormProps) {
+export default function BillingForm({ billing, onAdd, onEdit, onCancel, pharmacy_id }: BillingFormProps) {
   const { t } = useLanguage()
   const [drugs, setDrugs] = useState<Drug[]>([])
   const [selectedDrug, setSelectedDrug] = useState<Drug | null>(null)
   useEffect(() => {
-    getDrugs().then(setDrugs)
-  }, [])
+    if (!billing && pharmacy_id !== undefined) {
+      getDrugsByPharmacyId(pharmacy_id).then(setDrugs)
+    }
+  }, [billing])
+  
   const [formData, setFormData] = useState<Omit<Billing, "id" | "drugs">>({
     billing_id: 0,
-    pharmacy_id: billing?.pharmacy_id || 0,
+    pharmacy_id: pharmacy_id || 0,
     customer_name: "",
     total_amount: 0,
     paid_amount: 0,
@@ -139,23 +143,25 @@ export default function BillingForm({ billing, onAdd, onEdit, onCancel }: Billin
                 className="col-span-3"
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <label htmlFor="drug" className="text-right">
-                {t("billingDetails.drug")}
-              </label>
-              <Select onValueChange={(value) => handleDrugChange(Number(value))}>
-                <SelectTrigger className="col-span-3">
-                  <SelectValue placeholder={t("billingDetails.selectDrug")} />
-                </SelectTrigger>
-                <SelectContent>
-                  {drugs.map((drug) => (
-                    <SelectItem key={drug.drug_id} value={drug.drug_id.toString()}>
-                      {drug.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            {!billing && (
+              <div className="grid grid-cols-4 items-center gap-4">
+                <label htmlFor="drug" className="text-right">
+                  {t("billingDetails.drug")}
+                </label>
+                <Select onValueChange={(value) => handleDrugChange(Number(value))}>
+                  <SelectTrigger className="col-span-3">
+                    <SelectValue placeholder={t("billingDetails.selectDrug")} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {drugs.map((drug) => (
+                      <SelectItem key={drug.drug_id} value={drug.drug_id.toString()}>
+                        {drug.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
           </div>
           <div className="flex justify-end gap-4">
             <Button type="button" variant="outline" onClick={onCancel}>

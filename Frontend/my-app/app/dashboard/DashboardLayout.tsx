@@ -121,7 +121,7 @@ function SidebarToggle() {
       onClick={toggleSidebar}
       aria-label={open ? "Close sidebar" : "Open sidebar"}
     >
-      {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+      {open ? <Menu className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
     </Button>
   )
 }

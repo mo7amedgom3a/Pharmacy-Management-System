@@ -9,12 +9,25 @@ from models.billing import Billing
 from models.drug import Drug
 from models.employee import Employee
 from typing import List
+from models.employee import Employee
 
 
 class PharmacyCrud:
     def __init__(self, session: AsyncSession):
         """Initialize PharmacyCrud with a database session"""
         self.session = session
+
+    # check if the employee is working in the pharmacy
+    async def check_employee_in_pharmacy(self, pharmacy_id: int, employee_id: int) -> bool:
+        try:
+            result = await self.session.execute(
+                select(Employee).where(Employee.pharmacy_id == pharmacy_id, Employee.employee_id == employee_id)
+            )
+            employee = result.scalars().first()
+            return True if employee else False
+        except Exception as e:
+            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+        
 
     async def create_pharmacy(self, pharmacyDto: PharmacyCreate) -> Pharmacy:
         try:
@@ -25,6 +38,10 @@ class PharmacyCrud:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
     async def get_pharmacy(self, pharmacy_id: int) -> Pharmacy:
+        is_employee = await self.check_employee_in_pharmacy(pharmacy_id, 1)
+        if not is_employee:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="You are not authorized to access this pharmacy")
+        
         pharmacy = await self.session.get(Pharmacy, pharmacy_id)
         if not pharmacy:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Pharmacy not found")
@@ -38,6 +55,7 @@ class PharmacyCrud:
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
+   
     async def update_pharmacy(self, pharmacy_id: int, updates: PharmacyUpdate) -> Pharmacy:
         pharmacy = await self.session.get(Pharmacy, pharmacy_id)
         if not pharmacy:

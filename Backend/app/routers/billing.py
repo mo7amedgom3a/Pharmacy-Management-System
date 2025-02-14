@@ -6,14 +6,15 @@ from crud.billing import BillingCrud
 from models.billing import Billing
 from typing import List
 from models.drug import Drug
-
+from auth.dependencies import require_role, roles
 router = APIRouter(prefix="/billing", tags=["Billing"])
+
 
 # Dependency Injection for BillingCrud
 async def get_billing_crud(session: AsyncSession = Depends(get_session)):
     return BillingCrud(session)
 
-@router.get("/", response_model=List[Billing], status_code=200)
+@router.get("/", response_model=List[Billing], status_code=200, dependencies=[Depends(require_role(roles["admin"]))])
 async def get_all_billing(billing_crud: BillingCrud = Depends(get_billing_crud)) -> List[Billing]:
     return await billing_crud.get_all()
 
@@ -44,6 +45,6 @@ async def create_billing(billing: BillingCreate, billing_crud: BillingCrud = Dep
 async def update_billing(billing_id: int, billing: BillingCreate, billing_crud: BillingCrud = Depends(get_billing_crud)) -> Billing:
     return await billing_crud.update(billing_id, billing)
 
-@router.delete("/{billing_id}", response_model=bool, status_code=200)
+@router.delete("/{billing_id}", response_model=bool, status_code=200, dependencies=[Depends(require_role(roles["admin"]))])
 async def delete_billing(billing_id: int, billing_crud: BillingCrud = Depends(get_billing_crud)) -> bool:
     return await billing_crud.delete(billing_id)

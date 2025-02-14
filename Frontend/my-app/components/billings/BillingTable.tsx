@@ -16,10 +16,11 @@ interface BillingTableProps {
   onAdd: (billing: Billing) => void,
   onDialogOpen: (billing: Billing | null) => void, 
   onDialogClose: () => void,
-  isDialogOpen: boolean
+  isDialogOpen: boolean,
+  pharmacy_id: number
 }
 
-export default function BillingTable({ billings, onUpdate, onDelete, onAdd, onDialogClose, onDialogOpen, isDialogOpen }: BillingTableProps) {
+export default function BillingTable({ billings, onUpdate, onDelete, onAdd, onDialogClose, onDialogOpen, isDialogOpen, pharmacy_id }: BillingTableProps) {
   const { t } = useLanguage()
   const [selectedDrugs, setSelectedDrugs] = useState<Drug[] | null>(null)
   const [editingBilling, setEditingBilling] = useState<Billing | null>(null)
@@ -102,6 +103,7 @@ export default function BillingTable({ billings, onUpdate, onDelete, onAdd, onDi
           billing={editingBilling}
           onAdd={onAdd}
           onEdit={onUpdate}
+          pharmacy_id={pharmacy_id}
           onCancel={() => {
             setEditingBilling(null)
             setIsAdding(false)
