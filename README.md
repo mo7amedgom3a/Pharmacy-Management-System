@@ -1,4 +1,4 @@
-# 📦 Pharmacy Inventory Management System
+# 📦 Pharmacy Management System
 
 ## 📝 Overview
 The **Pharmacy Management System** is a web-based application designed to help pharmacies efficiently manage their inventory, track drug stocks, and facilitate smooth transactions. The system ensures seamless monitoring of drugs, pharmacies, billing, and inventory while maintaining role-based authorization for security.
