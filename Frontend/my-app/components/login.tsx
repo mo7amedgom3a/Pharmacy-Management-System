@@ -46,7 +46,7 @@ export default function LoginPage() {
                             <span className="text-white text-2xl font-bold"><img src="https://github.com/mo7amedgom3a/Pharmacy-Management-System/blob/main/Frontend/my-app/app/public/pharmacy-symbol.png?raw=true"></img></span>
                         </div>
                     </div>
-                    <CardTitle className="text-2xl text-center">Pharmacy Management System</CardTitle>
+                    <CardTitle className="text-2xl text-center">Mekkawy Pharma</CardTitle>
                     <CardDescription className="text-center">Enter your credentials to access the system</CardDescription>
                 </CardHeader>
                 <CardContent>

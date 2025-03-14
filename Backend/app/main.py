@@ -18,7 +18,8 @@ from routers import (
     billing,
     employee,
     inventory_transactions,
-    auth_router
+    auth_router,
+    search_router
 )
 
 # Initialize FastAPI app
@@ -56,6 +57,7 @@ app.include_router(inventory_transactions.router)
 app.include_router(drug.router)
 app.include_router(billing.router)
 app.include_router(employee.router)
+app.include_router(search_router)
 
 # Sample root endpoint
 @app.get("/")

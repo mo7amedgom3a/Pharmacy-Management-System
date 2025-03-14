@@ -1,0 +1,1 @@
+{'salary': '56', 'uses_text': 'مضاد حيوي موضعي', 'title': 'فيوسيدين 2% كريم 15 جرام', 'image': 'https://www.dwaprices.com/upload/1675589196.jpg', 'barcode': '6222003700204'}

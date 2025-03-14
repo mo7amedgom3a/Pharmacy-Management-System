@@ -3,7 +3,7 @@
 ## 📝 Overview
 The **Pharmacy Management System** is a web-based application designed to help pharmacies efficiently manage their inventory, track drug stocks, and facilitate smooth transactions. The system ensures seamless monitoring of drugs, pharmacies, billing, and inventory while maintaining role-based authorization for security.
 
-## 🏗️ Project Structure
+## 🏗️ Project Structure 
 The system follows a **simplified and optimized database schema** with three main entities:
 
 1. **Pharmacy** - A pharmacy can contain multiple inventories.

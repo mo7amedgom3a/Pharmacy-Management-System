@@ -4,8 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Drug } from "./api/drug"
+import { Search } from "lucide-react"
+import LoadingComponent from "../loading"
+import { searchDrugByName, searchDrug } from "./api/search_drug"
 import { fetchInventoryByPharmacy, Inventory } from "../inventory/api/inventory"
 import { useLanguage } from "@/contexts/LanguageContext"
+
 interface DrugDialogProps {
   drug: Drug | null
   isOpen: boolean
@@ -30,12 +34,12 @@ const emptyDrug: Drug = {
     current_quantity: 0,
     min_quantity: 0,
 }
-
 export function DrugDialog({ drug, isOpen, onClose, updateDrug, addDrug, isAdding, isVisible }: DrugDialogProps) {
   const { t } = useLanguage()
   const [editedDrug, setEditedDrug] = useState<Drug>(emptyDrug)
-  const [drugInventory, setDrugInventory] = useState<Inventory[]>([])
-  const [inventory, setInventory] = useState<Inventory>()
+  const [searching, setSearching] = useState(false)
+  const [searchedDrug, setSearchedDrug] = useState<searchDrug>()
+
   useEffect(() => {
     setEditedDrug(drug || emptyDrug)
   }, [drug])
@@ -47,7 +51,6 @@ export function DrugDialog({ drug, isOpen, onClose, updateDrug, addDrug, isAddin
       [name]: ["price", "total_quantity", "current_quantity", "min_quantity"].includes(name) ? Number(value) : value,
     }))
   }
-
   const handleSubmit = () => {
     if (isAdding) {
       addDrug(editedDrug)
@@ -55,6 +58,34 @@ export function DrugDialog({ drug, isOpen, onClose, updateDrug, addDrug, isAddin
       updateDrug(editedDrug)
     }
   }
+
+  // handle search drug and map the response
+  useEffect (() => {
+    console.log(editedDrug.name)
+      searchDrugByName(editedDrug.name).then((res) => {
+        console.log(res)
+        setSearchedDrug(res)
+        setSearching(false)
+      }).catch((err) => {
+        console.log(err)
+        setSearching(false)
+      })
+  }, [searching])
+  
+  useEffect(() => {
+    if (searchedDrug) {
+      setEditedDrug({
+      ...editedDrug,
+      name: searchedDrug.title,
+      type: searchedDrug.uses_text,
+      price_per_unit: Number(searchedDrug.salary),
+      description: searchedDrug.uses_text,
+      image_url: searchedDrug.image,
+      barcode: searchedDrug.barcode,
+      })
+    }
+  }
+  , [searchedDrug])
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -65,14 +96,17 @@ export function DrugDialog({ drug, isOpen, onClose, updateDrug, addDrug, isAddin
           <DialogHeader className="p-6">
             <DialogTitle>{isAdding ? t("drugList.addDrug") : t("drugList.update")}</DialogTitle>
           </DialogHeader>
-          <div className="grid gap-3 p-4">
+            <div className="grid gap-3 p-4">
             <div className="grid grid-cols-3 items-center gap-2">
-                
               <label htmlFor="name" className="text-right text-sm">
-                {t("drugList.name")}
+              {t("drugList.name")}
               </label>
-              <Input id="name" name="name" value={editedDrug.name} onChange={handleChange} className="col-span-2" />
+              <div className="col-span-2 flex items-center">
+              <Input id="name" name="name" value={editedDrug.name} onChange={handleChange} className="flex-grow" />
+              <Search onClick={() => setSearching(true)} className="ml-2 cursor-pointer" />
+              </div>
             </div>
+            {searching && <LoadingComponent />}
             <div className="grid grid-cols-3 items-center gap-2">
               <label htmlFor="type" className="text-right text-sm">
                 {t("drugList.type")}

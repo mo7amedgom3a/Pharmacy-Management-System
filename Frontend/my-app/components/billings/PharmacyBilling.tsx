@@ -6,6 +6,7 @@ import { Pharmacy, fetchPharmacies } from "../pharmacy/api/pharmacy"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import BillingTable from "./BillingTable"
+import LoadingComponent from "../loading"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { isAdmin, getAuthToken, getTokenPayload } from "@/hooks/useAuth"
 

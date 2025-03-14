@@ -59,7 +59,7 @@ export default function ToggleableSidebar({ children }: { children: ReactNode })
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <BriefcaseMedical className="h-6 w-6 text-primary" />
-                <span className="font-bold text-lg">PharmaCare</span>
+                <span className="font-bold text-lg font-serif">Mekkawy Pharma</span>
               </div>
               <Button variant="outline" size="sm" onClick={toggleLanguage}>
                 {language === "ar" ? "English" : "عربي"}

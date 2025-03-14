@@ -3,6 +3,7 @@ from .drug import router as drug_router
 from .inventory import router as inventory_router
 from .billing import router as billing_router
 from .employee import router as employee_router
+from .search import router as search_router
 from .supplier import router as supplier_router
 # from .drug_types import router as drug_types_router
 # from .drug_subtypes import router as drug_subtypes_router
@@ -18,5 +19,6 @@ __all__ = [
     # "drug_types_router",
     # "drug_subtypes_router",
     "inventory_transactions_router",
-    "auth_router"
+    "auth_router",
+    "search_router"
 ]
